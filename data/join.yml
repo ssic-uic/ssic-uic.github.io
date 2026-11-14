@@ -1,0 +1,11 @@
+# Join us page.
+# Postdoc openings: add an entry to post one. Each opening disappears on its own
+# after its closes date. With no openings, the page says there are none right now.
+openings: []
+
+# Example entry:
+# - title: Postdoctoral researcher in X-ray chemical imaging
+#   summary: One or two sentences on the project and the skills that fit.
+#   apply: Email cabana-group@uic.edu with a CV, a short statement of interest and the names of two references.
+#   posted: 2026-11-14
+#   closes: 2027-01-31

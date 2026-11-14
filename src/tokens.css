@@ -1,0 +1,38 @@
+/* Design tokens: every colour, font and size the site uses lives here.
+   Changing the look means editing this file only; content files never change. */
+:root{
+  /* palette */
+  --paper:#FBFCFD;   /* page background */
+  --ink:#13213F;     /* text, primary buttons, footer */
+  --ink-2:#44506A;   /* body copy */
+  --ink-3:#6E788D;   /* captions and meta */
+  --rule:#E1E6EE;    /* dividers */
+  --wash:#F1F4F9;    /* tinted sections and chips */
+  --blue:#1E4FA8;
+  --green:#2F8F6A;
+  --sky:#3A9AD9;
+  --gold:#E3B23C;
+  --white:#FFFFFF;
+  --ink-hover:#22355E;   /* primary button hover */
+  --footer-text:#E6EBF3; /* text on the navy footer */
+  --footer-muted:#AEB8CA;
+  --host-fill:#E7EEF8; /* octahedra in the hero drawing */
+
+  /* research themes: each theme has one colour used everywhere */
+  --t-ion:var(--blue);        /* ion transport in solids */
+  --t-redox:var(--gold);      /* redox beyond the metal */
+  --t-interface:var(--green); /* reactivity at electrochemical interfaces */
+  --t-xray:var(--sky);        /* X-ray analytical science */
+  --t-other:var(--ink-3);
+
+  --focus:var(--sky);
+
+  /* type */
+  --font:"Schibsted",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text-size:17px;
+  --leading:1.6;
+
+  /* shape and layout */
+  --r:6px;
+  --wrap:1180px;
+}

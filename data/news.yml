@@ -1,0 +1,23 @@
+# News items, newest first. status: draft items are kept out of the public site
+# until approved; set status: published to show one.
+items:
+  - date: "2025"
+    title: Paper in Science on high-entropy oxide nanoribbons
+    body: Husam Farraj and Jordi Cabana are coauthors on a Science study, with the Salehi-Khojin group, of how high-entropy oxide nanoribbons hold their structure and transform.
+    url: https://www.science.org/doi/abs/10.1126/science.adr5604
+    status: draft
+  - date: "2025"
+    title: How Mg ions move through solid electrolytes
+    body: A multi-institution team used ultrahigh-field ²⁵Mg NMR and first-principles calculations to reveal Mg-ion conduction in antiperovskite solid electrolytes (J. Am. Chem. Soc.).
+    url: https://doi.org/10.1021/jacs.5c07442
+    status: draft
+  - date: "2025"
+    title: Intercalation chemistry goes nuclear
+    body: Jordi Cabana writes in Chem about where intercalation chemistry is heading.
+    url: https://www.cell.com/chem/fulltext/S2451-9294(25)00294-3
+    status: draft
+  - date: "2025"
+    title: Reactive protons in high-voltage electrolytes
+    body: In Energy & Environmental Science, a collaboration traces highly reactive protons formed when high-voltage Li-ion battery electrolytes oxidize.
+    url: https://doi.org/10.1039/d5ee02403j
+    status: draft

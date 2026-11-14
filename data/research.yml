@@ -1,0 +1,19 @@
+# Research themes, in the order they appear on the site.
+# key must be one of: ion, redox, interface, xray (papers are tagged with these keys).
+themes:
+  - key: ion
+    title: Ion transport in solids
+    question: How does an ion change positions efficiently in a solid?
+    text: We study how the structure and composition of a solid govern the way its lattice adapts as ions come and go, and the speed at which this happens. The work runs from intercalation hosts for Li⁺, Na⁺, Mg²⁺ and Ca²⁺ to ionic conductors used as solid electrolytes. These processes are key to battery technology and ionics, but can also be used to explore new metastable states in materials.
+  - key: redox
+    title: Redox beyond the metal
+    question: How do electronic and crystal structure respond when ions enter a lattice?
+    text: In many solids, the electrons exchanged in a reaction do not come from the transition metal alone. We study how redox changes anions like oxide, fluoride or sulfide via the metal–ligand covalent bond. We are interested in testing the fundamental limits of redox chemistry in materials. Our current playground is cathodes for Li, Na and Mg batteries.
+  - key: interface
+    title: Reactivity at electrochemical interfaces
+    question: What starting chemistry favors efficient electrochemical transformations, molecule to molecule or molecule to metal?
+    text: Many electrochemical reactions happen at the boundary between a solid and its surroundings. We study how solids bind molecules to transform them, and how species in solution determine the efficiency of the plating of metals like iron. Applications include battery interphases and metal anodes, CO₂ reduction and other electrocatalysis.
+  - key: xray
+    title: X-ray analytical science
+    question: How can X-rays let us watch chemical change in solids as it happens?
+    text: "We develop and apply X-ray methods that follow chemical change from atoms to micrometers and from the bulk to interfaces: spectroscopy, scattering, and chemical imaging in 2D and 3D, increasingly analyzed with machine learning and AI. These methods run through the other three themes."

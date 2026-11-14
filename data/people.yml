@@ -1,0 +1,35 @@
+# Current group members. argonne: true marks students based at Argonne National Laboratory.
+pi:
+  name: Jordi Cabana
+  role: Professor of Chemistry, UIC
+  email: jcabana@uic.edu
+  cv:
+    - years: 2017–now
+      text: Associate Professor, Chemistry, UIC
+    - years: 2013–2017
+      text: Assistant Professor, Chemistry, UIC
+    - years: 2008–2013
+      text: Chemist Research Scientist, Lawrence Berkeley National Laboratory
+    - years: 2005–2008
+      text: Postdoctoral Fellow, Stony Brook University
+    - years: "2004"
+      text: Ph.D. in Materials Science, ICMAB-CSIC, Barcelona
+postdocs:
+  - name: Beatrice Tharigopala
+grads:
+  - name: Prasadi Abeysinghe Arachchilage
+  - name: Kavyasree Anjanarambath
+    argonne: true
+  - name: Catherine Barth-Yoakum
+  - name: Meghan Burns
+    argonne: true
+  - name: Karla Escobar
+  - name: Husam Farraj
+  - name: Seetho Kin Lung
+    argonne: true
+  - name: Mansi Porwal
+  - name: Kumuditha Rathnayake
+  - name: Tom Rickhoff
+  - name: Anwesa Samanta
+  - name: Shivam Singh
+  - name: Neelam Sunariwal
