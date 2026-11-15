@@ -40,6 +40,8 @@ grads:
   - name: Meghan Burns
     argonne: true
   - name: Karla Escobar
+  - name: Stephenie Merchan
+    argonne: true
   - name: Shristi Pradhan
   - name: Kumuditha Rathnayake
   - name: Tom Rickhoff
@@ -47,6 +49,8 @@ grads:
   - name: Kin Lung Seetho
     argonne: true
   - name: Shivam Singh
+  - name: Erica Strojny
+    argonne: true
 undergrads:
   - name: Hannah Hicks
   - name: Marco Servin
