@@ -77,3 +77,8 @@ test("a preprint's published version is found", () => {
   assert.strictEqual(publishedVersion({ relation: { "is-preprint-of": [{ "id-type": "doi", id: "10.1021/ACS.CHEMREV.5C00772" }] } }), "10.1021/acs.chemrev.5c00772");
   assert.strictEqual(publishedVersion({}), "");
 });
+
+test("Microscopy and Microanalysis abstracts without page ranges are left out", () => {
+  assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["Microscopy and Microanalysis"], issue: "Supplement_1" }), "conference abstract");
+  assert.strictEqual(notArticleReason({ type: "journal-article", "short-container-title": ["Microsc Microanal"] }), "conference abstract");
+});

@@ -161,7 +161,8 @@ function notArticleReason(m) {
   const [a, b] = page.split(/[-–]/).map(x => parseInt(String(x).replace(/\D/g, ""), 10));
   const span = Number.isFinite(a) && Number.isFinite(b) ? b - a + 1 : (Number.isFinite(a) ? 1 : 0);
   if (ABSTRACT_VENUES.test(venue)) return "conference abstract or proceedings";
-  if (/microscopy and microanalysis|microsc\.? microanal/i.test(venue) && span > 0 && span <= 2) return "conference abstract";
+  // its meeting abstracts are 1-2 pages, often with no page range at all, in supplement issues
+  if (/microscopy and microanalysis|microsc\.? microanal/i.test(venue) && (span <= 2 || /s|suppl/i.test(String(m.issue || "")))) return "conference abstract";
   if (/acta cryst/i.test(venue) && /^[ae]\d/i.test(page)) return "conference abstract";
   if (/supplement/i.test(String(m.issue || "")) && span > 0 && span <= 2) return "conference abstract";
   return "";
@@ -204,6 +205,8 @@ async function main() {
   const works = [...extras.map(e => ({ title: "", type: "journal-article", year: "", journal: "", doi: normDoi(e.doi) })), ...fromOrcid];
   const findSimilar = (title, year) => existing.find(e => Math.abs(Number(e.year) - Number(year || e.year)) <= 1 && similar(normTitle(e.title), normTitle(title)) >= 0.9);
   const done = new Set();
+  const storedDois = new Set(); // DOIs actually written this run
+  const droppedPreprints = []; // titles of preprints left out with no published version linked
   console.log(`ORCID: ${fromOrcid.length} works, plus ${extras.length} extra DOI(s)`);
   const seen = new Set();
 
@@ -226,12 +229,13 @@ async function main() {
       if (p) drop(p);
       p = byDoi.get(pub) || null;
       doi = pub;
-      if (seen.has(doi)) continue;
+      if (storedDois.has(doi)) continue;
       seen.add(doi);
       m = await crossref(doi);
       await sleep(120);
     }
     const why = m ? notArticleReason(m) : "";
+    if (why === "preprint") droppedPreprints.push(plain((m.title || [])[0]) || w.title);
     if (why) {
       exclude(doi, plain((m.title || [])[0]) || w.title, why);
       if (p) drop(p);
@@ -267,6 +271,7 @@ async function main() {
       if (JSON.stringify(p) !== before) report.updated.push(`${c.year} ${p.title}`);
     }
     done.add(p);
+    storedDois.add(doi);
     if (!c.hasCabana) {
       p.check = "Crossref does not list J. Cabana among the authors. Confirm this paper belongs here.";
       p.hide = true; // kept off the site until confirmed
@@ -278,7 +283,7 @@ async function main() {
   const oa = await openalexDois(ORCID);
   const known = new Set([...existing.map(p => normDoi(p.doi)).filter(Boolean), ...excludedDois]);
   // drop noise: abstract-service reprints, datasets, and papers already listed under another DOI
-  const NOISE = /^chem\s*inform abstract|^research data supporting|^supplementary/i;
+  const NOISE = /^chem\s*inform abstract|^research data supporting|^supplementary|^data:/i;
   const bare = t => normTitle(plain(t).replace(/^chem\s*inform abstract:\s*/i, ""));
   const listed = t => existing.some(e => similar(normTitle(e.title), bare(t)) >= 0.85);
   const candidates = [];
@@ -287,11 +292,19 @@ async function main() {
     if (!KEEP_TYPES.has(w.type === "article" ? "journal-article" : w.type)) continue;
     const m = await crossref(w.doi);
     await sleep(120);
-    if (m && notArticleReason(m)) continue; // only peer-reviewed articles are worth asking about
-    const c = m ? fromCrossref(m) : null;
+    if (!m || notArticleReason(m)) continue; // only peer-reviewed articles are worth asking about
+    const c = fromCrossref(m);
+    // the published version of a preprint we just left out: it was already on the site, so list it
+    if (c.hasCabana && droppedPreprints.some(t => similar(normTitle(t), normTitle(c.title)) >= 0.9)) {
+      existing.push({ year: c.year, published: c.published, title: c.title, authors: c.authors, journal: c.journal,
+        citation: c.citation, url: `https://doi.org/${w.doi}`, doi: w.doi, themes: guessThemes(c.title), themes_set_by: "guess", added: today });
+      known.add(w.doi);
+      report.added.push(`${c.year} ${c.title} (published version of a preprint)`);
+      continue;
+    }
     candidates.push({
-      year: (c && c.year) || w.year, title: (c && c.title) || plain(w.title), journal: (c && c.journal) || "",
-      doi: w.doi, cabana_in_crossref_authors: c ? c.hasCabana : "unknown", found_by: "OpenAlex",
+      year: c.year || w.year, title: c.title || plain(w.title), journal: c.journal || "",
+      doi: w.doi, cabana_in_crossref_authors: c.hasCabana, found_by: "OpenAlex",
       note: "Not on the ORCID record. Confirm it is ours before it is added.",
     });
   }
