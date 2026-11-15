@@ -12,13 +12,17 @@
 //   a guess (themes_set_by: guess).
 // - a "check" note is cleared once Crossref confirms the record.
 //
-// Env: ORCID (required), CONTACT_EMAIL (sent to Crossref/OpenAlex as a courtesy).
+// Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
+// OPENALEX_API_KEY (optional; without it the OpenAlex check is skipped).
+// data/extra-papers.yml lists DOIs to include even though the ORCID record lacks them.
 const fs = require("fs");
 const path = require("path");
 const YAML = require("yaml");
 
 const ORCID = process.env.ORCID;
 const EMAIL = process.env.CONTACT_EMAIL || "";
+const OPENALEX_KEY = process.env.OPENALEX_API_KEY || "";
+const EXTRA = path.join(__dirname, "..", "data", "extra-papers.yml");
 const root = path.join(__dirname, "..");
 const PUBS = path.join(root, "data", "publications.yml");
 const CANDIDATES = path.join(root, "data", "candidates.yml");
@@ -76,11 +80,12 @@ async function crossref(doi) {
 }
 
 async function openalexDois(orcid) {
+  if (!OPENALEX_KEY) { console.log("OpenAlex check skipped: no OPENALEX_API_KEY secret set."); return null; }
   const out = [];
   let cursor = "*";
   try {
     while (cursor) {
-      const j = await getJSON(`https://api.openalex.org/works?filter=author.orcid:${orcid}&per-page=200&select=doi,title,publication_year,type&cursor=${encodeURIComponent(cursor)}${EMAIL ? `&mailto=${encodeURIComponent(EMAIL)}` : ""}`);
+      const j = await getJSON(`https://api.openalex.org/works?filter=author.orcid:${orcid}&per-page=200&select=doi,title,publication_year,type&cursor=${encodeURIComponent(cursor)}&api_key=${encodeURIComponent(OPENALEX_KEY)}`);
       if (!j) break;
       (j.results || []).forEach(w => out.push({ doi: normDoi(w.doi), title: w.title || "", year: w.publication_year, type: w.type }));
       cursor = j.meta?.next_cursor;
@@ -152,10 +157,13 @@ async function main() {
   const byDoi = new Map(), byTitle = new Map();
   existing.forEach(p => { if (p.doi) byDoi.set(normDoi(p.doi), p); byTitle.set(normTitle(p.title), p); });
 
-  const works = (await orcidWorks(ORCID)).filter(w => (!w.type || KEEP_TYPES.has(w.type)) && !SKIP_TITLE.test(w.title.trim()));
+  const extras = fs.existsSync(EXTRA) ? (YAML.parse(fs.readFileSync(EXTRA, "utf8")) || []) : [];
+  const fromOrcid = (await orcidWorks(ORCID)).filter(w => (!w.type || KEEP_TYPES.has(w.type)) && !SKIP_TITLE.test(w.title.trim()));
+  // extra DOIs first, so ORCID entries without a DOI then match them by title
+  const works = [...extras.map(e => ({ title: "", type: "journal-article", year: "", journal: "", doi: normDoi(e.doi) })), ...fromOrcid];
   const findSimilar = (title, year) => existing.find(e => Math.abs(Number(e.year) - Number(year || e.year)) <= 1 && similar(normTitle(e.title), normTitle(title)) >= 0.9);
   const done = new Set();
-  console.log(`ORCID: ${works.length} works`);
+  console.log(`ORCID: ${fromOrcid.length} works, plus ${extras.length} extra DOI(s)`);
   const report = { added: [], updated: [], flagged: [], unmatched: [] };
   const seen = new Set();
 

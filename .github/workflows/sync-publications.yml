@@ -33,6 +33,7 @@ jobs:
         env:
           ORCID: 0000-0002-2353-5986
           CONTACT_EMAIL: cabana-group@uic.edu
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
       - name: Check the data and the page still build
         run: npm test
       - name: Save the result to the sync-trial branch for review (trial run)

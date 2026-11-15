@@ -1,0 +1,4 @@
+# Papers to include even though the ORCID record lacks their DOI.
+# The sync fetches each one from Crossref like any other paper.
+- doi: 10.1038/s41467-018-03401-x
+  note: Soft X-ray tomography paper (Nat. Commun. 2018). The ORCID entry has no DOI.
