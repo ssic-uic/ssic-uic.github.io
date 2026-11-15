@@ -219,14 +219,16 @@ async function main() {
     let doi = w.doi || (p && p.doi) || "";
     if (doi && seen.has(doi)) continue;
     if (doi) seen.add(doi);
-    if (doi && excludedDois.has(doi)) { if (p) drop(p); continue; }
+    // only drop an entry if it really is the excluded record (title matches can point elsewhere)
+    const isRecord = (q, d) => q && (!q.doi || normDoi(q.doi) === d);
+    if (doi && excludedDois.has(doi)) { if (isRecord(p, doi)) drop(p); continue; }
     let m = doi ? await crossref(doi) : null;
     await sleep(120);
     // a preprint with a published version: use the published version instead
     if (m && m.type === "posted-content" && publishedVersion(m)) {
       const pub = publishedVersion(m);
       exclude(doi, plain((m.title || [])[0]), "preprint; the published version is listed");
-      if (p) drop(p);
+      if (isRecord(p, doi)) drop(p);
       p = byDoi.get(pub) || null;
       doi = pub;
       if (storedDois.has(doi)) continue;
@@ -238,7 +240,7 @@ async function main() {
     if (why === "preprint") droppedPreprints.push(plain((m.title || [])[0]) || w.title);
     if (why) {
       exclude(doi, plain((m.title || [])[0]) || w.title, why);
-      if (p) drop(p);
+      if (isRecord(p, doi)) drop(p);
       continue;
     }
     if (!m) {
@@ -260,7 +262,10 @@ async function main() {
       report.added.push(`${c.year} ${c.title}`);
     } else {
       const before = JSON.stringify(p);
+      if (p.doi && normDoi(p.doi) !== doi) byDoi.delete(normDoi(p.doi));
       p.doi = doi;
+      p.url = `https://doi.org/${doi}`;
+      byDoi.set(doi, p);
       p.title = c.title;
       p.year = c.year;
       p.published = c.published;
