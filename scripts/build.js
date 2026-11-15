@@ -27,7 +27,8 @@ function siteFrom(d) {
     alumni: d.alumni,
     // draft news stays out of the public site until approved
     news: d.news.filter(n => n.status === "published").map(({ status, ...n }) => ({ ...n, date: String(n.date) })),
-    publications: d.publications.map(p => ({
+    // papers flagged "hide" (for example, authorship not confirmed) stay off the site
+    publications: d.publications.filter(p => !p.hide).map(p => ({
       year: String(p.year), title: p.title, authors: p.authors, journal: p.journal,
       citation: String(p.citation ?? ""), url: p.url, themes: p.themes || [],
     })),

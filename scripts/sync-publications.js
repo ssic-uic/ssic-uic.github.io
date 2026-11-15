@@ -197,6 +197,7 @@ async function main() {
     done.add(p);
     if (!c.hasCabana) {
       p.check = "Crossref does not list J. Cabana among the authors. Confirm this paper belongs here.";
+      p.hide = true; // kept off the site until confirmed
       report.flagged.push(`${c.year} ${p.title}`);
     }
   }
@@ -209,7 +210,7 @@ async function main() {
 
   // order: newest first by date of first appearance
   existing.sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")) || a.title.localeCompare(b.title));
-  const order = ["year", "published", "title", "authors", "journal", "citation", "url", "doi", "themes", "themes_set_by", "added", "check"];
+  const order = ["year", "published", "title", "authors", "journal", "citation", "url", "doi", "themes", "themes_set_by", "added", "check", "hide"];
   const tidy = existing.map(p => Object.fromEntries(order.filter(k => p[k] !== undefined && p[k] !== "").map(k => [k, p[k]])));
   fs.writeFileSync(PUBS, header + "\n" + YAML.stringify(tidy, { lineWidth: 0 }));
   fs.writeFileSync(CANDIDATES, "# Papers that OpenAlex links to the ORCID iD but the ORCID record does not list.\n# Confirm before adding; they are not shown on the site.\n" + YAML.stringify(candidates, { lineWidth: 0 }));

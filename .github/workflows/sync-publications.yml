@@ -35,14 +35,15 @@ jobs:
           CONTACT_EMAIL: cabana-group@uic.edu
       - name: Check the data and the page still build
         run: npm test
-      - name: Keep the result for review (trial run)
+      - name: Save the result to the sync-trial branch for review (trial run)
         if: ${{ always() && inputs.trial }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: sync-result
-          path: |
-            data/publications.yml
-            data/candidates.yml
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B sync-trial
+          git add data/publications.yml data/candidates.yml
+          git commit -m "Publication sync trial $(date -u +%F)" || echo "No changes."
+          git push --force origin sync-trial
       - name: Commit and publish
         if: ${{ !inputs.trial }}
         env:
