@@ -19,7 +19,8 @@
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
 // OPENALEX_API_KEY (optional; the OpenAlex check also runs without one).
-// data/extra-papers.yml lists DOIs to include even though the ORCID record lacks them.
+// data/extra-papers.yml lists papers the owner wants listed: DOIs the ORCID record lacks,
+// and pieces the owner confirmed (such as editorials) that the rules would otherwise leave out.
 const fs = require("fs");
 const path = require("path");
 const YAML = require("yaml");
@@ -189,9 +190,12 @@ async function main() {
   const byDoi = new Map(), byTitle = new Map();
   existing.forEach(p => { if (p.doi) byDoi.set(normDoi(p.doi), p); byTitle.set(normTitle(p.title), p); });
 
-  const report = { added: [], updated: [], flagged: [], unmatched: [], excluded: [] };
+  const report = { added: [], updated: [], flagged: [], unmatched: [], excluded: [], mismatched: [] };
   const extras = fs.existsSync(EXTRA) ? (YAML.parse(fs.readFileSync(EXTRA, "utf8")) || []) : [];
   const excludedList = fs.existsSync(EXCLUDED) ? (YAML.parse(fs.readFileSync(EXCLUDED, "utf8")) || []) : [];
+  // the owner's list wins over the rules: drop any of its DOIs from the excluded list
+  const ownerListed = new Set(extras.map(e => normDoi(e.doi)));
+  for (let i = excludedList.length - 1; i >= 0; i--) if (ownerListed.has(normDoi(excludedList[i].doi))) excludedList.splice(i, 1);
   const excludedDois = new Set(excludedList.map(e => normDoi(e.doi)));
   const exclude = (doi, title, reason) => {
     if (!doi || excludedDois.has(doi)) return;
@@ -221,7 +225,12 @@ async function main() {
     if (doi) seen.add(doi);
     // only drop an entry if it really is the excluded record (title matches can point elsewhere)
     const isRecord = (q, d) => q && (!q.doi || normDoi(q.doi) === d);
-    if (doi && excludedDois.has(doi)) { if (isRecord(p, doi)) drop(p); continue; }
+    if (doi && excludedDois.has(doi)) {
+      const ex = excludedList.find(e => normDoi(e.doi) === doi);
+      if (w.title && ex && similar(normTitle(w.title), normTitle(ex.title)) < 0.5) report.mismatched.push(`ORCID entry "${w.title}" carries DOI ${doi}, which is "${ex.title}"`);
+      if (isRecord(p, doi)) drop(p);
+      continue;
+    }
     let m = doi ? await crossref(doi) : null;
     await sleep(120);
     // a preprint with a published version: use the published version instead
@@ -236,7 +245,9 @@ async function main() {
       m = await crossref(doi);
       await sleep(120);
     }
-    const why = m ? notArticleReason(m) : "";
+    if (m && w.title && similar(normTitle(w.title), normTitle(plain((m.title || [])[0]))) < 0.5)
+      report.mismatched.push(`ORCID entry "${w.title}" carries DOI ${doi}, which is "${plain((m.title || [])[0])}"`);
+    const why = m && !ownerListed.has(doi) ? notArticleReason(m) : "";
     if (why === "preprint") droppedPreprints.push(plain((m.title || [])[0]) || w.title);
     if (why) {
       exclude(doi, plain((m.title || [])[0]) || w.title, why);
@@ -326,7 +337,7 @@ async function main() {
   const lines = [
     `## Publication sync, ${today}`,
     `${tidy.length} papers in total. ${report.added.length} added, ${report.updated.length} updated from Crossref, ${report.flagged.length} flagged, ${report.excluded.length} left out as not peer-reviewed articles, ${candidates.length} candidates from OpenAlex${oa === null ? " (OpenAlex check skipped)" : ""}.`,
-    ...[["Added", report.added], ["Flagged", report.flagged], ["Left out (not peer-reviewed articles)", report.excluded], ["No DOI found", report.unmatched]]
+    ...[["Added", report.added], ["Flagged", report.flagged], ["Left out (not peer-reviewed articles)", report.excluded], ["ORCID entries whose DOI points to a different work", report.mismatched], ["No DOI found", report.unmatched]]
       .filter(([, l]) => l.length).map(([h, l]) => `\n### ${h}\n` + l.map(x => `- ${x}`).join("\n")),
   ];
   const summary = lines.join("\n");
