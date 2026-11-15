@@ -94,3 +94,12 @@ test("corresponding authorship from OpenAlex flags", () => {
   assert.strictEqual(cabanaCorresponds([au("Jordi Cabana", false, me), au("H. D. Yoo", false)], me), null, "nobody flagged = unknown");
   assert.strictEqual(cabanaCorresponds(undefined, me), null);
 });
+
+test("Research-page candidates: newer than the shown papers, corresponding or unknown, not declined", () => {
+  const { researchCandidates } = require("../scripts/sync-publications.js");
+  const P = (doi, year, published, corresponding, themes = ["ion"]) => ({ doi, year, published, corresponding, themes, title: doi });
+  const pubs = [P("new-yes", 2026, "2026-11-01", true), P("new-unknown", 2026, "2026", undefined), P("new-no", 2026, "2026-11-02", false),
+    P("declined", 2026, "2026-11-03", true), P("shown", 2026, "2026-10-05", true), P("older", 2025, "2025-05-01", true), P("other-theme", 2026, "2026-11-04", true, ["redox"])];
+  const got = researchCandidates(pubs, [{ key: "ion", papers: ["shown"], not_shown: ["declined"] }]).map(c => c.paper.doi);
+  assert.deepStrictEqual(got.sort(), ["new-unknown", "new-yes"]);
+});

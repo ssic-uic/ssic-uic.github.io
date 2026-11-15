@@ -56,17 +56,12 @@ $('#openings').innerHTML = openNow.length
   ? openNow.map(o=>`<article class="opening"><h4>${esc(o.title)}</h4><p>${esc(o.summary)}</p><p class="meta">Posted ${esc(o.posted)}${o.closes?` · Apply by ${esc(o.closes)}`:''}</p><p>${esc(o.apply)}</p></article>`).join('')
   : `<p>We have no postdoc openings right now. When we do, they will be listed here.</p>`;
 
-/* research: three papers per theme. The owner's picks (pinned) first, then the most recent papers
-   with J. Cabana as corresponding author, leaving out not_shown; shown newest first. */
-const lc = a => (a || []).map(d => String(d).toLowerCase());
-const representative = r => {
-  const pin = lc(r.pinned), skip = lc(r.not_shown);
-  const fill = PUBS.filter(p => inArea(p,r.key) && p.corresponding && !pin.includes(p.doi) && !skip.includes(p.doi)).slice(0, Math.max(0, 3 - pin.length));
-  return PUBS.filter(p => pin.includes(p.doi) || fill.includes(p));
-};
-$('#research-rows').innerHTML = SITE.research.map(r => { const k = r.key; const recent = representative(r);
+/* research: the papers the owner chose for each theme (research.yml papers), newest first.
+   They change only when the owner says so; the weekly sync asks about newer candidates. */
+const representative = r => { const want = (r.papers || []).map(d => String(d).toLowerCase()); return PUBS.filter(p => want.includes(p.doi)); };
+$('#research-rows').innerHTML = SITE.research.map(r => { const k = r.key; const shown = representative(r);
   return `<div class="rrow" style="--c:${AREAS[k].c}"><h3><i></i>${esc(r.title)}</h3><div><p class="q">${esc(r.question)}</p><p>${esc(r.text)}</p>
-  <div class="papers"><h4>Recent papers</h4><ul>${recent.map(p=>`<li><a href="${esc(p.url)}">${chem(p.title)}</a><span><i>${esc(p.journal)}</i> ${p.year}</span></li>`).join('')}</ul><a class="all" href="#publications" data-go="publications" data-area="${k}">All papers in this theme</a></div></div></div>`; }).join('');
+  <div class="papers"><h4>Representative papers</h4><ul>${shown.map(p=>`<li><a href="${esc(p.url)}">${chem(p.title)}</a><span><i>${esc(p.journal)}</i> ${p.year}</span></li>`).join('')}</ul><a class="all" href="#publications" data-go="publications" data-area="${k}">All papers in this theme</a></div></div></div>`; }).join('');
 
 /* people */
 const pi = SITE.people.pi;

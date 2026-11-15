@@ -34,14 +34,13 @@ test("built page renders every section without script errors", async () => {
   assert.ok(d.querySelector("#pi h2").textContent.length > 0, "PI profile missing");
   assert.ok(d.querySelectorAll("#research-rows .rrow").length > 0, "research themes missing");
 
-  // Research: each theme shows its three most recent papers with J. Cabana as corresponding author
+  // Research: each theme shows the papers the owner chose
   const rows = [...d.querySelectorAll("#research-rows .rrow")];
   data0.research.forEach((r, i) => {
-    const lc = a => (a || []).map(x => String(x).toLowerCase()), pin = lc(r.pinned), skip = lc(r.not_shown), doi = p => String(p.doi || "").toLowerCase();
-    const pubs = data0.publications.filter(p => !p.hide);
-    const fill = pubs.filter(p => (p.themes || []).includes(r.key) && p.corresponding === true && !pin.includes(doi(p)) && !skip.includes(doi(p))).slice(0, 3 - pin.length);
-    const want = pubs.filter(p => pin.includes(doi(p)) || fill.includes(p)).map(p => p.url);
-    pin.forEach(x => assert.ok(want.includes(`https://doi.org/${x}`), `pinned ${x} not shown`));
+    // exactly the owner's chosen papers, newest first
+    const chosen = (r.papers || []).map(x => String(x).toLowerCase());
+    const want = data0.publications.filter(p => !p.hide && chosen.includes(String(p.doi || "").toLowerCase())).map(p => p.url);
+    assert.strictEqual(want.length, chosen.length, `${r.key}: a chosen paper is missing or hidden`);
     const got = [...rows[i].querySelectorAll(".papers li a")].map(a => a.getAttribute("href"));
     assert.deepStrictEqual(got, want, `Research papers for ${r.key}`);
   });

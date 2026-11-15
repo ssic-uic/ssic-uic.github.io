@@ -1,16 +1,18 @@
 # Research themes, in the order they appear on the site.
 # key must be one of: ion, redox, interface, xray (papers are tagged with these keys).
-# Each theme shows three papers on the Research page: the owner's picks (pinned, DOIs), then
-# the most recent papers with J. Cabana as corresponding author to fill the rest, leaving
-# out anything in not_shown (DOIs). Shown newest first.
+# papers: the (up to three) DOIs shown on the Research page for the theme, newest first. Only the
+#   owner changes them. When a newer paper appears in the theme with J. Cabana as corresponding
+#   author (or unknown), the weekly sync asks the owner (review.yml, kind research-candidate).
+# not_shown: DOIs the owner decided not to show for the theme; the sync never asks about them again.
 themes:
   - key: ion
     title: Ion transport in solids
     question: How does an ion change positions efficiently in a solid?
     text: We study how the structure and composition of a solid govern the way its lattice adapts as ions come and go, and the speed at which this happens. The work runs from intercalation hosts for Li⁺, Na⁺, Mg²⁺ and Ca²⁺ to ionic conductors used as solid electrolytes. These processes are key to battery technology and ionics, but can also be used to explore new metastable states in materials.
-    pinned:
-      - 10.1002/aenm.202300895 # Origin of Rapid Delithiation in Secondary Particles (Adv. Energy Mater. 2023)
-      - 10.1021/acsenergylett.0c01189 # High Capacity for Mg2+ Deintercalation in Spinel V Oxide (ACS Energy Lett. 2020)
+    papers:
+      - 10.1021/acs.chemmater.6c01680 # Decoupling Static and Dynamic Disorder in a Polyanionic Na-Ion Conductor (Chem. Mater. 2026)
+      - 10.1002/aenm.202300895 # Origin of Rapid Delithiation in Secondary Particles of NCA and NMC Cathodes (Adv. Energy Mater. 2023)
+      - 10.1021/acsenergylett.0c01189 # High Capacity for Mg2+ Deintercalation in Spinel Vanadium Oxide Nanocrystals (ACS Energy Lett. 2020)
     not_shown:
       - 10.1016/j.chempr.2025.102703 # Intercalation chemistry goes nuclear (Chem 2025)
       - 10.1021/acs.chemmater.5c02186 # Sodium Content and Copper Activity, O3 cathodes (Chem. Mater. 2025)
@@ -18,15 +20,29 @@ themes:
     title: Redox beyond the metal
     question: How do electronic and crystal structure respond when ions enter a lattice?
     text: In many solids, the electrons exchanged in a reaction do not come from the transition metal alone. We study how redox changes anions like oxide, fluoride or sulfide via the metal–ligand covalent bond. We are interested in testing the fundamental limits of redox chemistry in materials. Our current playground is cathodes for Li, Na and Mg batteries.
+    papers:
+      - 10.1002/adfm.202408060 # Key Electronic States in Layered Mixed Chalcogenides with a d0 Metal (Adv. Funct. Mater. 2024)
+      - 10.1021/acs.chemmater.2c03680 # Metal-Fluorine States upon Delithiation of DRX Oxyfluorides (Chem. Mater. 2023)
+      - 10.1021/acsenergylett.0c02040 # Elucidation of Active Oxygen Sites upon Delithiation of Li3IrO4 (ACS Energy Lett. 2020)
+    not_shown:
+      - 10.1021/acs.jpcc.2c08733 # XAS: Participation of Oxygen in the Cycling of Li4Mn2O5 (J. Phys. Chem. C 2023)
   - key: interface
     title: Reactivity at electrochemical interfaces
     question: What starting chemistry favors efficient electrochemical transformations, molecule to molecule or molecule to metal?
     text: Many electrochemical reactions happen at the boundary between a solid and its surroundings. We study how solids bind molecules to transform them, and how species in solution determine the efficiency of the plating of metals like iron. Applications include battery interphases and metal anodes, CO₂ reduction and other electrocatalysis.
-    pinned:
+    papers:
       - 10.1039/d5ee02403j # An unwanted guest... highly reactive protons (Energy Environ. Sci. 2025)
+      - 10.1021/acs.jpclett.2c03942 # Active States During the Reduction of CO2 by a MoS2 Electrocatalyst (J. Phys. Chem. Lett. 2023)
+      - 10.1021/acs.accounts.7b00482 # Degradation and Stabilization of Cathode-Electrolyte Interfaces (Acc. Chem. Res. 2018)
     not_shown:
       - 10.1021/acsenergylett.5c01634 # High-Nickel Cathodes with Tailored Concentration Gradients (ACS Energy Lett. 2025)
   - key: xray
     title: X-ray analytical science
     question: How can X-rays let us watch chemical change in solids as it happens?
     text: "We develop and apply X-ray methods that follow chemical change from atoms to micrometers and from the bulk to interfaces: spectroscopy, scattering, and chemical imaging in 2D and 3D, increasingly analyzed with machine learning and AI. These methods run through the other three themes."
+    papers:
+      - 10.1021/acsenergylett.2c02619 # 3D Quantification of Elemental Gradients in Heterostructured Cathode Particles (ACS Energy Lett. 2023)
+      - 10.1021/acsaem.2c02397 # Microstructural Degradation during Fast Charge in 18650 Cells (ACS Appl. Energy Mater. 2022)
+      - 10.1021/jacs.9b12438 # Definition of Redox Centers in Li Intercalation in Li3RuO4 Polymorphs (J. Am. Chem. Soc. 2020)
+    not_shown:
+      - 10.1021/acs.jpcc.2c08733 # XAS: Participation of Oxygen in the Cycling of Li4Mn2O5 (J. Phys. Chem. C 2023)

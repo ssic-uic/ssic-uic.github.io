@@ -27,7 +27,11 @@
 //   is_corresponding flags: corresponding: true/false, corresponding_set_by: openalex.
 //   When OpenAlex flags nobody on a paper, the field stays absent (unknown) and the
 //   last known value is kept. The owner's word (corresponding_set_by: owner) is never
-//   changed. Unknown papers recent enough to take a Research-page slot go to review.yml.
+//   changed.
+// - the Research page shows the papers the owner chose (research.yml papers) and never
+//   changes them by itself. A paper in a theme that is newer than the theme's shown papers,
+//   with J. Cabana as corresponding author or unknown, goes to review.yml as a
+//   research-candidate, unless the owner already put it in that theme's not_shown.
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
 // OPENALEX_API_KEY (optional; the OpenAlex check also runs without one).
@@ -129,6 +133,28 @@ function cabanaCorresponds(authorships, orcid) {
   if (!list.some(a => a.is_corresponding)) return null;
   const isMe = a => (orcid && String(a.author?.orcid || "").endsWith(orcid)) || isCabana({ family: (a.author?.display_name || a.raw_author_name || "").split(/\s+/).pop() });
   return list.some(a => a.is_corresponding && isMe(a));
+}
+
+// Papers to ask the owner about for the Research page, as [{ paper, themes }]: in a theme, not
+// shown or declined there, J. Cabana corresponding or unknown, and newer than the theme's
+// newest shown paper (a paper dated only by year counts as newer within that year: ask, don't guess).
+function researchCandidates(pubs, themes) {
+  const live = pubs.filter(p => !p.hide && p.doi);
+  const byDoi = new Map(live.map(p => [normDoi(p.doi), p]));
+  const out = new Map();
+  for (const t of themes) {
+    const shown = (t.papers || []).map(normDoi), skip = new Set((t.not_shown || []).map(normDoi));
+    const newest = shown.map(d => byDoi.get(d)).filter(Boolean).sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")))[0];
+    const newer = p => !newest || Number(p.year) > Number(newest.year) || (Number(p.year) === Number(newest.year) &&
+      (String(p.published || "").length <= 4 || String(newest.published || "").length <= 4 || String(p.published) > String(newest.published)));
+    for (const p of live) {
+      const d = normDoi(p.doi);
+      if (!(p.themes || []).includes(t.key) || shown.includes(d) || skip.has(d) || p.corresponding === false || !newer(p)) continue;
+      if (!out.has(d)) out.set(d, { paper: p, themes: [] });
+      out.get(d).themes.push(t);
+    }
+  }
+  return [...out.values()];
 }
 
 // ---------- formatting ----------
@@ -353,28 +379,18 @@ async function main() {
     if (v === undefined) continue; // unknown this week: keep what we had
     p.corresponding = v; p.corresponding_set_by = "openalex";
   }
-  // unknown papers that could take one of a theme's three Research-page slots: ask the owner
-  const newestFirst = [...existing].filter(p => !p.hide).sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")));
-  const unknownAsked = new Set();
-  const themeList = readYaml(RESEARCH, {}).themes || ["ion", "redox", "interface", "xray"].map(key => ({ key }));
-  for (const { key: k, pinned = [], not_shown = [] } of themeList) {
-    const owner = new Set([...pinned, ...not_shown].map(normDoi));
-    let shown = pinned.length; // the owner's picks take their slots first
-    for (const p of newestFirst.filter(p => (p.themes || []).includes(k) && !owner.has(normDoi(p.doi)))) {
-      if (shown >= 3) break;
-      if (p.corresponding === true) shown++;
-      else if (p.corresponding === undefined && !unknownAsked.has(p)) {
-        unknownAsked.add(p);
-        ask("corresponding-unknown", p.title, p.doi, `${p.journal} ${p.year}. OpenAlex doesn't say who the corresponding author is, and the paper is recent enough to be one of the Research page's papers. Is J. Cabana a corresponding author?`);
-      }
-    }
+  // Research page: the owner's lists never change by themselves; newer candidates are questions
+  const candidates = researchCandidates(existing, readYaml(RESEARCH, {}).themes || []);
+  for (const { paper: p, themes } of candidates) {
+    const who = p.corresponding === true ? `J. Cabana is a corresponding author (${p.corresponding_set_by === "owner" ? "owner" : "per OpenAlex"})` : "OpenAlex doesn't say who the corresponding author is";
+    ask("research-candidate", p.title, p.doi, `${p.journal} ${p.year}. Newer than the papers on the Research page for ${themes.map(t => t.title || t.key).join(" and ")}; ${who}. Show it there (replacing which paper?), or keep the page as it is?`);
   }
 
   // ---- the review list: pending decisions, minus anything known or already decided ----
   const keyOf = i => `${i.kind}|${i.doi ? normDoi(i.doi) : normTitle(i.title)}`;
   const knownKeys = new Set(readYaml(KNOWN, []).map(keyOf));
   const prev = new Map(readYaml(REVIEW, []).map(i => [keyOf(i), i]));
-  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && !["orcid-wrong-doi", "corresponding-unknown"].includes(i.kind);
+  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && !["orcid-wrong-doi", "research-candidate"].includes(i.kind);
   const review = [];
   const keys = new Set();
   for (const i of pending) {
@@ -392,7 +408,7 @@ async function main() {
   const tidy = existing.map(p => Object.fromEntries(order.filter(k => p[k] !== undefined && p[k] !== "").map(k => [k, p[k]])));
   fs.writeFileSync(PUBS, header + "\n" + YAML.stringify(tidy, { lineWidth: 0 }));
   fs.writeFileSync(EXCLUDED, "# Works left out of the site because they are not peer-reviewed journal articles\n# (conference abstracts, proceedings, book chapters, preprints, editorials).\n# by: rule = left out automatically; owner = the owner's decision. The sync never re-adds\n# anything listed here. To revisit one, delete its entry.\n" + YAML.stringify(excludedList, { lineWidth: 0 }));
-  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,\n# corresponding-unknown (could be on the Research page; set corresponding + corresponding_set_by: owner).\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
+  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,\n# research-candidate (newer than a theme's Research-page papers: show it, replacing which, or add the DOI to\n# that theme's not_shown in research.yml).\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
 
   const lines = [
     `## Publication sync, ${today}`,
@@ -406,4 +422,4 @@ async function main() {
 }
 
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });
-module.exports = { cabanaCorresponds, authorList, initials, fromCrossref, guessThemes, plain, normDoi, notArticleReason, publishedVersion, main };
+module.exports = { researchCandidates, cabanaCorresponds, authorList, initials, fromCrossref, guessThemes, plain, normDoi, notArticleReason, publishedVersion, main };

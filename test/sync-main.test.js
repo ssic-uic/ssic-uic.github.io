@@ -51,8 +51,10 @@ test("listed papers stay; only new items reach the owner", async () => {
     listed("10.1/unknown", "Recent, nobody flagged", 2026),
     listed("10.1/old", "Old, nobody flagged", 2003),
   ]));
-  for (const [d, t] of [["10.1/unknown", "Recent, nobody flagged"], ["10.1/old", "Old, nobody flagged"], ["10.1/corr", "Mine as corresponding"], ["10.1/notcorr", "Someone else corresponding"], ["10.1/kept", "Known before, silent now"]]) crossref[d] = article(t, { issued: { "date-parts": [[{ K: 2024, R: 2026, O: 2003 }[t[0]] || 2025, 1, 1]] } });
+  for (const [d, t] of [["10.1/unknown", "Recent, nobody flagged"], ["10.1/old", "Old, nobody flagged"], ["10.1/corr", "Mine as corresponding"], ["10.1/notcorr", "Someone else corresponding"], ["10.1/kept", "Known before, silent now"]]) crossref[d] = article(t, { issued: { "date-parts": [[{ K: 2024, R: 2026, O: 2003 }[t[0]] || 2025, t[0] === "R" ? 6 : 1, 1]] } });
   w("extra-papers.yml", []); w("excluded.yml", []);
+  // the owner's Research-page choice for ion: two papers shown, one declined
+  w("research.yml", { themes: [{ key: "ion", title: "Ion transport", question: "q", text: "t", papers: ["10.1/listed", "10.1/kept"], not_shown: ["10.1/corr"] }] });
   w("known.yml", [{ kind: "orcid-no-doi", title: "A seen entry without a DOI" }]);
   w("review.yml", [{ kind: "not-author", title: "Somebody else's paper", doi: "10.1/notours", detail: "x", first_seen: "2026-01-01" }]);
 
@@ -92,9 +94,12 @@ test("listed papers stay; only new items reach the owner", async () => {
   // the new 2026 article has no OpenAlex flags but a guessed theme could put it on the Research page
   const newOne = by("10.1/new");
   assert.strictEqual(newOne.corresponding, undefined);
-  if ((newOne.themes || []).length) assert.strictEqual(kinds["A new peer-reviewed article"]?.kind, "corresponding-unknown", "unknown recent paper not raised");
-  assert.strictEqual(kinds["Recent, nobody flagged"]?.kind, "corresponding-unknown", "unknown recent paper not raised");
-  // ion has three corresponding papers (listed, corr, kept) newer than 2003, so the old one can't take a slot
-  assert.ok(!kinds["Old, nobody flagged"], "an old unknown paper was raised");
+  // Research page: a newer ion paper (corresponding unknown) is a question; nothing changes by itself
+  assert.strictEqual(kinds["Recent, nobody flagged"]?.kind, "research-candidate", "newer candidate not raised");
+  assert.ok(!kinds["Mine as corresponding"], "a paper the owner declined was raised");
+  assert.ok(!kinds["Someone else corresponding"], "a paper where he isn't corresponding was raised");
+  assert.ok(!kinds["Old, nobody flagged"], "a paper older than the shown ones was raised");
+  const research = YAML.parse(fs.readFileSync(path.join(dir, "research.yml"), "utf8"));
+  assert.deepStrictEqual(research.themes[0].papers, ["10.1/listed", "10.1/kept"], "the sync changed the owner's papers");
   assert.ok(!kinds["Mine as corresponding"] && !kinds["Someone else corresponding"], "known papers raised");
 });

@@ -14,9 +14,10 @@ function validate(d) {
     need(t, ["key", "title", "question", "text"], `research.yml theme ${i + 1}`);
     if (t.key && !THEMES.includes(t.key)) errs.push(`research.yml theme ${i + 1}: unknown key "${t.key}"`);
     const dois = new Set((d.publications || []).map(p => String(p.doi || "").toLowerCase()));
-    if ((t.pinned || []).length > 3) errs.push(`research.yml ${t.key}: more than three pinned papers`);
-    for (const f of ["pinned", "not_shown"]) (t[f] || []).forEach(x => { if (!dois.has(String(x).toLowerCase())) errs.push(`research.yml ${t.key} ${f}: DOI ${x} is not in publications.yml`); });
-    (t.pinned || []).forEach(x => { if (lcs(t.not_shown).includes(String(x).toLowerCase())) errs.push(`research.yml ${t.key}: DOI ${x} is both pinned and not_shown`); });
+    if ((t.papers || []).length > 3) errs.push(`research.yml ${t.key}: more than three papers`);
+    if (t.pinned) errs.push(`research.yml ${t.key}: "pinned" is now "papers" (the full list shown)`);
+    for (const f of ["papers", "not_shown"]) (t[f] || []).forEach(x => { if (!dois.has(String(x).toLowerCase())) errs.push(`research.yml ${t.key} ${f}: DOI ${x} is not in publications.yml`); });
+    (t.papers || []).forEach(x => { if (lcs(t.not_shown).includes(String(x).toLowerCase())) errs.push(`research.yml ${t.key}: DOI ${x} is in both papers and not_shown`); });
   });
 
   (d.publications || []).forEach((p, i) => {
