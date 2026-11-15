@@ -216,8 +216,24 @@ async function main() {
   // papers OpenAlex links to the ORCID iD but ORCID does not list: hold for confirmation
   const oa = await openalexDois(ORCID);
   const known = new Set(existing.map(p => normDoi(p.doi)).filter(Boolean));
-  const candidates = (oa || []).filter(w => w.doi && !known.has(w.doi) && KEEP_TYPES.has(w.type === "article" ? "journal-article" : w.type))
-    .map(w => ({ year: w.year, title: plain(w.title), doi: w.doi, found_by: "OpenAlex", note: "Not on the ORCID record. Confirm it is ours before it is added." }));
+  // drop noise: abstract-service reprints, datasets, and papers already listed under another DOI
+  const NOISE = /^chem\s*inform abstract|^research data supporting|^supplementary/i;
+  const bare = t => normTitle(plain(t).replace(/^chem\s*inform abstract:\s*/i, ""));
+  const listed = t => existing.some(e => similar(normTitle(e.title), bare(t)) >= 0.85);
+  const candidates = [];
+  for (const w of oa || []) {
+    if (!w.doi || known.has(w.doi) || NOISE.test(w.title.trim()) || listed(w.title)) continue;
+    if (!KEEP_TYPES.has(w.type === "article" ? "journal-article" : w.type)) continue;
+    const m = await crossref(w.doi);
+    await sleep(120);
+    const c = m ? fromCrossref(m) : null;
+    candidates.push({
+      year: (c && c.year) || w.year, title: (c && c.title) || plain(w.title), journal: (c && c.journal) || "",
+      doi: w.doi, cabana_in_crossref_authors: c ? c.hasCabana : "unknown", found_by: "OpenAlex",
+      note: "Not on the ORCID record. Confirm it is ours before it is added.",
+    });
+  }
+  candidates.sort((a, b) => b.year - a.year);
 
   // order: newest first by date of first appearance
   existing.sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")) || a.title.localeCompare(b.title));
