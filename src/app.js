@@ -20,6 +20,10 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const authors = a => esc(a).replace(/J\. Cabana(-Jimenez)?/g, m => '<b>'+m+'</b>');
 const initials = n => { const w = n.replace(/\(.*?\)/g,'').trim().split(/\s+/); return (w[0][0] + w[w.length-1][0]).toUpperCase(); };
+/* thumbnail: the member's photo when there is one, otherwise their initials */
+const thumb = (p, style='') => p.photo
+  ? `<img class="ph" src="${esc(p.photo)}" alt="" width="480" height="480" loading="lazy" decoding="async"${style}>`
+  : `<div class="ph"${style} aria-hidden="true">${initials(p.name)}</div>`;
 
 function pubHTML(p){
   const ks = themesOf(p).length ? themesOf(p) : ["other"];
@@ -60,11 +64,11 @@ $('#research-rows').innerHTML = SITE.research.map(r => { const k = r.key; const 
 /* people */
 const pi = SITE.people.pi;
 const linked = x => x.url ? `<a href="${esc(x.url)}">${esc(x.text)}</a>` : esc(x.text);
-$('#pi').innerHTML = `<div class="ph" aria-hidden="true">${initials(pi.name)}</div>
+$('#pi').innerHTML = `${thumb(pi)}
   <div><h2>${esc(pi.name)}</h2><p class="role">${pi.roles.map(linked).join('<br>')}<br><a href="mailto:${esc(pi.email)}">${esc(pi.email)}</a></p>
   <ul class="cv">${pi.cv.map(c=>`<li><span>${esc(c.years)}</span>${linked(c)}</li>`).join('')}</ul></div>`;
 const tints = ["var(--blue)","var(--green)","var(--sky)"];
-const person = (p,i) => `<div class="person"><div class="ph" style="background:color-mix(in srgb,${tints[i%3]} 13%,var(--white));color:${tints[i%3]}" aria-hidden="true">${initials(p.name)}</div><b>${esc(p.name)}</b>${p.argonne?'<span>Based at Argonne</span>':''}</div>`;
+const person = (p,i) => `<div class="person">${thumb(p, ` style="background:color-mix(in srgb,${tints[i%3]} 13%,var(--white));color:${tints[i%3]}"`)}<b>${esc(p.name)}</b>${p.argonne?'<span>Based at Argonne</span>':''}</div>`;
 const grads = SITE.people.grads;
 $('#postdocs').innerHTML = SITE.people.postdocs.map((p,i)=>person(p,i+1)).join('');
 $('#grads').innerHTML = grads.map(person).join('');

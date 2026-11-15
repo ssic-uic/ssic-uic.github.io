@@ -3,14 +3,17 @@
 const fs = require("fs");
 const path = require("path");
 const YAML = require("yaml");
+const crypto = require("crypto");
 const { validate } = require("./validate");
 
 const root = path.join(__dirname, "..");
 const out = path.join(root, "dist");
+const PHOTOS = path.join(root, "data", "photos");
 const read = f => YAML.parse(fs.readFileSync(path.join(root, "data", f), "utf8"));
 
 function loadData() {
   return {
+    photos: fs.existsSync(PHOTOS) ? fs.readdirSync(PHOTOS).filter(f => !f.startsWith(".")) : [],
     research: read("research.yml").themes,
     people: read("people.yml"),
     alumni: read("alumni.yml").groups,
@@ -20,10 +23,20 @@ function loadData() {
   };
 }
 
+// photo: file.webp in the data becomes assets/photos/file.webp?v=<hash>, so a replaced
+// photo shows up at once instead of waiting for browser caches to expire
+function photoURL(file) {
+  const hash = crypto.createHash("sha1").update(fs.readFileSync(path.join(PHOTOS, file))).digest("hex").slice(0, 8);
+  return `assets/photos/${encodeURIComponent(file)}?v=${hash}`;
+}
+const withPhoto = ({ family, ...m }) => (m.photo ? { ...m, photo: photoURL(m.photo) } : m);
+
 function siteFrom(d) {
+  const ppl = d.people;
   return {
     research: d.research,
-    people: d.people,
+    people: { ...ppl, pi: withPhoto(ppl.pi),
+      ...Object.fromEntries(["postdocs", "grads", "undergrads"].map(g => [g, (ppl[g] || []).map(withPhoto)])) },
     alumni: d.alumni,
     // draft news stays out of the public site until approved
     news: d.news.filter(n => n.status === "published").map(({ status, ...n }) => ({ ...n, date: String(n.date) })),
@@ -50,6 +63,10 @@ function build() {
   fs.copyFileSync(path.join(root, "src", "index.html"), path.join(out, "index.html"));
   for (const f of ["tokens.css", "styles.css", "app.js"]) {
     fs.copyFileSync(path.join(root, "src", f), path.join(out, "assets", f));
+  }
+  if (fs.existsSync(PHOTOS)) {
+    fs.mkdirSync(path.join(out, "assets", "photos"));
+    for (const f of fs.readdirSync(PHOTOS).filter(f => f.endsWith(".webp"))) fs.copyFileSync(path.join(PHOTOS, f), path.join(out, "assets", "photos", f));
   }
   const fontDir = path.join(root, "node_modules", "@fontsource-variable", "schibsted-grotesk", "files");
   for (const f of ["schibsted-grotesk-latin-wght-normal.woff2", "schibsted-grotesk-latin-wght-italic.woff2"]) {

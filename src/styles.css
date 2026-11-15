@@ -120,6 +120,7 @@ h3{font-size:21px;line-height:1.25;letter-spacing:-.015em;font-weight:600;margin
 /* people */
 .pi{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
 .ph{aspect-ratio:1;border-radius:50%;background:var(--wash);display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--ink-2);letter-spacing:.02em}
+img.ph{display:block;width:100%;height:auto;object-fit:cover}
 .pi .ph{font-size:52px;background:color-mix(in srgb,var(--t-ion) 14%,var(--white));color:var(--t-ion)}
 .pi h2{margin-bottom:4px}
 .role{color:var(--ink-2);margin:0 0 22px}

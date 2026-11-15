@@ -10,6 +10,7 @@ Every push to `main` is tested, built and published to GitHub Pages by `.github/
 | --- | --- |
 | Research themes (title, question, text) | `data/research.yml` |
 | PI profile, postdocs, graduate and undergraduate students | `data/people.yml` |
+| Member photos (processed, 480×480 WebP) | `data/photos/` |
 | Alums (former members) | `data/alumni.yml` |
 | Publications, with research themes per paper | `data/publications.yml` |
 | News (draft items stay off the public site) | `data/news.yml` |
@@ -21,6 +22,18 @@ Every push to `main` is tested, built and published to GitHub Pages by `.github/
 | Chemical formula formatting in titles | `lib/chem.js` |
 
 A design change touches only `src/`; a content change touches only `data/`.
+
+## People and photos
+
+```
+node scripts/add-member.js --name "Ana López" --group grads [--argonne] [--photo ana.jpg]
+node scripts/add-member.js --name "Meghan Burns" --photo meghan.jpg      # existing member
+```
+
+- **Order.** New members are slotted into their group alphabetically by family name (the last word of the name, or `family:` when that differs, as for Prasadi Abeysinghe Arachchilage).
+- **Photos.** Any JPEG, PNG, WebP or TIFF is cropped square around the face (`--focus top|center|bottom|entropy` overrides the automatic choice), rotated upright, resized to 480×480 and saved as WebP in `data/photos/`. All metadata (camera, GPS location, date) is removed, so originals never reach the public repository. iPhone HEIC files need converting to JPEG first.
+- **Thumbnails.** A member with `photo:` shows the photo; everyone else keeps their initials. The build adds a content hash to each photo URL, so a replaced photo appears straight away.
+- **Checks.** The build stops if a listed photo is missing, if a file in `data/photos/` belongs to nobody on the current roster (delete a member's photo when they move to Alums), or if a group is out of alphabetical order.
 
 ## Publication sync
 

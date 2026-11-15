@@ -1,5 +1,8 @@
 # Current group members. argonne: true marks members based at Argonne National Laboratory.
 # PI roles and cv entries take an optional url, which turns the text into a link.
+# Members are listed alphabetically by family name: the last word of the name, or
+# `family:` when that differs. `photo:` names a file in data/photos/ (made by
+# scripts/add-member.js); without one, the thumbnail shows the person's initials.
 pi:
   name: Jordi Cabana
   roles:
@@ -34,6 +37,7 @@ postdocs:
   - name: Beatrice Tharigopala
 grads:
   - name: Prasadi Abeysinghe Arachchilage
+    family: Abeysinghe Arachchilage
   - name: Kavyasree Anjanarambath
     argonne: true
   - name: Catherine Barth-Yoakum

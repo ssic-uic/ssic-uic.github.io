@@ -30,6 +30,26 @@ function validate(d) {
   }
   ["postdocs", "grads", "undergrads"].forEach(g => ((d.people || {})[g] || []).forEach((m, i) => need(m, ["name"], `people.yml ${g} ${i + 1}`)));
 
+  // Photos: every photo named in people.yml exists, and every file in data/photos/ belongs
+  // to a current member (so a departed member's photo doesn't stay online by accident).
+  if (d.photos) {
+    const ppl = d.people || {};
+    const members = [ppl.pi, ...["postdocs", "grads", "undergrads"].flatMap(g => ppl[g] || [])].filter(Boolean);
+    const used = new Set();
+    members.filter(m => m.photo).forEach(m => {
+      used.add(m.photo);
+      if (!/^[a-z0-9-]+\.webp$/.test(m.photo)) errs.push(`people.yml ${m.name}: photo "${m.photo}" should be a .webp made by scripts/add-member.js`);
+      else if (!d.photos.includes(m.photo)) errs.push(`people.yml ${m.name}: photo data/photos/${m.photo} not found`);
+    });
+    d.photos.filter(f => !used.has(f)).forEach(f => errs.push(`data/photos/${f} isn't used by any current member; delete it`));
+  }
+  // Each group stays in alphabetical order by family name
+  const { byFamily } = require("./add-member");
+  ["postdocs", "grads", "undergrads"].forEach(g => {
+    const list = ((d.people || {})[g] || []).filter(m => m.name);
+    list.forEach((m, i) => { if (i && byFamily(list[i - 1], m) > 0) errs.push(`people.yml ${g}: ${m.name} should come before ${list[i - 1].name} (alphabetical by family name; set family: if the last word isn't it)`); });
+  });
+
   (d.alumni || []).forEach((g, i) => need(g, ["role", "people"], `alumni.yml group ${i + 1}`));
 
   (d.news || []).forEach((n, i) => {
