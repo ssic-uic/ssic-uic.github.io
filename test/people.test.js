@@ -31,7 +31,8 @@ test("a new member goes in alphabetical order by family name, keeping the file's
   assert.deepStrictEqual(d.grads[ana], { name: "Ana Ávila", argonne: true, photo: "ana-avila.webp" });
   assert.strictEqual(d.undergrads.at(-1).name, "Zoe Zhang");
   assert.match(doc.toString(), /^# Current group members/);
-  const errs = validate({ ...loadData(), people: d, photos: ["ana-avila.webp"] });
+  const all = loadData();
+  const errs = validate({ ...all, people: d, photos: [...all.photos, "ana-avila.webp"] });
   assert.deepStrictEqual(errs, []);
 });
 

@@ -5,6 +5,7 @@
 # scripts/add-member.js); without one, the thumbnail shows the person's initials.
 pi:
   name: Jordi Cabana
+  photo: jordi-cabana.webp
   roles:
     - text: Professor of Chemistry, UIC
     - text: Group Leader and Scientist, Materials Science Division, Argonne National Laboratory
