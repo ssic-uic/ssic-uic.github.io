@@ -1,4 +1,5 @@
 # Publications, one entry per paper, newest first.
+# Peer-reviewed journal articles only (no abstracts, chapters, preprints or editorials).
 # themes: any of ion (ion transport in solids), redox (redox beyond the metal),
 #   interface (reactivity at electrochemical interfaces), xray (X-ray analytical science). Empty = other.
 # themes_set_by: "guess" until the owner confirms or changes them; then "owner". The sync never overwrites "owner".

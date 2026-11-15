@@ -2,3 +2,9 @@
 # The sync fetches each one from Crossref like any other paper.
 - doi: 10.1038/s41467-018-03401-x
   note: Soft X-ray tomography paper (Nat. Commun. 2018). The ORCID entry has no DOI.
+- doi: 10.1021/acs.chemrev.5c00772
+  note: Published version of the chemRxiv preprint (Chem. Rev. 2026).
+- doi: 10.1088/2515-7655/ae6a6e
+  note: Roadmap on real-time characterisation (J. Phys. Energy 2026). Found by OpenAlex, confirmed by the owner.
+- doi: 10.1016/j.ensm.2026.105040
+  note: Electrolyte solvent oxidation by NMR (Energy Storage Mater. 2026). Found by OpenAlex, confirmed by the owner.

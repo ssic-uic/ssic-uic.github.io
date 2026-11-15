@@ -11,6 +11,11 @@
 // - themes set by the owner (themes_set_by: owner) are never changed; new papers get
 //   a guess (themes_set_by: guess).
 // - a "check" note is cleared once Crossref confirms the record.
+// - only peer-reviewed journal articles are listed (owner's rule): no conference
+//   abstracts, proceedings, book chapters, preprints or editorials. A preprint whose
+//   Crossref record points to a published version is replaced by that version.
+//   Everything left out is recorded in data/excluded.yml and never re-added; delete
+//   an entry there to revisit it. The owner can add DOIs there to exclude them.
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
 // OPENALEX_API_KEY (optional; the OpenAlex check also runs without one).
@@ -26,7 +31,9 @@ const EXTRA = path.join(__dirname, "..", "data", "extra-papers.yml");
 const root = path.join(__dirname, "..");
 const PUBS = path.join(root, "data", "publications.yml");
 const CANDIDATES = path.join(root, "data", "candidates.yml");
-const KEEP_TYPES = new Set(["journal-article", "review", "book-chapter", "letter", "editorial"]);
+const EXCLUDED = path.join(root, "data", "excluded.yml");
+// ORCID work types that can be peer-reviewed articles; Crossref has the final say
+const KEEP_TYPES = new Set(["journal-article", "review", "letter"]);
 const UA = `ssic-website publication sync (mailto:${EMAIL})`;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -139,6 +146,28 @@ function fromCrossref(m) {
   };
 }
 
+// Why a Crossref record is not a peer-reviewed journal article, or "" if it is one.
+const ABSTRACT_VENUES = /meeting abstracts|ecs transactions|proceedings|proc\.|symposium|conference|congress/i;
+function notArticleReason(m) {
+  const type = m.type || "";
+  if (type === "posted-content") return "preprint";
+  if (/proceedings/.test(type)) return "conference proceedings";
+  if (/book|monograph|reference/.test(type)) return "book or book chapter";
+  if (type === "dataset" || type === "component") return "dataset or supplement";
+  if (type === "peer-review") return "peer-review report";
+  if (type !== "journal-article") return `not a journal article (${type || "unknown type"})`;
+  const venue = [...(m["container-title"] || []), ...(m["short-container-title"] || [])].join(" ");
+  const page = String(m.page || "");
+  const [a, b] = page.split(/[-–]/).map(x => parseInt(String(x).replace(/\D/g, ""), 10));
+  const span = Number.isFinite(a) && Number.isFinite(b) ? b - a + 1 : (Number.isFinite(a) ? 1 : 0);
+  if (ABSTRACT_VENUES.test(venue)) return "conference abstract or proceedings";
+  if (/microscopy and microanalysis|microsc\.? microanal/i.test(venue) && span > 0 && span <= 2) return "conference abstract";
+  if (/acta cryst/i.test(venue) && /^[ae]\d/i.test(page)) return "conference abstract";
+  if (/supplement/i.test(String(m.issue || "")) && span > 0 && span <= 2) return "conference abstract";
+  return "";
+}
+const publishedVersion = m => normDoi((((m.relation || {})["is-preprint-of"] || []).find(r => r["id-type"] === "doi") || {}).id || "");
+
 function guessThemes(title) {
   const t = title.toLowerCase();
   const th = [];
@@ -159,23 +188,55 @@ async function main() {
   const byDoi = new Map(), byTitle = new Map();
   existing.forEach(p => { if (p.doi) byDoi.set(normDoi(p.doi), p); byTitle.set(normTitle(p.title), p); });
 
+  const report = { added: [], updated: [], flagged: [], unmatched: [], excluded: [] };
   const extras = fs.existsSync(EXTRA) ? (YAML.parse(fs.readFileSync(EXTRA, "utf8")) || []) : [];
+  const excludedList = fs.existsSync(EXCLUDED) ? (YAML.parse(fs.readFileSync(EXCLUDED, "utf8")) || []) : [];
+  const excludedDois = new Set(excludedList.map(e => normDoi(e.doi)));
+  const exclude = (doi, title, reason) => {
+    if (!doi || excludedDois.has(doi)) return;
+    excludedDois.add(doi);
+    excludedList.push({ doi, title, reason, by: "rule", date: today });
+    report.excluded.push(`${title} (${reason})`);
+  };
+  const drop = p => { const i = existing.indexOf(p); if (i >= 0) existing.splice(i, 1); byDoi.delete(normDoi(p.doi)); byTitle.delete(normTitle(p.title)); };
   const fromOrcid = (await orcidWorks(ORCID)).filter(w => (!w.type || KEEP_TYPES.has(w.type)) && !SKIP_TITLE.test(w.title.trim()));
   // extra DOIs first, so ORCID entries without a DOI then match them by title
   const works = [...extras.map(e => ({ title: "", type: "journal-article", year: "", journal: "", doi: normDoi(e.doi) })), ...fromOrcid];
   const findSimilar = (title, year) => existing.find(e => Math.abs(Number(e.year) - Number(year || e.year)) <= 1 && similar(normTitle(e.title), normTitle(title)) >= 0.9);
   const done = new Set();
   console.log(`ORCID: ${fromOrcid.length} works, plus ${extras.length} extra DOI(s)`);
-  const report = { added: [], updated: [], flagged: [], unmatched: [] };
   const seen = new Set();
+
+  // also re-check papers already listed that ORCID no longer carries, so the rule covers everything
+  const orcidDois = new Set(works.map(w => w.doi).filter(Boolean));
+  existing.filter(p => p.doi && !orcidDois.has(normDoi(p.doi))).forEach(p => works.push({ title: p.title, type: "journal-article", year: p.year, journal: p.journal, doi: normDoi(p.doi) }));
 
   for (const w of works) {
     let p = (w.doi && byDoi.get(w.doi)) || byTitle.get(normTitle(w.title)) || findSimilar(w.title, w.year);
-    const doi = w.doi || (p && p.doi) || "";
+    let doi = w.doi || (p && p.doi) || "";
     if (doi && seen.has(doi)) continue;
     if (doi) seen.add(doi);
-    const m = doi ? await crossref(doi) : null;
+    if (doi && excludedDois.has(doi)) { if (p) drop(p); continue; }
+    let m = doi ? await crossref(doi) : null;
     await sleep(120);
+    // a preprint with a published version: use the published version instead
+    if (m && m.type === "posted-content" && publishedVersion(m)) {
+      const pub = publishedVersion(m);
+      exclude(doi, plain((m.title || [])[0]), "preprint; the published version is listed");
+      if (p) drop(p);
+      p = byDoi.get(pub) || null;
+      doi = pub;
+      if (seen.has(doi)) continue;
+      seen.add(doi);
+      m = await crossref(doi);
+      await sleep(120);
+    }
+    const why = m ? notArticleReason(m) : "";
+    if (why) {
+      exclude(doi, plain((m.title || [])[0]) || w.title, why);
+      if (p) drop(p);
+      continue;
+    }
     if (!m) {
       if (!p) report.unmatched.push(`${w.year} ${w.title} (no DOI found)`);
       continue;
@@ -215,7 +276,7 @@ async function main() {
 
   // papers OpenAlex links to the ORCID iD but ORCID does not list: hold for confirmation
   const oa = await openalexDois(ORCID);
-  const known = new Set(existing.map(p => normDoi(p.doi)).filter(Boolean));
+  const known = new Set([...existing.map(p => normDoi(p.doi)).filter(Boolean), ...excludedDois]);
   // drop noise: abstract-service reprints, datasets, and papers already listed under another DOI
   const NOISE = /^chem\s*inform abstract|^research data supporting|^supplementary/i;
   const bare = t => normTitle(plain(t).replace(/^chem\s*inform abstract:\s*/i, ""));
@@ -226,6 +287,7 @@ async function main() {
     if (!KEEP_TYPES.has(w.type === "article" ? "journal-article" : w.type)) continue;
     const m = await crossref(w.doi);
     await sleep(120);
+    if (m && notArticleReason(m)) continue; // only peer-reviewed articles are worth asking about
     const c = m ? fromCrossref(m) : null;
     candidates.push({
       year: (c && c.year) || w.year, title: (c && c.title) || plain(w.title), journal: (c && c.journal) || "",
@@ -240,12 +302,13 @@ async function main() {
   const order = ["year", "published", "title", "authors", "journal", "citation", "url", "doi", "themes", "themes_set_by", "added", "check", "hide"];
   const tidy = existing.map(p => Object.fromEntries(order.filter(k => p[k] !== undefined && p[k] !== "").map(k => [k, p[k]])));
   fs.writeFileSync(PUBS, header + "\n" + YAML.stringify(tidy, { lineWidth: 0 }));
+  fs.writeFileSync(EXCLUDED, "# Works left out of the site because they are not peer-reviewed journal articles\n# (conference abstracts, proceedings, book chapters, preprints, editorials).\n# by: rule = left out automatically; owner = the owner's decision. The sync never re-adds\n# anything listed here. To revisit one, delete its entry.\n" + YAML.stringify(excludedList, { lineWidth: 0 }));
   fs.writeFileSync(CANDIDATES, "# Papers that OpenAlex links to the ORCID iD but the ORCID record does not list.\n# Confirm before adding; they are not shown on the site.\n" + YAML.stringify(candidates, { lineWidth: 0 }));
 
   const lines = [
     `## Publication sync, ${today}`,
-    `${tidy.length} papers in total. ${report.added.length} added, ${report.updated.length} updated from Crossref, ${report.flagged.length} flagged, ${candidates.length} candidates from OpenAlex${oa === null ? " (OpenAlex check skipped)" : ""}.`,
-    ...[["Added", report.added], ["Flagged", report.flagged], ["No DOI found", report.unmatched]]
+    `${tidy.length} papers in total. ${report.added.length} added, ${report.updated.length} updated from Crossref, ${report.flagged.length} flagged, ${report.excluded.length} left out as not peer-reviewed articles, ${candidates.length} candidates from OpenAlex${oa === null ? " (OpenAlex check skipped)" : ""}.`,
+    ...[["Added", report.added], ["Flagged", report.flagged], ["Left out (not peer-reviewed articles)", report.excluded], ["No DOI found", report.unmatched]]
       .filter(([, l]) => l.length).map(([h, l]) => `\n### ${h}\n` + l.map(x => `- ${x}`).join("\n")),
   ];
   const summary = lines.join("\n");
@@ -254,4 +317,4 @@ async function main() {
 }
 
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });
-module.exports = { authorList, initials, fromCrossref, guessThemes, plain, normDoi };
+module.exports = { authorList, initials, fromCrossref, guessThemes, plain, normDoi, notArticleReason, publishedVersion };

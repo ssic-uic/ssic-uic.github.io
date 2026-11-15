@@ -58,3 +58,22 @@ test("formula pieces split by Crossref markup are rejoined", () => {
 test("APS MathML formulas collapse to plain text", () => {
   assert.strictEqual(plain('Changes in <mml:math><mml:mrow><mml:msub><mml:mi>Li</mml:mi>\n<mml:mn>2</mml:mn></mml:msub>\n<mml:mi>Ru</mml:mi><mml:msub><mml:mi mathvariant="normal">O</mml:mi>\n<mml:mn>3</mml:mn></mml:msub></mml:mrow></mml:math> induced'), "Changes in Li2RuO3 induced");
 });
+
+const { notArticleReason, publishedVersion } = require("../scripts/sync-publications.js");
+
+test("only peer-reviewed journal articles pass", () => {
+  assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["Chemistry of Materials"], page: "100-110" }), "");
+  assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["Microscopy and Microanalysis"], page: "1547-1548" }), "conference abstract");
+  assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["Microscopy and Microanalysis"], page: "100-112" }), "");
+  assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["Acta Crystallographica Section A Foundations and Advances"], page: "a119-a119" }), "conference abstract");
+  assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["ECS Meeting Abstracts"] }), "conference abstract or proceedings");
+  assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["MRS Proceedings"] }), "conference abstract or proceedings");
+  assert.strictEqual(notArticleReason({ type: "posted-content" }), "preprint");
+  assert.strictEqual(notArticleReason({ type: "book-chapter" }), "book or book chapter");
+  assert.strictEqual(notArticleReason({ type: "proceedings-article" }), "conference proceedings");
+});
+
+test("a preprint's published version is found", () => {
+  assert.strictEqual(publishedVersion({ relation: { "is-preprint-of": [{ "id-type": "doi", id: "10.1021/ACS.CHEMREV.5C00772" }] } }), "10.1021/acs.chemrev.5c00772");
+  assert.strictEqual(publishedVersion({}), "");
+});

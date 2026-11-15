@@ -42,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B sync-trial
-          git add data/publications.yml data/candidates.yml
+          git add data/publications.yml data/candidates.yml data/excluded.yml
           git commit -m "Publication sync trial $(date -u +%F)" || echo "No changes."
           git push --force origin sync-trial
       - name: Commit and publish
@@ -53,7 +53,7 @@ jobs:
           if git diff --quiet -- data/; then echo "No changes."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/publications.yml data/candidates.yml
+          git add data/publications.yml data/candidates.yml data/excluded.yml
           git commit -m "Publication sync $(date -u +%F)"
           git push
           # pushes made by this workflow don't start other workflows, so start publishing directly
