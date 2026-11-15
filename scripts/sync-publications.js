@@ -13,7 +13,7 @@
 // - a "check" note is cleared once Crossref confirms the record.
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
-// OPENALEX_API_KEY (optional; without it the OpenAlex check is skipped).
+// OPENALEX_API_KEY (optional; the OpenAlex check also runs without one).
 // data/extra-papers.yml lists DOIs to include even though the ORCID record lacks them.
 const fs = require("fs");
 const path = require("path");
@@ -79,16 +79,18 @@ async function crossref(doi) {
   return j ? j.message : null;
 }
 
+// Works without a key: plain page numbers (not cursor paging, which needs a key)
+// and about two requests a week, well inside OpenAlex's keyless daily allowance.
 async function openalexDois(orcid) {
-  if (!OPENALEX_KEY) { console.log("OpenAlex check skipped: no OPENALEX_API_KEY secret set."); return null; }
   const out = [];
-  let cursor = "*";
+  const key = OPENALEX_KEY ? `&api_key=${encodeURIComponent(OPENALEX_KEY)}` : "";
   try {
-    while (cursor) {
-      const j = await getJSON(`https://api.openalex.org/works?filter=author.orcid:${orcid}&per-page=200&select=doi,title,publication_year,type&cursor=${encodeURIComponent(cursor)}&api_key=${encodeURIComponent(OPENALEX_KEY)}`);
-      if (!j) break;
-      (j.results || []).forEach(w => out.push({ doi: normDoi(w.doi), title: w.title || "", year: w.publication_year, type: w.type }));
-      cursor = j.meta?.next_cursor;
+    for (let page = 1; page <= 10; page++) {
+      const j = await getJSON(`https://api.openalex.org/works?filter=author.orcid:${orcid}&per-page=200&page=${page}&select=doi,title,publication_year,type${key}`);
+      const results = (j && j.results) || [];
+      results.forEach(w => out.push({ doi: normDoi(w.doi), title: w.title || "", year: w.publication_year, type: w.type }));
+      if (!results.length || page * 200 >= (j.meta?.count || 0)) break;
+      await sleep(500);
     }
   } catch (e) {
     console.log(`OpenAlex check skipped: ${e.message}`);
