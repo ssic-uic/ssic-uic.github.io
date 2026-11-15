@@ -40,8 +40,7 @@
   doi: 10.1021/acs.chemmater.6c01680
   themes:
     - ion
-    - redox
-  themes_set_by: guess
+  themes_set_by: owner
   added: 2026-11-15
 - year: 2026
   published: 2026-05-07
