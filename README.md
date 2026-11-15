@@ -30,6 +30,11 @@ node scripts/add-member.js --name "Ana López" --group grads [--argonne] [--phot
 node scripts/add-member.js --name "Meghan Burns" --photo meghan.jpg      # existing member
 ```
 
+```
+node scripts/import-photos.js <folder> [--dry-run]                      # photos members dropped in Box
+```
+
+- **Photo drop.** Members upload through a Box file request (no Box account needed). Each week a scheduled task downloads the folder and runs `import-photos.js`, which matches each file name to a current member ("Meghan Burns.jpg", "burns_meghan.HEIC"), converts HEIC, imports it once (`data/photo-intake.yml` keeps only content hashes), and reports anything unclear for the owner: unknown names, several matches, non-images.
 - **Order.** New members are slotted into their group alphabetically by family name (the last word of the name, or `family:` when that differs, as for Prasadi Abeysinghe Arachchilage).
 - **Photos.** Any JPEG, PNG, WebP or TIFF is cropped square around the face (`--focus top|center|bottom|entropy` overrides the automatic choice), rotated upright, resized to 480×480 and saved as WebP in `data/photos/`. All metadata (camera, GPS location, date) is removed, so originals never reach the public repository. iPhone HEIC files need converting to JPEG first.
 - **Thumbnails.** A member with `photo:` shows the photo; everyone else keeps their initials. The build adds a content hash to each photo URL, so a replaced photo appears straight away.
