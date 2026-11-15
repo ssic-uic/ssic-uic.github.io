@@ -1,10 +1,22 @@
-# Current group members. argonne: true marks students based at Argonne National Laboratory.
+# Current group members. argonne: true marks members based at Argonne National Laboratory.
+# PI roles and cv entries take an optional url, which turns the text into a link.
 pi:
   name: Jordi Cabana
-  role: Professor of Chemistry, UIC
+  roles:
+    - text: Professor of Chemistry, UIC
+    - text: Group Leader and Scientist, Materials Science Division, Argonne National Laboratory
+    - text: Co-Director, George Crabtree Institute for Discovery
+      url: https://crabtree.uic.edu/
   email: jcabana@uic.edu
   cv:
-    - years: 2017–now
+    - years: 2024–now
+      text: Co-Director, George Crabtree Institute for Discovery, UIC and Argonne National Laboratory
+      url: https://crabtree.uic.edu/
+    - years: 2022–now
+      text: Group Leader and Scientist, Materials Science Division, Argonne National Laboratory
+    - years: 2021–now
+      text: Professor, Chemistry, UIC
+    - years: 2017–2021
       text: Associate Professor, Chemistry, UIC
     - years: 2013–2017
       text: Assistant Professor, Chemistry, UIC
@@ -12,9 +24,13 @@ pi:
       text: Chemist Research Scientist, Lawrence Berkeley National Laboratory
     - years: 2005–2008
       text: Postdoctoral Fellow, Stony Brook University
+    - years: 2004–2005
+      text: Postdoctoral Research Associate, ICMAB-CSIC, Barcelona
     - years: "2004"
-      text: Ph.D. in Materials Science, ICMAB-CSIC, Barcelona
+      text: Ph.D. in Materials Science, Universitat Autònoma de Barcelona
 postdocs:
+  - name: Dževad Kozlica
+    argonne: true
   - name: Beatrice Tharigopala
 grads:
   - name: Prasadi Abeysinghe Arachchilage
@@ -24,12 +40,12 @@ grads:
   - name: Meghan Burns
     argonne: true
   - name: Karla Escobar
-  - name: Husam Farraj
-  - name: Seetho Kin Lung
-    argonne: true
-  - name: Mansi Porwal
   - name: Kumuditha Rathnayake
   - name: Tom Rickhoff
   - name: Anwesa Samanta
+  - name: Kin Lung Seetho
+    argonne: true
   - name: Shivam Singh
-  - name: Neelam Sunariwal
+undergrads:
+  - name: Hannah Hicks
+  - name: Marco Servin

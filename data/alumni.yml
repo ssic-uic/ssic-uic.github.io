@@ -1,20 +1,20 @@
-# Former members, grouped by role, in the order shown on the site.
+# Former members (shown as "Alums"), grouped by role, in the order shown on the site.
 groups:
-  - role: Postdoctoral Research Associates
+  - role: Postdoctoral Researchers
     people:
       - Grant Alexander
-      - Tanghong Yi
-      - Young-Sang Yu
-  - role: Visiting Research Assistant Professors
-    people:
       - Ryan Bayliss
       - Linhua Hu
       - Chunjoong Kim
+      - Jiang Luo
+      - Tanghong Yi
       - Hyun Deog (Sam) Yoo
+      - Young-Sang Yu
   - role: Graduate Students
     people:
       - Eva Allen
       - Mike Dato
+      - Husam Farraj
       - Will Judge
       - Khagesh Kumar
       - Bob Jin Kwon
@@ -25,7 +25,9 @@ groups:
       - Megan Murphy
       - Gene Nolis
       - Mike Plews
+      - Mansi Porwal
       - Indrani Roy
+      - Neelam Sunariwal
       - Mark Wolfman
   - role: Undergraduate Researchers
     people:

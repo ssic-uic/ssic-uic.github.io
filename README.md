@@ -9,8 +9,8 @@ Every push to `main` is tested, built and published to GitHub Pages by `.github/
 | What | File |
 | --- | --- |
 | Research themes (title, question, text) | `data/research.yml` |
-| PI profile, postdocs, graduate students | `data/people.yml` |
-| Alumni | `data/alumni.yml` |
+| PI profile, postdocs, graduate and undergraduate students | `data/people.yml` |
+| Alums (former members) | `data/alumni.yml` |
 | Publications, with research themes per paper | `data/publications.yml` |
 | News (draft items stay off the public site) | `data/news.yml` |
 | Postdoc openings (each expires after its closing date) | `data/join.yml` |

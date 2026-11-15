@@ -59,14 +59,18 @@ $('#research-rows').innerHTML = SITE.research.map(r => { const k = r.key; const 
 
 /* people */
 const pi = SITE.people.pi;
+const linked = x => x.url ? `<a href="${esc(x.url)}">${esc(x.text)}</a>` : esc(x.text);
 $('#pi').innerHTML = `<div class="ph" aria-hidden="true">${initials(pi.name)}</div>
-  <div><h2>${esc(pi.name)}</h2><p class="role">${esc(pi.role)}<br><a href="mailto:${esc(pi.email)}">${esc(pi.email)}</a></p>
-  <ul class="cv">${pi.cv.map(c=>`<li><span>${esc(c.years)}</span>${esc(c.text)}</li>`).join('')}</ul></div>`;
+  <div><h2>${esc(pi.name)}</h2><p class="role">${pi.roles.map(linked).join('<br>')}<br><a href="mailto:${esc(pi.email)}">${esc(pi.email)}</a></p>
+  <ul class="cv">${pi.cv.map(c=>`<li><span>${esc(c.years)}</span>${linked(c)}</li>`).join('')}</ul></div>`;
 const tints = ["var(--blue)","var(--green)","var(--sky)"];
 const person = (p,i) => `<div class="person"><div class="ph" style="background:color-mix(in srgb,${tints[i%3]} 13%,var(--white));color:${tints[i%3]}" aria-hidden="true">${initials(p.name)}</div><b>${esc(p.name)}</b>${p.argonne?'<span>Based at Argonne</span>':''}</div>`;
 const grads = SITE.people.grads;
 $('#postdocs').innerHTML = SITE.people.postdocs.map((p,i)=>person(p,i+1)).join('');
 $('#grads').innerHTML = grads.map(person).join('');
+const undergrads = SITE.people.undergrads || [];
+$('#undergrads').innerHTML = undergrads.map((p,i)=>person(p,i+2)).join('');
+$('#undergrad-group').hidden = !undergrads.length;
 $('#grad-n').textContent = `${grads.length} students, ${grads.filter(g=>g.argonne).length} of them based at Argonne.`;
 $('#alumni').innerHTML = SITE.alumni.map(g=>`<div><h3>${esc(g.role)} <span>${g.people.length}</span></h3><ul>${g.people.map(n=>`<li>${esc(n)}</li>`).join('')}</ul></div>`).join('');
 

@@ -32,4 +32,14 @@ test("built page renders every section without script errors", async () => {
   assert.ok(d.querySelectorAll("#publist .pub").length > 0, "publications list is empty");
   assert.ok(d.querySelector("#pi h2").textContent.length > 0, "PI profile missing");
   assert.ok(d.querySelectorAll("#research-rows .rrow").length > 0, "research themes missing");
+
+  // People: every group from the data files appears, and PI roles with a url become links
+  const data = loadData();
+  for (const g of ["postdocs", "grads", "undergrads"]) {
+    const sel = { postdocs: "#postdocs", grads: "#grads", undergrads: "#undergrads" }[g];
+    assert.strictEqual(d.querySelectorAll(`${sel} .person`).length, (data.people[g] || []).length, `${g} count`);
+  }
+  assert.strictEqual(d.querySelectorAll("#alumni > div").length, data.alumni.length, "alums groups");
+  const roleLinks = [...d.querySelectorAll("#pi .role a")].map(a => a.href);
+  data.people.pi.roles.filter(r => r.url).forEach(r => assert.ok(roleLinks.includes(r.url), `PI role link ${r.url} missing`));
 });

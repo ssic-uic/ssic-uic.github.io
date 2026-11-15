@@ -23,8 +23,12 @@ function validate(d) {
 
   const pi = d.people && d.people.pi;
   if (!pi) errs.push("people.yml: missing pi");
-  else need(pi, ["name", "role", "email"], "people.yml pi");
-  ["postdocs", "grads"].forEach(g => ((d.people || {})[g] || []).forEach((m, i) => need(m, ["name"], `people.yml ${g} ${i + 1}`)));
+  else {
+    need(pi, ["name", "roles", "email"], "people.yml pi");
+    (pi.roles || []).forEach((r, i) => need(r, ["text"], `people.yml pi role ${i + 1}`));
+    (pi.cv || []).forEach((c, i) => need(c, ["years", "text"], `people.yml pi cv ${i + 1}`));
+  }
+  ["postdocs", "grads", "undergrads"].forEach(g => ((d.people || {})[g] || []).forEach((m, i) => need(m, ["name"], `people.yml ${g} ${i + 1}`)));
 
   (d.alumni || []).forEach((g, i) => need(g, ["role", "people"], `alumni.yml group ${i + 1}`));
 
