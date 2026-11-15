@@ -44,6 +44,17 @@
   themes_set_by: guess
   added: 2026-11-15
 - year: 2026
+  published: 2026-05-07
+  title: Roadmap on advanced and / real-time characterisation of solid state materials and devices for energy applications
+  authors: A. Aguadero, F. Baiutti, M. Burriel, M. Kubicek, A. K. Opitz, J. Fleig, D. Munoz-Rojas, C. Vallée, M. Bonvalot, A. Popescu, N. H. Perry, F. M. Chiabrera, Á. Morata, J. C. Gonzalez-Rosillo, A. Stangl, R. Escobar-Galindo, M. Krause, S. Sukumaran, S. Fearn, R. J. Chater, S. J. Skinner, J. Kilner, S. Möller, M. Finsterbusch, M. K. Ghosalya, S. Urpelainen, C. Baeumer, S. Kumar, V. Celorrio, D. Gianolio, D. C. Grinter, P. Ferrer-Escorihuela, G. Held, J. Cabana, S. Lyonnard, D. B. Ravnsbæk, M. R. Palacin, M. Casas-Cabanas, J. Villanova, A. Léon, Q. Xu, J. Drnec, B. Seger, D. R. Diercks, N. Hodnik, L. Yedra, S. Estrade, F. Peiró, N. Domingo, M. O. Liedke, E. Menéndez, D. J. Keeble, J. Čížek, R. F. Ziesche, O. Sans Planell, N. Kardjilov, I. Manke, D. Pergolesi and J. Stahn
+  journal: J. Phys. Energy
+  citation: online ahead of print
+  url: https://doi.org/10.1088/2515-7655/ae6a6e
+  doi: 10.1088/2515-7655/ae6a6e
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
   published: 2026-05-01
   title: "NGenE 2025: Electrochemistry for Energy Abundance"
   authors: Z. Wang, L. Lower, K. Kawashima, D. Zhang, S. N. Misal, S. Castro Baldivieso, G. Chen, S. Hong, H. Tupkar, K. N. D. Silva, A. Banerjee, R. Mathison, J. Lopez Ochoa, I. S. Buyuker, I. Messias, D. Ju, A. Lee, R. Gaddam, J. F. King, A. L. Blockmon, P. Nagarajan, J.-E. Stokes, A. Svirinovsky-Arbeli, A. H. Biby, C. E. Wilson, J. Luo, A. Cosenza, M. K. Phuthi, N. Karki, X. Wang, A. Morchhale, L. K. Arrazolo, S. L. Ramesh, D. K. Kozlica, V. S. Ganesan, B. N. Tafese, J. Lim, L. Wofford, S. Hou, J. Shin, D. Oh, N. Minocha and J. Cabana
@@ -52,6 +63,32 @@
   url: https://doi.org/10.1021/acsenergylett.6c01050
   doi: 10.1021/acsenergylett.6c01050
   themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
+  published: 2026-04
+  title: Networks of electrochemical oxidation of common lithium-ion Battery solvents revealed by NMR spectroscopy
+  authors: L. Rynearson, H. Liu, S. Ilic, M. Martins, P. F. B. D. Martins, J. Niklas, J. G. Connell, D. Strmcnik, J. Cabana and B. Key
+  journal: Energy Storage Materials
+  citation: 87, 105040
+  url: https://doi.org/10.1016/j.ensm.2026.105040
+  doi: 10.1016/j.ensm.2026.105040
+  themes:
+    - ion
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
+  published: 2026-02-27
+  title: "Advancing Battery Manufacturing: Synchrotron Characterization for Industry"
+  authors: H. Koh, J. N. Burrow, N. D’Anna, H. Zhang, T. V. Beatriceveena, J. Wang, J. Lai, Y. Chen, J. Cabana, M. K. Y. Chan, E. J. Crumlin, P. A. Fenter, T. T. Fister, D.-J. Liu, Y. S. Meng, O. Shpyrko, K. Wiaderek and K. B. Hatzell
+  journal: Chem. Rev.
+  citation: 126, 3089–3124
+  url: https://doi.org/10.1021/acs.chemrev.5c00772
+  doi: 10.1021/acs.chemrev.5c00772
+  themes:
+    - ion
+    - xray
   themes_set_by: guess
   added: 2026-11-15
 - year: 2026
@@ -84,7 +121,7 @@
   authors: H. Li, B. Song, Y. Chen, X. Rui, R. F. Klie, T. D. Boyko, J. W. Freeland, M. K. Y. Chan, J. Liu and J. Cabana
   journal: Phys. Rev. Mater.
   citation: 9, 125402
-  url: https://journals.aps.org/prmaterials/abstract/10.1103/pk6l-ds6m
+  url: https://doi.org/10.1103/pk6l-ds6m
   doi: 10.1103/pk6l-ds6m
   themes:
     - ion
@@ -103,25 +140,12 @@
   themes_set_by: guess
   added: 2026-11-15
 - year: 2025
-  published: 2025-09-22
-  title: "Advancing Battery Manufacturing: Synchrotron Characterization for Industry"
-  authors: H. Koh, J. Burrow, N. D'Anna, H. Zhang, B. Tharigopala Vincent, J. Wang, J. Lai, Y. Chen, J. Cabana, M. Chan, E. Crumlin, P. Fenter, T. Fister, D.-J. Liu, Y. S. Meng, O. Shpryko, K. Wiaderek and K. Hatzell
-  journal: chemRxiv
-  citation: online ahead of print
-  url: https://doi.org/10.26434/chemrxiv-2025-xc2q8
-  doi: 10.26434/chemrxiv-2025-xc2q8
-  themes:
-    - ion
-    - xray
-  themes_set_by: guess
-  added: 2026-11-15
-- year: 2025
   published: 2025-08
   title: Chlorination and oxygenation of carbon electrodes for covalent attachment of thiol-terminated molecules
   authors: X. Zheng, I. L. Bolotin, B. Tanriover, K. Rathnayake, E. J. Askins, J. Cabana, N. P. Mankad and K. D. Glusac
   journal: Carbon Trends
   citation: 20, 100539
-  url: https://www.sciencedirect.com/science/article/pii/S2667056925000896
+  url: https://doi.org/10.1016/j.cartre.2025.100539
   doi: 10.1016/j.cartre.2025.100539
   themes:
     - interface
@@ -132,7 +156,7 @@
   authors: J. Cabana
   journal: Chem
   citation: 11, 102703
-  url: https://www.cell.com/chem/fulltext/S2451-9294(25)00294-3
+  url: https://doi.org/10.1016/j.chempr.2025.102703
   doi: 10.1016/j.chempr.2025.102703
   themes:
     - ion
@@ -154,7 +178,7 @@
   authors: S. Kim, A. S. Thind, S. K. Mohanty, J. K. Hong, J. Y. Jung, H. Park, Y. Yang, M.-S. Park, M. S. Porwal, E. Allen, B. K. Choi, H. Jung, N. Sunariwal, K. Kumar, M. Ge, J. Yoo, J.-H. Song, J. H. Ryu, S. Lee, S. C. Reddy, M. K. Srinivasa, A. R. Pati, E. Lee, R. F. Klie, J. Cabana and H. D. Yoo
   journal: ACS Energy Lett.
   citation: 10, 3600–3609
-  url: https://pubs.acs.org/doi/abs/10.1021/acsenergylett.5c01634
+  url: https://doi.org/10.1021/acsenergylett.5c01634
   doi: 10.1021/acsenergylett.5c01634
   themes:
     - ion
@@ -166,7 +190,7 @@
   authors: J. Z. Hu, W. Hu, H. Jeong, G. Alexander, N. Dan Thien, V. Prabhakaran, K. S. Han, Y. Chen, J. Cabana, J. G. Connell, L. Cheng, V. Murugesan, K. R. Zavadil and K. T. Mueller
   journal: Energy Storage Mater.
   citation: 79, 104315
-  url: https://www.sciencedirect.com/science/article/abs/pii/S2405829725003137
+  url: https://doi.org/10.1016/j.ensm.2025.104315
   doi: 10.1016/j.ensm.2025.104315
   themes:
     - interface
@@ -177,7 +201,7 @@
   authors: H. Shahbazi, P. Seraji, H. Farraj, T. Yang, A. Kim, S. Fattahpour, I. Papailias, M. Diamond, S. Namvar, A. Ahmadiparidari, S. Wang, Z. Liu, S. Feng, K. Kumar, M. Ahart, J. Cabana, S. Kadkhodaei, J. Wang, Z. Huang, R. J. Hemley and A. Salehi-Khojin
   journal: Science
   citation: 388, 950–956
-  url: https://www.science.org/doi/abs/10.1126/science.adr5604
+  url: https://doi.org/10.1126/science.adr5604
   doi: 10.1126/science.adr5604
   themes: []
   themes_set_by: guess
@@ -244,7 +268,7 @@
   authors: S. C. Reddy, H. Lee, N. Sunariwal, K. Kumar, W. J. No, J. Cabana, S. H. Oh and H. D. Yoo
   journal: Energy Storage Mater.
   citation: 75, 104002
-  url: https://www.sciencedirect.com/science/article/abs/pii/S2405829725000030
+  url: https://doi.org/10.1016/j.ensm.2025.104002
   doi: 10.1016/j.ensm.2025.104002
   themes:
     - ion
@@ -266,7 +290,7 @@
   authors: T. Kim, Z. D. Hood, A. Sundar, A. U. Mane, F. Lagunas, K. Kumar, N. Sunariwal, J. Cabana, S. Tepavcevic, J. W. Elam, P. Zapol and J. G. Connell
   journal: ACS Mater. Lett.
   citation: 6, 5409–5417
-  url: https://pubs.acs.org/doi/abs/10.1021/acsmaterialslett.4c01923
+  url: https://doi.org/10.1021/acsmaterialslett.4c01923
   doi: 10.1021/acsmaterialslett.4c01923
   themes:
     - ion
@@ -278,7 +302,7 @@
   authors: J. Xiao, N. Adelstein, Y. Bi, W. Bian, J. Cabana, C. L. Cobb, Y. Cui, S. J. Dillon, M. M. Doeff, S. M. Islam, K. Leung, M. Li, F. Lin, J. Liu, H. Luo, A. C. Marschilok, Y. S. Meng, Y. Qi, R. Sahore, K. G. Sprenger, R. C. Tenent, M. F. Toney, W. Tong, L. F. Wan, C. Wang, S. E. Weitzner, B. Wu and Y. Xu
   journal: Nat. Energy
   citation: 9, 1463–1473
-  url: https://www.nature.com/articles/s41560-024-01639-y
+  url: https://doi.org/10.1038/s41560-024-01639-y
   doi: 10.1038/s41560-024-01639-y
   themes:
     - interface
@@ -311,7 +335,7 @@
   authors: M. J. W. Ogley, A. S. Menon, B. J. Johnston, G. Pandey, I. McClelland, X. Shi, S. Agrestini, V. Celorrio, G. E. Pérez, S. G. Booth, J. Cabana, S. A. Cussen and L. F. J. Piper
   journal: ACS Energy Lett.
   citation: 9, 4607–4613
-  url: https://pubs.acs.org/doi/full/10.1021/acsenergylett.4c02031
+  url: https://doi.org/10.1021/acsenergylett.4c02031
   doi: 10.1021/acsenergylett.4c02031
   themes:
     - redox
@@ -322,7 +346,7 @@
   authors: M. A. Dato, L. Hu, D. McElheny and J. Cabana
   journal: Chem. Mater.
   citation: 36, 8349–8358
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.4c01349
+  url: https://doi.org/10.1021/acs.chemmater.4c01349
   doi: 10.1021/acs.chemmater.4c01349
   themes:
     - ion
@@ -333,7 +357,7 @@
   authors: E. J. Askins, A. Sarkar, P. Navabi, K. Kumar, S. J. Finkelmeyer, M. Presselt, J. Cabana and K. D. Glusac
   journal: J. Am. Chem. Soc.
   citation: 146, 22360–22373
-  url: https://pubs.acs.org/doi/abs/10.1021/jacs.4c05250
+  url: https://doi.org/10.1021/jacs.4c05250
   doi: 10.1021/jacs.4c05250
   themes:
     - interface
@@ -365,7 +389,7 @@
   authors: X. Wang, Q. Zhang, C. Zhao, H. Li, B. Zhang, G. Zeng, Y. Tang, Z. Huang, I. Hwang, H. Zhang, S. Zhou, Y. Qiu, Y. Xiao, J. Cabana, C.-J. Sun, K. Amine, Y. Sun, Q. Wang, G.-L. Xu, L. Gu, Y. Qiao and S.-G. Sun
   journal: Nat. Energy
   citation: 9, 184–196
-  url: https://www.nature.com/articles/s41560-023-01425-2
+  url: https://doi.org/10.1038/s41560-023-01425-2
   doi: 10.1038/s41560-023-01425-2
   themes:
     - redox
@@ -377,7 +401,7 @@
   authors: A. Mistry, I. D. Johnson, J. Cabana, B. J. Ingram and V. Srinivasan
   journal: Phys. Chem. Chem. Phys.
   citation: 26, 2153–2167
-  url: https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp04628a/unauth
+  url: https://doi.org/10.1039/d3cp04628a
   doi: 10.1039/d3cp04628a
   themes:
     - ion
@@ -388,7 +412,7 @@
   authors: B. J. Kwon, S. H. Lapidus, J. T. Vaughey, G. Ceder, J. Cabana and B. Key
   journal: Acc. Chem. Res.
   citation: 57, 1–9
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.accounts.3c00282
+  url: https://doi.org/10.1021/acs.accounts.3c00282
   doi: 10.1021/acs.accounts.3c00282
   themes:
     - ion
@@ -410,10 +434,22 @@
   authors: P. Wang, P. Kannan, L. Lu, K. Kumar, C. Pan, J. Guo, R. Klie and J. Cabana
   journal: Appl. Phys. Lett.
   citation: 123, 213904
-  url: https://pubs.aip.org/aip/apl/article-abstract/123/21/213904/2922375/Cation-defect-engineering-of-core-shell-spinels?redirectedFrom=fulltext
+  url: https://doi.org/10.1063/5.0174481
   doi: 10.1063/5.0174481
   themes:
     - interface
+  themes_set_by: guess
+- year: 2023
+  published: 2023-10-30
+  title: Insights into the reactivity and lithium plating mechanisms of ultra-thin metal oxide coatings for anode-free solid-state lithium metal batteries
+  authors: M. J. Counihan, T. Kim, R. Pathak, T. Zagorac, Y. Yang, M. E. Burns, J. Cabana, R. F. Klie, L. Hanley, J. G. Connell, A. U. Mane, J. W. Elam and S. Tepavcevic
+  journal: Front. Batter. Electrochem.
+  citation: 2, 1292622
+  url: https://doi.org/10.3389/fbael.2023.1292622
+  doi: 10.3389/fbael.2023.1292622
+  themes:
+    - interface
+    - ion
   themes_set_by: guess
 - year: 2023
   published: 2023-10-20
@@ -432,7 +468,7 @@
   authors: J. Kim, S. Anand, C. Gilgenbach, I. D. Johnson, M. Murphy, T. Chen, M. Moy, A. Penn, J. Cabana, G. Ceder, B. J. Ingram and J. M. LeBeau
   journal: Chem. Mater.
   citation: 35, 8455–8463
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.3c01219
+  url: https://doi.org/10.1021/acs.chemmater.3c01219
   doi: 10.1021/acs.chemmater.3c01219
   themes:
     - ion
@@ -454,7 +490,7 @@
   authors: S. Wang, T. Yang, K. Kumar, S. Namvar, S. Kim, A. Ahmadiparidari, H. Shahbazi, S. Singh, Z. Hemmat, V. Berry, J. Cabana, F. Khalili-Araghi, Z. Huang and A. Salehi-Khojin
   journal: ACS Nano
   citation: 17, 15053–15064
-  url: https://pubs.acs.org/doi/abs/10.1021/acsnano.3c04178
+  url: https://doi.org/10.1021/acsnano.3c04178
   doi: 10.1021/acsnano.3c04178
   themes: []
   themes_set_by: guess
@@ -475,7 +511,7 @@
   authors: F. Lagunas, G. Alexander, A. Lee Punaro, C. Moscosa, L. Hu, J. Cabana and R. F. Klie
   journal: ACS Appl. Energy Mater.
   citation: 6, 5681–5689
-  url: https://pubs.acs.org/doi/abs/10.1021/acsaem.3c00035
+  url: https://doi.org/10.1021/acsaem.3c00035
   doi: 10.1021/acsaem.3c00035
   themes:
     - ion
@@ -486,7 +522,7 @@
   authors: H. Li, I. Roy, M. Starczewski, J. Freeland and J. Cabana
   journal: J. Phys. Chem. C
   citation: 127, 7913–7920
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.jpcc.2c08733
+  url: https://doi.org/10.1021/acs.jpcc.2c08733
   doi: 10.1021/acs.jpcc.2c08733
   themes:
     - redox
@@ -509,7 +545,7 @@
   authors: K. Kumar, S. Jamnuch, L. Majidi, S. Misal, A. Ahmadiparidari, M. A. Dato, G. E. Sterbinsky, T. Wu, A. Salehi-Khojin, T. A. Pascal and J. Cabana
   journal: J. Phys. Chem. Lett.
   citation: 14, 3222–3229
-  url: https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c03942
+  url: https://doi.org/10.1021/acs.jpclett.2c03942
   doi: 10.1021/acs.jpclett.2c03942
   themes:
     - interface
@@ -520,7 +556,7 @@
   authors: J. J. Markut, J. Cabana, N. P. Mankad and D. J. Wink
   journal: J. Chem. Educ.
   citation: 100, 1633–1640
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.jchemed.3c00037
+  url: https://doi.org/10.1021/acs.jchemed.3c00037
   doi: 10.1021/acs.jchemed.3c00037
   themes: []
   themes_set_by: guess
@@ -530,7 +566,7 @@
   authors: I. Roy, K. Kumar, H. Li, N. Sunariwal, G. C. B. Alexander, J. W. Freeland, F. Rodolakis and J. Cabana
   journal: Chem. Mater.
   citation: 35, 2107–2113
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.2c03680
+  url: https://doi.org/10.1021/acs.chemmater.2c03680
   doi: 10.1021/acs.chemmater.2c03680
   themes:
     - redox
@@ -541,21 +577,10 @@
   authors: E. Allen, Y. Shin, W. Judge, M. Wolfman, V. De Andrade, S. M. Cologna and J. Cabana
   journal: ACS Energy Lett.
   citation: 8, 1371–1378
-  url: https://pubs.acs.org/doi/abs/10.1021/acsenergylett.2c02619
+  url: https://doi.org/10.1021/acsenergylett.2c02619
   doi: 10.1021/acsenergylett.2c02619
   themes:
     - xray
-  themes_set_by: guess
-- year: 2023
-  title: Insights into the reactivity and lithium plating mechanisms of ultra-thin metal oxide coatings for anode-free solid-state lithium metal batteries
-  authors: M. J. Counihan, T. Kim, R. Pathak, T. Zagorac, Y. Yang, M. E. Burns, J. Cabana, R. F. Klie, L. Hanley, J. G. Connell, A. U. Mane, J. W. Elam and S. Tepavcevic
-  journal: Front. Batter. Electrochem.
-  citation: 2, 1292622
-  url: https://doi.org/10.3389/fbael.2023.1292622
-  doi: 10.3389/fbael.2023.1292622
-  themes:
-    - interface
-    - ion
   themes_set_by: guess
 - year: 2022
   published: 2022-12-28
@@ -563,7 +588,7 @@
   authors: J. Cabana, T. Alaan, G. W. Crabtree, P.-W. Huang, A. Jain, M. Murphy, J. N’Diaye, K. Ojha, G. Agbeworvi, H. Bergstrom, S. Gersib, H. Harb, A. Stejer, G. Quiles-Galarza, O. Rodriguez, I. Caruso, J. M. Gonçalves, G. Y. Chen, C. A. Fernández, H. Pan, K. Ritter, Y. Yang, H. Zhang, A. C. García-Álvarez, S. Ilic, K. Kumar, R. Silcox, Y. Yao, H. Song, S. Stoyanov, M. Saraf, C. H. Chen, S. M. S. Subasinghe, R. Gomes, S. Lang, E. Murphy, A. S. Thind and Y. Zheng
   journal: ACS Energy Lett.
   citation: 8, 740–747
-  url: https://pubs.acs.org/doi/full/10.1021/acsenergylett.2c02587
+  url: https://doi.org/10.1021/acsenergylett.2c02587
   doi: 10.1021/acsenergylett.2c02587
   themes: []
   themes_set_by: guess
@@ -595,7 +620,7 @@
   authors: E. Allen, L. Y. Lim, X. Xiao, A. Liu, M. F. Toney, J. Cabana and J. Nelson Weker
   journal: ACS Appl. Energy Mater.
   citation: 5, 12798–12808
-  url: https://pubs.acs.org/doi/abs/10.1021/acsaem.2c02397
+  url: https://doi.org/10.1021/acsaem.2c02397
   doi: 10.1021/acsaem.2c02397
   themes:
     - xray
@@ -606,7 +631,7 @@
   authors: W. J. Judge, B. M. May, K. Kumar, M. F. Wolfman, D. A. Shapiro, Z. Cai, M. V. Holt and J. Cabana
   journal: J. Phys. Chem. C
   citation: 126, 16082–16089
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.jpcc.2c04101
+  url: https://doi.org/10.1021/acs.jpcc.2c04101
   doi: 10.1021/acs.jpcc.2c04101
   themes:
     - xray
@@ -618,7 +643,7 @@
   authors: B. KC, J. Guo, J. Farrell, G. M. Nolis, D. B. Buchholz, G. Evmenenko, J. Cabana, G. W. Crabtree and R. F. Klie
   journal: Adv. Mater. Interfaces
   citation: 9, 2201187
-  url: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/admi.202201187
+  url: https://doi.org/10.1002/admi.202201187
   doi: 10.1002/admi.202201187
   themes:
     - ion
@@ -729,7 +754,7 @@
   authors: X. Cao, H. Li, Y. Qiao, M. Jia, H. Kitaura, J. Zhang, P. He, J. Cabana and H. Zhou
   journal: Sci. Bull.
   citation: 67, 381–388
-  url: https://www.sciencedirect.com/science/article/abs/pii/S2095927321007210
+  url: https://doi.org/10.1016/j.scib.2021.11.014
   doi: 10.1016/j.scib.2021.11.014
   themes:
     - redox
@@ -751,7 +776,7 @@
   authors: J. Cabana, T. Alaan, G. W. Crabtree, M. C. Hatzell, K. Manthiram, D. A. Steingart, I. Zenyuk, F. Jiao, A. Vojvodic, J. Y. Yang, N. P. Balsara, K. A. Persson, D. J. Siegel, C. L. Haynes, J. Mauzeroll, M. Shen, B. J. Venton, N. Balke, J. Rodríguez-López, D. R. Rolison, R. Shahbazian-Yassar, V. Srinivasan, S. Chaudhuri, A. Couet and J. Hattrick-Simpers
   journal: ACS Energy Lett.
   citation: 7, 368–374
-  url: https://pubs.acs.org/doi/full/10.1021/acsenergylett.1c02608
+  url: https://doi.org/10.1021/acsenergylett.1c02608
   doi: 10.1021/acsenergylett.1c02608
   themes: []
   themes_set_by: guess
@@ -790,19 +815,6 @@
     - xray
   themes_set_by: guess
   added: 2026-11-15
-- year: 2021
-  published: 2021-07-30
-  title: Protein crystallography and PUIs
-  authors: K. McLaughlin
-  journal: Acta Crystallogr A Found Adv
-  citation: 77, a119–a119
-  url: https://doi.org/10.1107/s0108767321098809
-  doi: 10.1107/s0108767321098809
-  themes: []
-  themes_set_by: guess
-  added: 2026-11-15
-  check: Crossref does not list J. Cabana among the authors. Confirm this paper belongs here.
-  hide: true
 - year: 2021
   published: 2021-06-11
   title: Database of ab initio L-edge X-ray absorption near edge structure
@@ -1745,18 +1757,6 @@
   url: https://doi.org/10.1021/acsami.5b09346
   doi: 10.1021/acsami.5b09346
   themes: []
-  themes_set_by: guess
-  added: 2026-11-15
-- year: 2015
-  published: 2015-08
-  title: The Role of Aberration-Corrected STEM in the Characterization of Oxide Cathode Materials
-  authors: P. Phillips, D. Abraham, J. Bareno, C. Kim, T. Yi, J. Cabana and R. Klie
-  journal: Microsc Microanal
-  citation: 21, 1547–1548
-  url: https://doi.org/10.1017/s143192761500851x
-  doi: 10.1017/s143192761500851x
-  themes:
-    - ion
   themes_set_by: guess
   added: 2026-11-15
 - year: 2015

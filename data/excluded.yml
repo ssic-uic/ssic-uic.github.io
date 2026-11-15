@@ -1,0 +1,44 @@
+# Works left out of the site because they are not peer-reviewed journal articles
+# (conference abstracts, proceedings, book chapters, preprints, editorials).
+# by: rule = left out automatically; owner = the owner's decision. The sync never re-adds
+# anything listed here. To revisit one, delete its entry.
+- doi: 10.26434/chemrxiv-2024-w2ps0
+  title: Interfacial Electrochemistry of Catalyst-Coordinated Graphene Nanoribbons
+  reason: preprint; the published version is listed
+  by: rule
+  date: 2026-11-15
+- doi: 10.26434/chemrxiv-2024-6b63z
+  title: Investigation of key electronic states in layered mixed chalcogenides with a d0 transition metal as Li-ion cathodes
+  reason: preprint; the published version is listed
+  by: rule
+  date: 2026-11-15
+- doi: 10.26434/chemrxiv-2023-x22xj
+  title: Origin of Rapid Delithiation In Secondary Particles Of LiNi0.8Co0.15Al0.05O2 and LiNiyMnzCo(1-y-z)O2 Cathodes
+  reason: preprint
+  by: rule
+  date: 2026-11-15
+- doi: 10.26434/chemrxiv-2022-zpl7n
+  title: Active states during the reduction of CO2 by an MoS2 electrocatalyst
+  reason: preprint; the published version is listed
+  by: rule
+  date: 2026-11-15
+- doi: 10.26434/chemrxiv-2022-5pl5p
+  title: Activity of metal-fluorine states upon delithiation of disordered rocksalt oxyfluorides.
+  reason: preprint; the published version is listed
+  by: rule
+  date: 2026-11-15
+- doi: 10.1107/s0108767321098809
+  title: Protein crystallography and PUIs
+  reason: conference abstract
+  by: rule
+  date: 2026-11-15
+- doi: 10.1017/s143192761500851x
+  title: The Role of Aberration-Corrected STEM in the Characterization of Oxide Cathode Materials
+  reason: conference abstract
+  by: rule
+  date: 2026-11-15
+- doi: 10.26434/chemrxiv-2025-xc2q8
+  title: "Advancing Battery Manufacturing: Synchrotron Characterization for Industry"
+  reason: preprint; the published version is listed
+  by: rule
+  date: 2026-11-15
