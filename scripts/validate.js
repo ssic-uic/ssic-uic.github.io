@@ -19,6 +19,8 @@ function validate(d) {
     need(p, ["year", "title", "authors", "journal", "url"], where);
     if (p.year && !/^\d{4}$/.test(String(p.year))) errs.push(`${where}: year "${p.year}" is not a 4-digit year`);
     (p.themes || []).forEach(t => { if (!THEMES.includes(t)) errs.push(`${where}: unknown theme "${t}"`); });
+    if (p.corresponding !== undefined && typeof p.corresponding !== "boolean") errs.push(`${where}: corresponding must be true or false`);
+    if (p.corresponding_set_by !== undefined && !["openalex", "owner"].includes(p.corresponding_set_by)) errs.push(`${where}: corresponding_set_by must be openalex or owner`);
   });
 
   const pi = d.people && d.people.pi;

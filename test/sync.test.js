@@ -82,3 +82,15 @@ test("Microscopy and Microanalysis abstracts without page ranges are left out", 
   assert.strictEqual(notArticleReason({ type: "journal-article", "container-title": ["Microscopy and Microanalysis"], issue: "Supplement_1" }), "conference abstract");
   assert.strictEqual(notArticleReason({ type: "journal-article", "short-container-title": ["Microsc Microanal"] }), "conference abstract");
 });
+
+test("corresponding authorship from OpenAlex flags", () => {
+  const { cabanaCorresponds } = require("../scripts/sync-publications.js");
+  const au = (name, corr, orcid) => ({ author: { display_name: name, orcid: orcid ? `https://orcid.org/${orcid}` : null }, is_corresponding: corr });
+  const me = "0000-0002-2353-5986";
+  assert.strictEqual(cabanaCorresponds([au("A. Student", false), au("Jordi Cabana", true, me)], me), true);
+  assert.strictEqual(cabanaCorresponds([au("A. Student", false), au("J. Cabana-Jiménez", true)], me), true, "matched by name without ORCID");
+  assert.strictEqual(cabanaCorresponds([au("Jordi Cabana", false, me), au("H. D. Yoo", true)], me), false);
+  assert.strictEqual(cabanaCorresponds([au("Jordi Cabana", true, me), au("D. J. Siegel", true)], me), true, "co-corresponding counts");
+  assert.strictEqual(cabanaCorresponds([au("Jordi Cabana", false, me), au("H. D. Yoo", false)], me), null, "nobody flagged = unknown");
+  assert.strictEqual(cabanaCorresponds(undefined, me), null);
+});

@@ -22,6 +22,12 @@
 //   Crossref record points to a published version is replaced by that version.
 //   Everything left out is recorded in data/excluded.yml and never re-added; delete
 //   an entry there to revisit it. The owner can add DOIs there to exclude them.
+// - corresponding authorship (for the Research page, which shows each theme's most
+//   recent papers with J. Cabana as corresponding author) comes from OpenAlex's
+//   is_corresponding flags: corresponding: true/false, corresponding_set_by: openalex.
+//   When OpenAlex flags nobody on a paper, the field stays absent (unknown) and the
+//   last known value is kept. The owner's word (corresponding_set_by: owner) is never
+//   changed. Unknown papers recent enough to take a Research-page slot go to review.yml.
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
 // OPENALEX_API_KEY (optional; the OpenAlex check also runs without one).
@@ -41,6 +47,7 @@ const PUBS = path.join(DATA, "publications.yml");
 const EXCLUDED = path.join(DATA, "excluded.yml");
 const REVIEW = path.join(DATA, "review.yml");
 const KNOWN = path.join(DATA, "known.yml");
+const RESEARCH = path.join(DATA, "research.yml");
 // ORCID work types that can be peer-reviewed articles; Crossref has the final say
 const KEEP_TYPES = new Set(["journal-article", "review", "letter"]);
 const UA = `ssic-website publication sync (mailto:${EMAIL})`;
@@ -102,9 +109,9 @@ async function openalexDois(orcid) {
   const key = OPENALEX_KEY ? `&api_key=${encodeURIComponent(OPENALEX_KEY)}` : "";
   try {
     for (let page = 1; page <= 10; page++) {
-      const j = await getJSON(`https://api.openalex.org/works?filter=author.orcid:${orcid}&per-page=200&page=${page}&select=doi,title,publication_year,type${key}`);
+      const j = await getJSON(`https://api.openalex.org/works?filter=author.orcid:${orcid}&per-page=200&page=${page}&select=doi,title,publication_year,type,authorships${key}`);
       const results = (j && j.results) || [];
-      results.forEach(w => out.push({ doi: normDoi(w.doi), title: w.title || "", year: w.publication_year, type: w.type }));
+      results.forEach(w => out.push({ doi: normDoi(w.doi), title: w.title || "", year: w.publication_year, type: w.type, corresponding: cabanaCorresponds(w.authorships, orcid) }));
       if (!results.length || page * 200 >= (j.meta?.count || 0)) break;
       await sleep(500);
     }
@@ -113,6 +120,15 @@ async function openalexDois(orcid) {
     return null;
   }
   return out;
+}
+
+// Is J. Cabana a corresponding author, per OpenAlex? true / false, or null when OpenAlex
+// flags no corresponding author at all on the paper (unknown, not "no").
+function cabanaCorresponds(authorships, orcid) {
+  const list = authorships || [];
+  if (!list.some(a => a.is_corresponding)) return null;
+  const isMe = a => (orcid && String(a.author?.orcid || "").endsWith(orcid)) || isCabana({ family: (a.author?.display_name || a.raw_author_name || "").split(/\s+/).pop() });
+  return list.some(a => a.is_corresponding && isMe(a));
 }
 
 // ---------- formatting ----------
@@ -329,11 +345,34 @@ async function main() {
     ask("openalex-find", c.title, w.doi, `${c.journal || "journal unknown"}, ${c.year}. Linked to the ORCID iD by OpenAlex but not on the ORCID record. Crossref ${c.hasCabana ? "lists" : "does not list"} J. Cabana as an author.`);
   }
 
+  // ---- corresponding authorship (Research page) ----
+  const oaCorr = new Map((oa || []).filter(w => w.doi && w.corresponding !== null && w.corresponding !== undefined).map(w => [w.doi, w.corresponding]));
+  for (const p of existing) {
+    if (p.corresponding_set_by === "owner" || !p.doi) continue;
+    const v = oaCorr.get(normDoi(p.doi));
+    if (v === undefined) continue; // unknown this week: keep what we had
+    p.corresponding = v; p.corresponding_set_by = "openalex";
+  }
+  // unknown papers that could take one of a theme's three Research-page slots: ask the owner
+  const newestFirst = [...existing].filter(p => !p.hide).sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")));
+  const unknownAsked = new Set();
+  for (const k of readYaml(RESEARCH, {}).themes?.map(t => t.key) || ["ion", "redox", "interface", "xray"]) {
+    let shown = 0;
+    for (const p of newestFirst.filter(p => (p.themes || []).includes(k))) {
+      if (shown >= 3) break;
+      if (p.corresponding === true) shown++;
+      else if (p.corresponding === undefined && !unknownAsked.has(p)) {
+        unknownAsked.add(p);
+        ask("corresponding-unknown", p.title, p.doi, `${p.journal} ${p.year}. OpenAlex doesn't say who the corresponding author is, and the paper is recent enough to be one of the Research page's papers. Is J. Cabana a corresponding author?`);
+      }
+    }
+  }
+
   // ---- the review list: pending decisions, minus anything known or already decided ----
   const keyOf = i => `${i.kind}|${i.doi ? normDoi(i.doi) : normTitle(i.title)}`;
   const knownKeys = new Set(readYaml(KNOWN, []).map(keyOf));
   const prev = new Map(readYaml(REVIEW, []).map(i => [keyOf(i), i]));
-  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && i.kind !== "orcid-wrong-doi";
+  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && !["orcid-wrong-doi", "corresponding-unknown"].includes(i.kind);
   const review = [];
   const keys = new Set();
   for (const i of pending) {
@@ -347,11 +386,11 @@ async function main() {
 
   // ---- write ----
   existing.sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")) || a.title.localeCompare(b.title));
-  const order = ["year", "published", "title", "authors", "journal", "citation", "url", "doi", "themes", "themes_set_by", "added"];
+  const order = ["year", "published", "title", "authors", "journal", "citation", "url", "doi", "themes", "themes_set_by", "corresponding", "corresponding_set_by", "added"];
   const tidy = existing.map(p => Object.fromEntries(order.filter(k => p[k] !== undefined && p[k] !== "").map(k => [k, p[k]])));
   fs.writeFileSync(PUBS, header + "\n" + YAML.stringify(tidy, { lineWidth: 0 }));
   fs.writeFileSync(EXCLUDED, "# Works left out of the site because they are not peer-reviewed journal articles\n# (conference abstracts, proceedings, book chapters, preprints).\n# by: rule = left out automatically; owner = the owner's decision. The sync never re-adds\n# anything listed here. To revisit one, delete its entry.\n" + YAML.stringify(excludedList, { lineWidth: 0 }));
-  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi.\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
+  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,\n# corresponding-unknown (could be on the Research page; set corresponding + corresponding_set_by: owner).\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
 
   const lines = [
     `## Publication sync, ${today}`,
@@ -365,4 +404,4 @@ async function main() {
 }
 
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });
-module.exports = { authorList, initials, fromCrossref, guessThemes, plain, normDoi, notArticleReason, publishedVersion, main };
+module.exports = { cabanaCorresponds, authorList, initials, fromCrossref, guessThemes, plain, normDoi, notArticleReason, publishedVersion, main };

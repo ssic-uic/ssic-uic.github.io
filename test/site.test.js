@@ -27,11 +27,20 @@ test("built page renders every section without script errors", async () => {
   dom.window.scrollTo = () => {};
   await new Promise(r => setTimeout(r, 200));
   const d = dom.window.document;
+  const data0 = loadData();
   assert.deepStrictEqual(errors, []);
   assert.strictEqual(d.querySelectorAll("#home-areas .area").length, loadData().research.length);
   assert.ok(d.querySelectorAll("#publist .pub").length > 0, "publications list is empty");
   assert.ok(d.querySelector("#pi h2").textContent.length > 0, "PI profile missing");
   assert.ok(d.querySelectorAll("#research-rows .rrow").length > 0, "research themes missing");
+
+  // Research: each theme shows its three most recent papers with J. Cabana as corresponding author
+  const rows = [...d.querySelectorAll("#research-rows .rrow")];
+  data0.research.forEach((r, i) => {
+    const want = data0.publications.filter(p => !p.hide && (p.themes || []).includes(r.key) && p.corresponding === true).slice(0, 3).map(p => p.url);
+    const got = [...rows[i].querySelectorAll(".papers li a")].map(a => a.getAttribute("href"));
+    assert.deepStrictEqual(got, want, `Research papers for ${r.key}`);
+  });
 
   // People: every group from the data files appears, and PI roles with a url become links
   const data = loadData();

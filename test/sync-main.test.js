@@ -21,7 +21,15 @@ const orcid = { group: [
   ["Somebody else's paper", "10.1/notours"], ["My abstract with the wrong DOI", "10.1/other"], ["A seen entry without a DOI", ""], ["A new entry without a DOI", ""],
 ].map(([t, d]) => ({ "work-summary": [{ title: { title: { value: t } }, type: "journal-article", "publication-date": { year: { value: "2026" } } }],
   "external-ids": { "external-id": d ? [{ "external-id-type": "doi", "external-id-value": d, "external-id-relationship": "self" }] : [] } })) };
-const openalex = { results: [{ doi: "https://doi.org/10.1/oa", title: "Found by OpenAlex", publication_year: 2026, type: "article" }], meta: { count: 1 } };
+const au = (name, corr) => ({ author: { display_name: name }, is_corresponding: corr });
+const openalex = { results: [
+  { doi: "https://doi.org/10.1/oa", title: "Found by OpenAlex", publication_year: 2026, type: "article" },
+  // OpenAlex says someone else is corresponding, but the owner has said otherwise: the owner wins
+  { doi: "https://doi.org/10.1/listed", title: "A listed paper that became odd", publication_year: 2025, type: "article", authorships: [au("Jordi Cabana", false), au("A. Other", true)] },
+  { doi: "https://doi.org/10.1/corr", title: "Mine as corresponding", publication_year: 2025, type: "article", authorships: [au("A. Student", false), au("Jordi Cabana", true)] },
+  { doi: "https://doi.org/10.1/notcorr", title: "Someone else corresponding", publication_year: 2025, type: "article", authorships: [au("Jordi Cabana", false), au("A. Other", true)] },
+  { doi: "https://doi.org/10.1/kept", title: "Known before, silent now", publication_year: 2024, type: "article", authorships: [au("Jordi Cabana", false)] },
+], meta: { count: 5 } };
 
 function fakeFetch(url) {
   const ok = body => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(body) });
@@ -34,7 +42,16 @@ function fakeFetch(url) {
 test("listed papers stay; only new items reach the owner", async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "sync-"));
   const w = (f, v) => fs.writeFileSync(path.join(dir, f), typeof v === "string" ? v : YAML.stringify(v));
-  w("publications.yml", "# header\n" + YAML.stringify([{ year: 2025, title: "A listed paper that became odd", authors: "J. Cabana", journal: "Chem. Mater.", citation: "1, 1", url: "https://doi.org/10.1/listed", doi: "10.1/listed", themes: ["ion"], themes_set_by: "owner" }]));
+  const listed = (doi, title, year, extra = {}) => ({ year, title, authors: "J. Cabana", journal: "Chem. Mater.", citation: "1, 1", url: `https://doi.org/${doi}`, doi, themes: ["ion"], themes_set_by: "owner", ...extra });
+  w("publications.yml", "# header\n" + YAML.stringify([
+    listed("10.1/listed", "A listed paper that became odd", 2025, { corresponding: true, corresponding_set_by: "owner" }),
+    listed("10.1/corr", "Mine as corresponding", 2025),
+    listed("10.1/notcorr", "Someone else corresponding", 2025),
+    listed("10.1/kept", "Known before, silent now", 2024, { corresponding: true, corresponding_set_by: "openalex" }),
+    listed("10.1/unknown", "Recent, nobody flagged", 2026),
+    listed("10.1/old", "Old, nobody flagged", 2003),
+  ]));
+  for (const [d, t] of [["10.1/unknown", "Recent, nobody flagged"], ["10.1/old", "Old, nobody flagged"], ["10.1/corr", "Mine as corresponding"], ["10.1/notcorr", "Someone else corresponding"], ["10.1/kept", "Known before, silent now"]]) crossref[d] = article(t, { issued: { "date-parts": [[{ K: 2024, R: 2026, O: 2003 }[t[0]] || 2025, 1, 1]] } });
   w("extra-papers.yml", []); w("excluded.yml", []);
   w("known.yml", [{ kind: "orcid-no-doi", title: "A seen entry without a DOI" }]);
   w("review.yml", [{ kind: "not-author", title: "Somebody else's paper", doi: "10.1/notours", detail: "x", first_seen: "2026-01-01" }]);
@@ -65,4 +82,19 @@ test("listed papers stay; only new items reach the owner", async () => {
   assert.strictEqual(kinds["Found by OpenAlex"].kind, "openalex-find");
   assert.ok(!kinds["A seen entry without a DOI"], "a known item was raised again");
   assert.ok(!titles.includes("Found by OpenAlex"), "OpenAlex find was added without the owner");
+
+  // corresponding authorship
+  const by = d => pubs.find(p => p.doi === d);
+  assert.deepStrictEqual([by("10.1/listed").corresponding, by("10.1/listed").corresponding_set_by], [true, "owner"], "owner's word changed");
+  assert.deepStrictEqual([by("10.1/corr").corresponding, by("10.1/corr").corresponding_set_by], [true, "openalex"]);
+  assert.strictEqual(by("10.1/notcorr").corresponding, false);
+  assert.strictEqual(by("10.1/kept").corresponding, true, "a known value was lost when OpenAlex went silent");
+  // the new 2026 article has no OpenAlex flags but a guessed theme could put it on the Research page
+  const newOne = by("10.1/new");
+  assert.strictEqual(newOne.corresponding, undefined);
+  if ((newOne.themes || []).length) assert.strictEqual(kinds["A new peer-reviewed article"]?.kind, "corresponding-unknown", "unknown recent paper not raised");
+  assert.strictEqual(kinds["Recent, nobody flagged"]?.kind, "corresponding-unknown", "unknown recent paper not raised");
+  // ion has three corresponding papers (listed, corr, kept) newer than 2003, so the old one can't take a slot
+  assert.ok(!kinds["Old, nobody flagged"], "an old unknown paper was raised");
+  assert.ok(!kinds["Mine as corresponding"] && !kinds["Someone else corresponding"], "known papers raised");
 });

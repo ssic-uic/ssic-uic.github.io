@@ -3,6 +3,9 @@
 # themes: any of ion (ion transport in solids), redox (redox beyond the metal),
 #   interface (reactivity at electrochemical interfaces), xray (X-ray analytical science). Empty = other.
 # themes_set_by: "guess" until the owner confirms or changes them; then "owner". The sync never overwrites "owner".
+# corresponding: true when J. Cabana is a corresponding author (the Research page shows each theme's three
+#   most recent such papers); false when he isn't; absent when unknown. corresponding_set_by: "openalex"
+#   (from OpenAlex, refreshed weekly) or "owner" (the owner's word; the sync never overwrites it).
 # check: something to verify against the journal; the sync clears it once Crossref confirms.
 # Copied from the v0 design (cabana.chem.uic.edu, 13 Nov 2026); 2022-2025 only so far.
 - year: 2026
