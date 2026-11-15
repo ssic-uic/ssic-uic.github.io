@@ -19,6 +19,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2026
   published: 2026-10-06
@@ -32,6 +34,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2026
   published: 2026-10-05
@@ -44,6 +48,8 @@
   themes:
     - ion
   themes_set_by: owner
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2026
   published: 2026-05-07
@@ -55,6 +61,8 @@
   doi: 10.1088/2515-7655/ae6a6e
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2026
   published: 2026-05-01
@@ -66,6 +74,8 @@
   doi: 10.1021/acsenergylett.6c01050
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2026
   published: 2026-04
@@ -79,6 +89,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2026
   published: 2026-02-27
@@ -92,6 +104,8 @@
     - ion
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2026
   published: "2026"
@@ -140,6 +154,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2025
   published: 2025-08
@@ -152,6 +168,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-08
   title: Intercalation chemistry goes nuclear
@@ -163,6 +181,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-07-24
   title: Mg-Ion Conduction in Antiperovskite Solid Electrolytes Revealed by25Mg Ultrahigh Field NMR and First-Principles Calculations
@@ -174,6 +194,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-06-30
   title: High-Nickel Cathodes with Mechanical and Interfacial Robustness via Tailored Concentration Gradients for Stable Li-Ion Batteries
@@ -186,6 +208,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-06
   title: Thermal decomposition pathways of bulk electrolytes on vanadium oxide nanocrystals
@@ -197,6 +221,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-05-29
   title: Resiliency, morphology, and entropic transformations in high-entropy oxide nanoribbons
@@ -207,6 +233,8 @@
   doi: 10.1126/science.adr5604
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-05-27
   title: Cathode Upcycling for Direct Recycling of Lithium‐Ion Batteries Using a Precipitation Approach
@@ -218,6 +246,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-04-10
   title: Tailoring Oxygen Redox Activity and Accelerating Li+ Diffusion via Ti Substitution Within Li‐O‐Vacancy Configurations
@@ -230,6 +260,8 @@
     - redox
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-03-23
   title: Self‐Lubricating Tribo‐Catalytic Activity of 2D High Entropy Alloy Nanoflakes
@@ -240,6 +272,8 @@
   doi: 10.1002/smll.202500322
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2025
   published: 2025-02-10
@@ -252,6 +286,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-02
   title: High-entropy Li-rich layered oxide cathode for Li-ion batteries
@@ -264,6 +300,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: 2025-02
   title: Interlayer expansion of kinetically grown molybdenum oxide for Mg batteries with enhanced energy density
@@ -275,6 +313,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2025
   published: "2025"
   title: "An unwanted guest in the electrochemical oxidation of high-voltage Li-ion battery electrolytes: the life of highly reactive protons"
@@ -298,6 +338,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-10-07
   title: Assessing cathode–electrolyte interphases in batteries
@@ -309,6 +351,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-09-06
   title: Investigation of Key Electronic States in Layered Mixed Chalcogenides With a d0 Transition Metal as Li‐Ion Cathodes
@@ -320,6 +364,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-09
   title: Structural and chemical evolutions of a magnesium vanadium oxide cathode under electrochemical cycling in magnesium batteries
@@ -331,6 +377,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-08-28
   title: "Rethinking Oxygen Redox: Does Oxygen Dimerization Occur without Oxidation in Li2NiO3 ?"
@@ -342,6 +390,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-08-26
   title: One-Step Solvothermal Synthesis of Perovskite-Type Li3xLa2/3–x□1/3–2xTiO3 Nanomaterials
@@ -353,6 +403,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-08-01
   title: Interfacial Electrochemistry of Catalyst-Coordinated Graphene Nanoribbons
@@ -364,6 +416,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-06
   title: Designing novel tunable Mn-based inorganic oxyfluoride pigments
@@ -374,6 +428,8 @@
   doi: 10.1016/j.materresbull.2024.112746
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-03-11
   title: Fast Charge‐Transfer Rates in Li‐CO2 Batteries with a Coupled Cation‐Electron Transfer Process
@@ -385,6 +441,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: 2024-01-11
   title: Achieving a high-performance sodium-ion pouch cell by regulating intergrowth structures in a layered oxide cathode with anionic redox
@@ -397,6 +455,8 @@
     - redox
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2024
   published: "2024"
   title: How machine learning can extend electroanalytical measurements beyond analytical interpretation
@@ -408,6 +468,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-12-19
   title: Design Strategies of Spinel Oxide Frameworks Enabling Reversible Mg-Ion Intercalation
@@ -419,6 +481,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-11-27
   title: Structural and Chemical Evolution of Highly Fluorinated Li‐Rich Disordered Rocksalt Oxyfluorides as a Function of Temperature
@@ -430,6 +494,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-11-20
   title: Cation defect engineering of core–shell spinels nanoelectrocatalyst for enhanced oxygen evolution reaction
@@ -453,6 +519,8 @@
     - interface
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-10-20
   title: Effect of the Nature of Both Cation and Anion Substitution on the Structural Symmetry of Li‐Rich 3 d ‐Metal Chalcogenide Electrodes
@@ -464,6 +532,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-10-09
   title: Elucidating Structural Transition Dynamics in the Magnesium Cathode MgCr2O4
@@ -475,6 +545,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-09-03
   title: Origin of Rapid Delithiation In Secondary Particles Of LiNi0.8Co0.15Al0.05O2 and LiNiyMnzCo1−y−zO2 Cathodes
@@ -486,6 +558,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-07-19
   title: Thermodynamics and Kinetics in Anisotropic Growth of One-Dimensional Midentropy Nanoribbons
@@ -496,6 +570,8 @@
   doi: 10.1021/acsnano.3c04178
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-06-02
   title: Cycling of block copolymer composites with lithium-conducting ceramic nanoparticles
@@ -507,6 +583,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-05-16
   title: Structural Transformations at the Atomic Scale in Spinel Vanadium Oxides upon Mg2+ Extraction
@@ -518,6 +596,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-04-21
   title: X-ray Absorption Spectroscopy Illustrates the Participation of Oxygen in the Electrochemical Cycling of Li4Mn2O5
@@ -530,6 +610,8 @@
     - redox
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-04-02
   title: A High‐Rate Li–CO2 Battery Enabled by 2D Medium‐Entropy Catalyst
@@ -541,6 +623,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-03-27
   title: Active States During the Reduction of CO2 by a MoS2 Electrocatalyst
@@ -552,6 +636,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-03-23
   title: A Collaborative Model-Based Symmetry Activity for the Inorganic Chemistry Laboratory
@@ -562,6 +648,8 @@
   doi: 10.1021/acs.jchemed.3c00037
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-02-21
   title: Activity of Metal-Fluorine States upon Delithiation of Disordered Rocksalt Oxyfluorides
@@ -573,6 +661,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-02-13
   title: 3D Quantification of Elemental Gradients within Heterostructured Particles of Battery Cathodes
@@ -584,6 +674,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-12-28
   title: "NGenE 2022: Electrochemistry for Decarbonization"
@@ -594,6 +686,8 @@
   doi: 10.1021/acsenergylett.2c02587
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-11
   title: Synthesis and Mg2+ deintercalation in manganese spinel nanocrystals
@@ -605,6 +699,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-10-03
   title: β-V2O5 as Magnesium Intercalation Cathode
@@ -616,6 +712,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-09-26
   title: Spatial Quantification of Microstructural Degradation during Fast Charge in 18650 Lithium-Ion Batteries through Operando X-ray Microtomography and Euclidean Distance Mapping
@@ -627,6 +725,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-09-19
   title: Evaluation of Chemical and Structural Homogeneity in Single Particles of Li1–xNi0.33Mn0.33Co0.33O2
@@ -639,6 +739,8 @@
     - xray
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-09-13
   title: Molecular Beam Epitaxy (MBE) Growth of Model Cathodes to Study Interfacial Ion Diffusion
@@ -651,6 +753,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-09-01
   title: Defect identification in simulated Bragg coherent diffraction imaging by automated AI
@@ -662,6 +766,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-08-25
   title: The Origin of High‐Voltage Stability in Single‐Crystal Layered Ni‐Rich Cathode Materials
@@ -673,6 +779,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-07-27
   title: Unconventional Charge Transport in MgCr2O4 and Implications for Battery Intercalation Hosts
@@ -684,6 +792,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-06-22
   title: Triggering and Stabilizing Oxygen Redox Chemistry in Layered Li[Na1/3Ru2/3]O2 Enabled by Stable Li–O–Na Configuration
@@ -695,6 +805,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-06-21
   title: Unprecedented Multifunctionality in 1D Nb1‐xTaxS3 Transition Metal Trichalcogenide Alloy
@@ -705,6 +817,8 @@
   doi: 10.1002/adfm.202205214
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-06-20
   title: Capturing dynamic ligand-to-metal charge transfer with a long-lived cationic intermediate for anionic redox
@@ -716,6 +830,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-06
   title: Reversible anionic redox chemistry in layered Li4/7[□1/7Mn6/7]O2 enabled by stable Li–O-vacancy configuration
@@ -727,6 +843,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-04-15
   title: Access to Ru(IV)–Ru(V) and Ru(V)–Ru(VI) Redox in Layered Li7RuO6 via Intercalation Reactions
@@ -739,6 +857,8 @@
     - redox
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-04-07
   title: Facile Electrochemical Mg-Ion Transport in a Defect-Free Spinel Oxide
@@ -750,6 +870,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-02
   title: Structure design enables stable anionic and cationic redox chemistry in a T2-type Li-excess layered oxide cathode
@@ -761,6 +883,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
 - year: 2022
   published: 2022-01-10
   title: Intercalation of Ca into a Highly Defective Manganese Oxide at Room Temperature
@@ -772,6 +896,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2021
   published: 2021-12-22
   title: "NGenE 2021: Electrochemistry Is Everywhere"
@@ -782,6 +908,8 @@
   doi: 10.1021/acsenergylett.1c02608
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2021
   published: 2021-12-10
   title: Nanostructured Conductive Metal Organic Frameworks for Sustainable Low Charge Overpotentials in Li–Air Batteries
@@ -793,6 +921,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-11
@@ -816,6 +946,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-06-11
@@ -828,6 +960,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-06-01
@@ -840,6 +974,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-06
@@ -853,6 +989,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-05-24
@@ -864,6 +1002,8 @@
   doi: 10.1021/acs.chemmater.1c00375
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-04-26
@@ -876,6 +1016,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-02
@@ -888,6 +1030,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: 2021-01-11
@@ -901,6 +1045,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
   published: "2021"
@@ -913,6 +1059,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-12-11
@@ -924,6 +1072,8 @@
   doi: 10.1021/acsenergylett.0c02040
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-12-03
@@ -937,6 +1087,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-11-19
@@ -949,6 +1101,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-10-08
@@ -961,6 +1115,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-09-22
@@ -973,6 +1129,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-08-31
@@ -985,6 +1143,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-08-03
@@ -998,6 +1158,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-08
@@ -1009,6 +1171,8 @@
   doi: 10.1016/j.jssc.2020.121365
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-07-28
@@ -1021,6 +1185,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-07-23
@@ -1033,6 +1199,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-07-14
@@ -1045,6 +1213,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-07-07
@@ -1057,6 +1227,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-06-26
@@ -1069,6 +1241,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-06-19
@@ -1081,6 +1255,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-06-19
@@ -1092,6 +1268,8 @@
   doi: 10.1021/acs.chemmater.0c01986
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-05-25
@@ -1116,6 +1294,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-04-09
@@ -1128,6 +1308,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-04-01
@@ -1139,6 +1321,8 @@
   doi: 10.1021/jacs.0c01239
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-03-31
@@ -1151,6 +1335,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-03-19
@@ -1164,6 +1350,8 @@
     - redox
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-03-02
@@ -1176,6 +1364,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-02-26
@@ -1188,6 +1378,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-02-26
@@ -1201,6 +1393,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-02-18
@@ -1213,6 +1407,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: 2020-01-02
@@ -1225,6 +1421,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2020
   published: "2020"
@@ -1236,6 +1434,8 @@
   doi: 10.1039/d0nr05060a
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-12-27
@@ -1248,6 +1448,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-12-19
@@ -1259,6 +1461,8 @@
   doi: 10.1021/acs.chemmater.9b02450
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-11-14
@@ -1272,6 +1476,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-10-01
@@ -1296,6 +1502,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-06-25
@@ -1309,6 +1517,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-05-31
@@ -1321,6 +1531,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-03-25
@@ -1333,6 +1545,8 @@
   themes:
     - redox
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-03-18
@@ -1344,6 +1558,8 @@
   doi: 10.1021/acs.jpcc.8b11661
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-03
@@ -1357,6 +1573,8 @@
     - ion
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-02-22
@@ -1369,6 +1587,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: 2019-01-07
@@ -1381,6 +1601,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: "2019"
@@ -1404,6 +1626,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2019
   published: "2019"
@@ -1416,6 +1640,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-10-02
@@ -1427,6 +1653,8 @@
   doi: 10.1021/acs.inorgchem.8b02124
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-05-21
@@ -1438,6 +1666,8 @@
   doi: 10.1021/acs.chemmater.8b01372
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-03-02
@@ -1451,6 +1681,8 @@
     - ion
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-03
@@ -1463,6 +1695,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-02-23
@@ -1475,6 +1709,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-02-20
@@ -1486,6 +1722,8 @@
   doi: 10.1021/acs.chemmater.7b03640
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-02-19
@@ -1498,6 +1736,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-01-31
@@ -1511,6 +1751,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: 2018-01-18
@@ -1523,6 +1765,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: "2018"
@@ -1545,6 +1789,8 @@
   doi: 10.1039/c7nr08612a
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2018
   published: "2018"
@@ -1557,6 +1803,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-12-18
@@ -1569,6 +1817,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-11-30
@@ -1580,6 +1830,8 @@
   doi: 10.1021/acs.nanolett.7b03086
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-07-13
@@ -1593,6 +1845,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-07-05
@@ -1605,6 +1859,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-05-26
@@ -1617,6 +1873,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-05-22
@@ -1642,6 +1900,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-03-21
@@ -1655,6 +1915,8 @@
     - ion
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-02-07
@@ -1667,6 +1929,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2017
   published: 2017-02-06
@@ -1691,6 +1955,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2016
   published: 2016-10-24
@@ -1702,6 +1968,8 @@
   doi: 10.1021/acsami.6b08367
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2016
   published: 2016-05-06
@@ -1714,6 +1982,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2016
   published: 2016-05
@@ -1726,6 +1996,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2016
   published: "2016"
@@ -1737,6 +2009,8 @@
   doi: 10.1039/c6ta00424e
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2016
   published: "2016"
@@ -1760,6 +2034,8 @@
   doi: 10.1021/acsami.5b09346
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2015
   published: 2015-06-10
@@ -1771,6 +2047,8 @@
   doi: 10.1021/acs.nanolett.5b01314
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2015
   published: 2015-04-20
@@ -1783,6 +2061,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2015
   published: 2015-04-17
@@ -1795,6 +2075,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2015
   published: 2015-03-05
@@ -1807,6 +2089,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2015
   published: 2015-02-27
@@ -1819,6 +2103,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2015
   published: 2015-02
@@ -1830,6 +2116,8 @@
   doi: 10.1016/j.tsf.2014.11.019
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-12-22
@@ -1842,6 +2130,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-12-17
@@ -1855,6 +2145,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-11-20
@@ -1867,6 +2159,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-09-24
@@ -1878,6 +2172,8 @@
   doi: 10.1039/c4ta04299a
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-09-07
@@ -1890,6 +2186,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-05-12
@@ -1902,6 +2200,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-05-05
@@ -1915,6 +2215,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-04-14
@@ -1928,6 +2230,8 @@
     - ion
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-04-01
@@ -1940,6 +2244,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-03-26
@@ -1953,6 +2259,8 @@
     - interface
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-02-26
@@ -1965,6 +2273,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: 2014-01-15
@@ -1988,6 +2298,8 @@
   doi: 10.1039/c3ta13999a
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: "2014"
@@ -2000,6 +2312,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: "2014"
@@ -2011,6 +2325,8 @@
   doi: 10.1039/c4ra05189k
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: "2014"
@@ -2035,6 +2351,8 @@
   doi: 10.1039/c3ta14793b
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2014
   published: "2014"
@@ -2048,6 +2366,8 @@
     - ion
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: 2013-11-11
@@ -2072,6 +2392,8 @@
   doi: 10.1021/jp408762v
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: 2013-09-27
@@ -2084,6 +2406,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: 2013-07-24
@@ -2095,6 +2419,8 @@
   doi: 10.1021/ic400579w
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: 2013-06-26
@@ -2107,6 +2433,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: 2013-04-03
@@ -2119,6 +2447,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: 2013-03-15
@@ -2130,6 +2460,8 @@
   doi: 10.1021/nl400418c
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: 2013-02
@@ -2142,6 +2474,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: "2013"
@@ -2153,6 +2487,8 @@
   doi: 10.1039/c3ta11659j
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2013
   published: "2013"
@@ -2177,6 +2513,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2012
   published: 2012-11-06
@@ -2200,6 +2538,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2012
   published: 2012-10-04
@@ -2212,6 +2552,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2012
   published: 2012-08-27
@@ -2224,6 +2566,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2012
   published: 2012-08-03
@@ -2236,6 +2580,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2012
   published: 2012-05-01
@@ -2248,6 +2594,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2012
   published: "2012"
@@ -2271,6 +2619,8 @@
   doi: 10.1021/cm2026619
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2011
   published: 2011-07-08
@@ -2305,6 +2655,8 @@
   doi: 10.1039/c0jm04197a
   themes: []
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2010
   published: 2010-08-20
@@ -2329,6 +2681,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2010
   published: 2010-07
@@ -2340,6 +2694,8 @@
   doi: 10.1016/j.jssc.2010.05.012
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2010
   published: 2010-02
@@ -2352,6 +2708,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2010
   published: 2010-01-06
@@ -2363,6 +2721,8 @@
   doi: 10.1021/cm902714v
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2010
   published: 2010-01-04
@@ -2375,6 +2735,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2009
   published: 2009-06-15
@@ -2386,6 +2748,8 @@
   doi: 10.1021/ic900082u
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2009
   published: 2009-04-02
@@ -2398,6 +2762,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2009
   published: "2009"
@@ -2421,6 +2787,8 @@
   doi: 10.1039/b901491h
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2008
   published: 2008-10-22
@@ -2432,6 +2800,8 @@
   doi: 10.1021/cm801817n
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2008
   published: 2008-02-13
@@ -2444,6 +2814,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2007
   published: 2007-11-15
@@ -2457,6 +2829,8 @@
     - ion
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2007
   published: 2007-04
@@ -2468,6 +2842,8 @@
   doi: 10.1016/j.jpowsour.2006.12.107
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2007
   published: 2007-03
@@ -2480,6 +2856,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2007
   published: "2007"
@@ -2492,6 +2870,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2006
   published: 2006-09-28
@@ -2516,6 +2896,8 @@
   themes:
     - xray
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2005
   published: 2005-08
@@ -2527,6 +2909,8 @@
   doi: 10.1002/zaac.200570030
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2005
   published: "2005"
@@ -2550,6 +2934,8 @@
   doi: 10.1021/ic049138z
   themes: []
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2003
   published: "2003"
@@ -2562,4 +2948,6 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
