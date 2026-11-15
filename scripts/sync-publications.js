@@ -95,7 +95,8 @@ async function openalexDois(orcid) {
 // ---------- formatting ----------
 const decode = s => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 function plain(s) {
-  let t = (s || "").replace(/<mml:math[\s\S]*?<\/mml:math>/g, m => m.replace(/<[^>]+>/g, ""));
+  // MathML formulas (used by APS): drop the markup and the whitespace between its pieces
+  let t = (s || "").replace(/<mml:math[\s\S]*?<\/mml:math>/g, m => m.replace(/>\s+</g, "><").replace(/<[^>]+>/g, ""));
   // join formula pieces that markup split apart: "V <sub>2</sub> O <sub>5</sub>" -> "V2O5"
   t = t.replace(/<(sub|sup)>\s*([\s\S]*?)\s*<\/\1>/g, "<$1>$2</$1>")
        .replace(/\s+(?=<(sub|sup)>)/g, "")

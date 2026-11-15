@@ -73,7 +73,7 @@ $('#alumni').innerHTML = SITE.alumni.map(g=>`<div><h3>${esc(g.role)} <span>${g.p
 /* publications */
 let fy = 'all', fa = 'all';
 $('#area-f').innerHTML = `<button class="chip" data-a="all" aria-pressed="true">All research</button>` + FILTER_KEYS.map(k=>`<button class="chip" data-a="${k}" style="--c:${AREAS[k].c}" aria-pressed="false"><i></i>${AREAS[k].name}</button>`).join('');
-$('#year-f').innerHTML = `<button class="chip" data-y="all" aria-pressed="true">All years</button>` + years.map(y=>`<button class="chip" data-y="${y}" aria-pressed="false">${y}</button>`).join('');
+$('#year-s').innerHTML = `<option value="all">All years</option>` + years.map(y=>`<option value="${y}">${y}</option>`).join('');
 function renderPubs(){
   const q = $('#q').value.trim().toLowerCase();
   const list = PUBS.filter(p => (fy==='all'||p.year===fy) && (fa==='all'||inArea(p,fa)) && (!q || (p.title+' '+p.authors+' '+p.journal).toLowerCase().includes(q)));
@@ -85,7 +85,7 @@ function renderPubs(){
 }
 function setChip(group, attr, val){ document.querySelectorAll(group+' .chip').forEach(c=>c.setAttribute('aria-pressed', c.dataset[attr]===val)); }
 $('#area-f').addEventListener('click', e=>{ const b=e.target.closest('.chip'); if(!b) return; fa=b.dataset.a; setChip('#area-f','a',fa); renderPubs(); });
-$('#year-f').addEventListener('click', e=>{ const b=e.target.closest('.chip'); if(!b) return; fy=b.dataset.y; setChip('#year-f','y',fy); renderPubs(); });
+$('#year-s').addEventListener('change', e=>{ fy=e.target.value; renderPubs(); });
 $('#q').addEventListener('input', renderPubs);
 renderPubs();
 

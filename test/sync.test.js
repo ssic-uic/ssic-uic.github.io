@@ -54,3 +54,7 @@ test("formula pieces split by Crossref markup are rejoined", () => {
   assert.strictEqual(plain("Evolution upon Redox Swings of Li <sub>3</sub> IrO <sub>4</sub>"), "Evolution upon Redox Swings of Li3IrO4");
   assert.strictEqual(plain("CO <sub>2</sub> reduction"), "CO2 reduction");
 });
+
+test("APS MathML formulas collapse to plain text", () => {
+  assert.strictEqual(plain('Changes in <mml:math><mml:mrow><mml:msub><mml:mi>Li</mml:mi>\n<mml:mn>2</mml:mn></mml:msub>\n<mml:mi>Ru</mml:mi><mml:msub><mml:mi mathvariant="normal">O</mml:mi>\n<mml:mn>3</mml:mn></mml:msub></mml:mrow></mml:math> induced'), "Changes in Li2RuO3 induced");
+});
