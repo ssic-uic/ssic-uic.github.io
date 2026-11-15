@@ -1,0 +1,12 @@
+# Items the owner has seen and wants left alone. The sync never raises them again.
+# kind + doi (or kind + title when there is no DOI) identifies an item.
+- kind: orcid-wrong-doi
+  doi: 10.1107/s0108767321098809
+  title: Elucidating Ionic Mobility in Multivalent Spinel Oxides
+  note: The ORCID entry (a 2021 conference abstract) carries the DOI of another abstract. The owner can't edit it in ORCID; abstracts aren't listed anyway.
+- kind: orcid-no-doi
+  title: Colloidal Mn-O phase space as a function of temperature and oxidizing agent
+  note: ORCID entry with no DOI; no published article found.
+- kind: orcid-no-doi
+  title: Evolution of the graphite crystal and electronic structure during operation as a positive electrode in dual intercalation lithium ion systems
+  note: ORCID entry with no DOI; no published article found.
