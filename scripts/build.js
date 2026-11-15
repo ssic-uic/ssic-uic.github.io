@@ -43,7 +43,7 @@ function siteFrom(d) {
     // papers flagged "hide" (for example, authorship not confirmed) stay off the site
     publications: d.publications.filter(p => !p.hide).map(p => ({
       year: String(p.year), title: p.title, authors: p.authors, journal: p.journal,
-      citation: String(p.citation ?? ""), url: p.url, themes: p.themes || [],
+      citation: String(p.citation ?? ""), url: p.url, doi: String(p.doi || "").toLowerCase(), themes: p.themes || [],
       ...(p.corresponding === true ? { corresponding: true } : {}),
     })),
     openings: d.openings,

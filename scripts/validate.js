@@ -2,6 +2,7 @@
 // publishing a broken page. Returns a list of problems (empty when all is well).
 const THEMES = ["ion", "redox", "interface", "xray"];
 
+const lcs = a => (a || []).map(x => String(x).toLowerCase());
 function validate(d) {
   const errs = [];
   const need = (obj, keys, where) => keys.forEach(k => {
@@ -12,6 +13,10 @@ function validate(d) {
   (d.research || []).forEach((t, i) => {
     need(t, ["key", "title", "question", "text"], `research.yml theme ${i + 1}`);
     if (t.key && !THEMES.includes(t.key)) errs.push(`research.yml theme ${i + 1}: unknown key "${t.key}"`);
+    const dois = new Set((d.publications || []).map(p => String(p.doi || "").toLowerCase()));
+    if ((t.pinned || []).length > 3) errs.push(`research.yml ${t.key}: more than three pinned papers`);
+    for (const f of ["pinned", "not_shown"]) (t[f] || []).forEach(x => { if (!dois.has(String(x).toLowerCase())) errs.push(`research.yml ${t.key} ${f}: DOI ${x} is not in publications.yml`); });
+    (t.pinned || []).forEach(x => { if (lcs(t.not_shown).includes(String(x).toLowerCase())) errs.push(`research.yml ${t.key}: DOI ${x} is both pinned and not_shown`); });
   });
 
   (d.publications || []).forEach((p, i) => {

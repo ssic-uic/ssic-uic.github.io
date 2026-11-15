@@ -326,6 +326,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: owner
 - year: 2024
   published: 2024-11-12
   title: Suppressing Atmospheric Degradation of Sulfide-Based Solid Electrolytes via Ultrathin Metal Oxide Layers

@@ -1,10 +1,19 @@
 # Research themes, in the order they appear on the site.
 # key must be one of: ion, redox, interface, xray (papers are tagged with these keys).
+# Each theme shows three papers on the Research page: the owner's picks (pinned, DOIs), then
+# the most recent papers with J. Cabana as corresponding author to fill the rest, leaving
+# out anything in not_shown (DOIs). Shown newest first.
 themes:
   - key: ion
     title: Ion transport in solids
     question: How does an ion change positions efficiently in a solid?
     text: We study how the structure and composition of a solid govern the way its lattice adapts as ions come and go, and the speed at which this happens. The work runs from intercalation hosts for Li⁺, Na⁺, Mg²⁺ and Ca²⁺ to ionic conductors used as solid electrolytes. These processes are key to battery technology and ionics, but can also be used to explore new metastable states in materials.
+    pinned:
+      - 10.1002/aenm.202300895 # Origin of Rapid Delithiation in Secondary Particles (Adv. Energy Mater. 2023)
+      - 10.1021/acsenergylett.0c01189 # High Capacity for Mg2+ Deintercalation in Spinel V Oxide (ACS Energy Lett. 2020)
+    not_shown:
+      - 10.1016/j.chempr.2025.102703 # Intercalation chemistry goes nuclear (Chem 2025)
+      - 10.1021/acs.chemmater.5c02186 # Sodium Content and Copper Activity, O3 cathodes (Chem. Mater. 2025)
   - key: redox
     title: Redox beyond the metal
     question: How do electronic and crystal structure respond when ions enter a lattice?
@@ -13,6 +22,10 @@ themes:
     title: Reactivity at electrochemical interfaces
     question: What starting chemistry favors efficient electrochemical transformations, molecule to molecule or molecule to metal?
     text: Many electrochemical reactions happen at the boundary between a solid and its surroundings. We study how solids bind molecules to transform them, and how species in solution determine the efficiency of the plating of metals like iron. Applications include battery interphases and metal anodes, CO₂ reduction and other electrocatalysis.
+    pinned:
+      - 10.1039/d5ee02403j # An unwanted guest... highly reactive protons (Energy Environ. Sci. 2025)
+    not_shown:
+      - 10.1021/acsenergylett.5c01634 # High-Nickel Cathodes with Tailored Concentration Gradients (ACS Energy Lett. 2025)
   - key: xray
     title: X-ray analytical science
     question: How can X-rays let us watch chemical change in solids as it happens?

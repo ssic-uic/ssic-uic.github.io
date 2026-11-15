@@ -356,9 +356,11 @@ async function main() {
   // unknown papers that could take one of a theme's three Research-page slots: ask the owner
   const newestFirst = [...existing].filter(p => !p.hide).sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")));
   const unknownAsked = new Set();
-  for (const k of readYaml(RESEARCH, {}).themes?.map(t => t.key) || ["ion", "redox", "interface", "xray"]) {
-    let shown = 0;
-    for (const p of newestFirst.filter(p => (p.themes || []).includes(k))) {
+  const themeList = readYaml(RESEARCH, {}).themes || ["ion", "redox", "interface", "xray"].map(key => ({ key }));
+  for (const { key: k, pinned = [], not_shown = [] } of themeList) {
+    const owner = new Set([...pinned, ...not_shown].map(normDoi));
+    let shown = pinned.length; // the owner's picks take their slots first
+    for (const p of newestFirst.filter(p => (p.themes || []).includes(k) && !owner.has(normDoi(p.doi)))) {
       if (shown >= 3) break;
       if (p.corresponding === true) shown++;
       else if (p.corresponding === undefined && !unknownAsked.has(p)) {

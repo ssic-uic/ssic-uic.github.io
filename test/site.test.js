@@ -37,7 +37,11 @@ test("built page renders every section without script errors", async () => {
   // Research: each theme shows its three most recent papers with J. Cabana as corresponding author
   const rows = [...d.querySelectorAll("#research-rows .rrow")];
   data0.research.forEach((r, i) => {
-    const want = data0.publications.filter(p => !p.hide && (p.themes || []).includes(r.key) && p.corresponding === true).slice(0, 3).map(p => p.url);
+    const lc = a => (a || []).map(x => String(x).toLowerCase()), pin = lc(r.pinned), skip = lc(r.not_shown), doi = p => String(p.doi || "").toLowerCase();
+    const pubs = data0.publications.filter(p => !p.hide);
+    const fill = pubs.filter(p => (p.themes || []).includes(r.key) && p.corresponding === true && !pin.includes(doi(p)) && !skip.includes(doi(p))).slice(0, 3 - pin.length);
+    const want = pubs.filter(p => pin.includes(doi(p)) || fill.includes(p)).map(p => p.url);
+    pin.forEach(x => assert.ok(want.includes(`https://doi.org/${x}`), `pinned ${x} not shown`));
     const got = [...rows[i].querySelectorAll(".papers li a")].map(a => a.getAttribute("href"));
     assert.deepStrictEqual(got, want, `Research papers for ${r.key}`);
   });
