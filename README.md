@@ -22,6 +22,10 @@ Every push to `main` is tested, built and published to GitHub Pages by `.github/
 
 A design change touches only `src/`; a content change touches only `data/`.
 
+## Publication sync
+
+`.github/workflows/sync-publications.yml` runs every Monday (and on demand). `scripts/sync-publications.js` reads the PI's ORCID record to decide which papers are ours, takes authors, journal, volume/pages and dates from Crossref, and adds new papers with a guessed research theme. A paper's year is the year it first appeared, so it never moves when its print issue comes out. Themes marked `themes_set_by: owner` are never changed. Papers that OpenAlex links to the ORCID iD but ORCID doesn't list go to `data/candidates.yml` and are not shown until confirmed. A run commits the changes and triggers publishing; a trial run (manual, "trial" ticked) only uploads the result for review.
+
 ## Building locally
 
 ```

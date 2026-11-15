@@ -1,0 +1,50 @@
+// Offline checks for the publication sync's formatting rules (no network).
+const test = require("node:test");
+const assert = require("node:assert");
+const { authorList, initials, fromCrossref, guessThemes, plain, normDoi } = require("../scripts/sync-publications.js");
+
+test("initials handle hyphens and existing initials", () => {
+  assert.strictEqual(initials("Jordi"), "J.");
+  assert.strictEqual(initials("Jean-Marie"), "J.-M.");
+  assert.strictEqual(initials("P. F. B. D."), "P. F. B. D.");
+  assert.strictEqual(initials("Bob Jin"), "B. J.");
+});
+
+test("author list joins the last name with 'and'", () => {
+  assert.strictEqual(authorList([{ given: "Hao", family: "Li" }, { given: "Jordi", family: "Cabana" }]), "H. Li and J. Cabana");
+  assert.strictEqual(authorList([{ given: "A", family: "One" }, { given: "B", family: "Two" }, { given: "C", family: "Three" }]), "A. One, B. Two and C. Three");
+  assert.strictEqual(authorList([{ name: "ESRA Collaboration" }]), "ESRA Collaboration");
+});
+
+test("titles lose markup but keep the formula text", () => {
+  assert.strictEqual(plain("Active States of MoS<sub>2</sub> &amp; CO<sub>2</sub>"), "Active States of MoS2 & CO2");
+});
+
+test("Crossref record maps to our fields, year from first appearance", () => {
+  const c = fromCrossref({
+    title: ["Spinel <i>frameworks</i>"],
+    author: [{ given: "Jordi", family: "Cabana" }],
+    "short-container-title": ["Acc. Chem. Res."],
+    volume: "57", page: "9-19",
+    issued: { "date-parts": [[2023, 12, 20]] },
+    "published-print": { "date-parts": [[2024, 1, 2]] },
+  });
+  assert.strictEqual(c.year, 2023);
+  assert.strictEqual(c.published, "2023-12-20");
+  assert.strictEqual(c.citation, "57, 9–19");
+  assert.strictEqual(c.journal, "Acc. Chem. Res.");
+  assert.strictEqual(c.title, "Spinel frameworks");
+  assert.ok(c.hasCabana);
+});
+
+test("article numbers and missing Cabana are handled", () => {
+  const c = fromCrossref({ title: ["X"], author: [{ given: "A", family: "B" }], volume: "123", "article-number": "213904", issued: { "date-parts": [[2023]] } });
+  assert.strictEqual(c.citation, "123, 213904");
+  assert.strictEqual(c.hasCabana, false);
+});
+
+test("theme guesses and DOI normalisation", () => {
+  assert.deepStrictEqual(guessThemes("Mg intercalation in spinel cathodes"), ["ion"]);
+  assert.deepStrictEqual(guessThemes("Operando X-ray imaging of oxygen redox in Li-rich cathodes"), ["ion", "redox", "xray"]);
+  assert.strictEqual(normDoi("https://doi.org/10.1021/JACS.5C07442"), "10.1021/jacs.5c07442");
+});

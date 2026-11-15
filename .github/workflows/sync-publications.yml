@@ -1,0 +1,58 @@
+name: Sync publications
+
+on:
+  schedule:
+    - cron: "17 11 * * 1" # Mondays, early morning in Chicago
+  workflow_dispatch:
+    inputs:
+      trial:
+        description: "Trial run: show what would change, commit nothing"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-publications
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Fetch papers from ORCID, Crossref and OpenAlex
+        run: node scripts/sync-publications.js
+        env:
+          ORCID: 0000-0002-2353-5986
+          CONTACT_EMAIL: cabana-group@uic.edu
+      - name: Check the data and the page still build
+        run: npm test
+      - name: Keep the result for review (trial run)
+        if: ${{ inputs.trial }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-result
+          path: |
+            data/publications.yml
+            data/candidates.yml
+      - name: Commit and publish
+        if: ${{ !inputs.trial }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- data/; then echo "No changes."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/publications.yml data/candidates.yml
+          git commit -m "Publication sync $(date -u +%F)"
+          git push
+          # pushes made by this workflow don't start other workflows, so start publishing directly
+          gh workflow run deploy.yml --ref main
