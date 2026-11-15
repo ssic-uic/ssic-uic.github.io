@@ -4,9 +4,83 @@
 # themes_set_by: "guess" until the owner confirms or changes them; then "owner". The sync never overwrites "owner".
 # check: something to verify against the journal; the sync clears it once Crossref confirms.
 # Copied from the v0 design (cabana.chem.uic.edu, 13 Nov 2026); 2022-2025 only so far.
+- year: 2026
+  published: 2026-11-09
+  title: "Tuning MoS2 Interlayer Spacing for Mg2+ Insertion: Navigating the Capacity–Stability Trade-Off in Mg-Ion Batteries"
+  authors: S. C. Reddy, B. Kang, L. Cao, N. Sunariwal, K. Kumar, S. K. Mohanty, J. K. Park, J. Cabana, S. H. Oh and H. D. Yoo
+  journal: ACS Applied Energy Materials
+  citation: online ahead of print
+  url: https://doi.org/10.1021/acsaem.6c02466
+  doi: 10.1021/acsaem.6c02466
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
+  published: 2026-10-06
+  title: Thermocleavable Cobalt Phthalocyanine Precursors for Electrode-Immobilized Catalysts in CO2-to-Methanol Conversion
+  authors: X. Zheng, K. Prasad, E. Riley, F. Tao, N. P. Lata, D. Zangeneh, X. Wang, E. Piao, D. Winstead, S. N. Misal, K. Rathnayake, Z. Huang, L. Tao, R. B. Tello, U. Lee, V. V. Gande, R. Sartape, M. R. Singh, J. Cabana, J. W. Elam, R. F. Klie, D. J. Myers, E. E. Nesterov and K. D. Glusac
+  journal: ACS Applied Energy Materials
+  citation: 9, 13464–13479
+  url: https://doi.org/10.1021/acsaem.6c02202
+  doi: 10.1021/acsaem.6c02202
+  themes:
+    - ion
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
+  published: 2026-10-05
+  title: Decoupling Static and Dynamic Disorder in a Polyanionic Na-Ion Conductor
+  authors: M. Murphy, J. G. Smith, B. Cladek, S. R. Mair, P.-C. Tsai, Y.-M. Chiang, J. Liu, M. G. Tucker, D. J. Siegel and J. Cabana
+  journal: Chemistry of Materials
+  citation: 38, 10623–10633
+  url: https://doi.org/10.1021/acs.chemmater.6c01680
+  doi: 10.1021/acs.chemmater.6c01680
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
+  published: 2026-05-01
+  title: "NGenE 2025: Electrochemistry for Energy Abundance"
+  authors: Z. Wang, L. Lower, K. Kawashima, D. Zhang, S. N. Misal, S. Castro Baldivieso, G. Chen, S. Hong, H. Tupkar, K. N. D. Silva, A. Banerjee, R. Mathison, J. Lopez Ochoa, I. S. Buyuker, I. Messias, D. Ju, A. Lee, R. Gaddam, J. F. King, A. L. Blockmon, P. Nagarajan, J.-E. Stokes, A. Svirinovsky-Arbeli, A. H. Biby, C. E. Wilson, J. Luo, A. Cosenza, M. K. Phuthi, N. Karki, X. Wang, A. Morchhale, L. K. Arrazolo, S. L. Ramesh, D. K. Kozlica, V. S. Ganesan, B. N. Tafese, J. Lim, L. Wofford, S. Hou, J. Shin, D. Oh, N. Minocha and J. Cabana
+  journal: ACS Energy Lett.
+  citation: 11, 4190–4196
+  url: https://doi.org/10.1021/acsenergylett.6c01050
+  doi: 10.1021/acsenergylett.6c01050
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
+  published: "2026"
+  title: Effect of nanoparticle surface modification on lithium-ion transport in composite polymer electrolytes
+  authors: M. Burns, M. K. Ncube, D. McElheny, M. Counihan, L. A. Curtiss, A. T. Ngo, J. Cabana and S. Tepavcevic
+  journal: EES Batteries
+  citation: 2, 1280–1295
+  url: https://doi.org/10.1039/d6eb00043f
+  doi: 10.1039/d6eb00043f
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2026
+  published: "2026"
+  title: Effect of preconditioning on cycling performance of aqueous Zn-ion batteries
+  authors: N. Sunariwal, T. Le, X. Yang, T. Gallagher, J. Cabana, T. Vosburgh and S. Tepavcevic
+  journal: J. Mater. Chem. A
+  citation: 14, 5095–5105
+  url: https://doi.org/10.1039/d5ta08873a
+  doi: 10.1039/d5ta08873a
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
 - year: 2025
+  published: 2025-12-05
   title: Structural and electronic changes in Li2RuO3 induced by lithium intercalation
-  authors: H. Li, B. Song, Y. Chen, X. Rui, R. Klie, T. Boyko, J. Freeland, M. Chan, J. Liu and J. Cabana
+  authors: H. Li, B. Song, Y. Chen, X. Rui, R. F. Klie, T. D. Boyko, J. W. Freeland, M. K. Y. Chan, J. Liu and J. Cabana
   journal: Phys. Rev. Mater.
   citation: 9, 125402
   url: https://journals.aps.org/prmaterials/abstract/10.1103/pk6l-ds6m
@@ -16,26 +90,55 @@
     - redox
   themes_set_by: guess
 - year: 2025
+  published: 2025-11-20
+  title: Relationship between Sodium Content and Copper Activity for High Voltage Stability in O3-Type Layered Oxide Cathodes
+  authors: N. Sunariwal, J. Gim, A. Tayal, K. Kumar, D. Nordlund, C. S. Johnson, E. Lee and J. Cabana
+  journal: Chem. Mater.
+  citation: 37, 9515–9523
+  url: https://doi.org/10.1021/acs.chemmater.5c02186
+  doi: 10.1021/acs.chemmater.5c02186
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2025
+  published: 2025-09-22
+  title: "Advancing Battery Manufacturing: Synchrotron Characterization for Industry"
+  authors: H. Koh, J. Burrow, N. D'Anna, H. Zhang, B. Tharigopala Vincent, J. Wang, J. Lai, Y. Chen, J. Cabana, M. Chan, E. Crumlin, P. Fenter, T. Fister, D.-J. Liu, Y. S. Meng, O. Shpryko, K. Wiaderek and K. Hatzell
+  journal: chemRxiv
+  citation: online ahead of print
+  url: https://doi.org/10.26434/chemrxiv-2025-xc2q8
+  doi: 10.26434/chemrxiv-2025-xc2q8
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2025
+  published: 2025-08
+  title: Chlorination and oxygenation of carbon electrodes for covalent attachment of thiol-terminated molecules
+  authors: X. Zheng, I. L. Bolotin, B. Tanriover, K. Rathnayake, E. J. Askins, J. Cabana, N. P. Mankad and K. D. Glusac
+  journal: Carbon Trends
+  citation: 20, 100539
+  url: https://www.sciencedirect.com/science/article/pii/S2667056925000896
+  doi: 10.1016/j.cartre.2025.100539
+  themes:
+    - interface
+  themes_set_by: guess
+- year: 2025
+  published: 2025-08
   title: Intercalation chemistry goes nuclear
   authors: J. Cabana
   journal: Chem
   citation: 11, 102703
   url: https://www.cell.com/chem/fulltext/S2451-9294(25)00294-3
+  doi: 10.1016/j.chempr.2025.102703
   themes:
     - ion
   themes_set_by: guess
 - year: 2025
-  title: "An unwanted guest in the electrochemical oxidation of high-voltage Li-ion battery electrolytes: the life of highly reactive protons"
-  authors: S. Ilic, M. Martins, H. Liu, P. F. B. D. Martins, D. Haering, J. Yang, T. Hatsukade, B. Genorio, S. E. Weitzner, L. F. Wan, Z. Zhang, J. G. Connell, B. Key, J. Cabana and D. Strmcnik
-  journal: Energy Environ. Sci.
-  citation: 18, 8303–8312
-  url: https://doi.org/10.1039/d5ee02403j
-  doi: 10.1039/d5ee02403j
-  themes:
-    - interface
-  themes_set_by: guess
-- year: 2025
-  title: Mg-Ion Conduction in Antiperovskite Solid Electrolytes Revealed by 25Mg Ultrahigh Field NMR and First-Principles Calculations
+  published: 2025-07-24
+  title: Mg-Ion Conduction in Antiperovskite Solid Electrolytes Revealed by25Mg Ultrahigh Field NMR and First-Principles Calculations
   authors: D. M. Halat, H. Liu, K. Kim, G. C. B. Alexander, X. Wang, A. Venkatesh, A. R. Altenhof, H. E. Mason, S. H. Lapidus, J. S. Yoon, I. Hung, Z. Gan, J. Cabana, D. J. Siegel, J. A. Reimer and B. Key
   journal: J. Am. Chem. Soc.
   citation: 147, 27949–27961
@@ -45,8 +148,9 @@
     - ion
   themes_set_by: guess
 - year: 2025
+  published: 2025-06-30
   title: High-Nickel Cathodes with Mechanical and Interfacial Robustness via Tailored Concentration Gradients for Stable Li-Ion Batteries
-  authors: S. Kim, A. S. Thind, S. K. Mohanty, J. K. Hong, J. Y. Jung, H. Park, Y. Yang, M.-S. Park, M. S. Porwal, E. Allen, B. K. Choi, H. Jung, N. Sunariwal, K. Kumar, M. Ge, J. Yoo, J.-H. Song, J. H. Ryu, S. Lee, S. C. Reddy, M. K. Srinivasan, A. R. Pati, E. Lee, R. F. Klie, J. Cabana and H. D. Yoo
+  authors: S. Kim, A. S. Thind, S. K. Mohanty, J. K. Hong, J. Y. Jung, H. Park, Y. Yang, M.-S. Park, M. S. Porwal, E. Allen, B. K. Choi, H. Jung, N. Sunariwal, K. Kumar, M. Ge, J. Yoo, J.-H. Song, J. H. Ryu, S. Lee, S. C. Reddy, M. K. Srinivasa, A. R. Pati, E. Lee, R. F. Klie, J. Cabana and H. D. Yoo
   journal: ACS Energy Lett.
   citation: 10, 3600–3609
   url: https://pubs.acs.org/doi/abs/10.1021/acsenergylett.5c01634
@@ -56,26 +160,18 @@
     - interface
   themes_set_by: guess
 - year: 2025
-  title: Chlorination and Oxygenation of Carbon Electrodes for Covalent Attachment of Thiol-Terminated Molecules
-  authors: X. Zheng, I. L. Bolotin, B. Tanriover, K. Rathnayake, E. J. Askins, J. Cabana, N. P. Mankad and K. D. Glusac
-  journal: Carbon Trends
-  citation: "100539"
-  url: https://www.sciencedirect.com/science/article/pii/S2667056925000896
+  published: 2025-06
+  title: Thermal decomposition pathways of bulk electrolytes on vanadium oxide nanocrystals
+  authors: J. Z. Hu, W. Hu, H. Jeong, G. Alexander, N. Dan Thien, V. Prabhakaran, K. S. Han, Y. Chen, J. Cabana, J. G. Connell, L. Cheng, V. Murugesan, K. R. Zavadil and K. T. Mueller
+  journal: Energy Storage Mater.
+  citation: 79, 104315
+  url: https://www.sciencedirect.com/science/article/abs/pii/S2405829725003137
+  doi: 10.1016/j.ensm.2025.104315
   themes:
     - interface
   themes_set_by: guess
 - year: 2025
-  title: Tailoring Oxygen Redox Activity and Accelerating Li+ Diffusion via Ti Substitution Within Li‐O‐Vacancy Configurations
-  authors: X. Zhao, I. Roy, C. Sheng, S. Gao, L. Xu, Y. Wang, P. Wu, P. He, C. Li, Y. Tang, J. Cabana, Z. Zhou and H. Zhou
-  journal: Adv. Funct. Mater.
-  citation: "2504973"
-  url: https://doi.org/10.1002/adfm.202504973
-  doi: 10.1002/adfm.202504973
-  themes:
-    - redox
-    - ion
-  themes_set_by: guess
-- year: 2025
+  published: 2025-05-29
   title: Resiliency, morphology, and entropic transformations in high-entropy oxide nanoribbons
   authors: H. Shahbazi, P. Seraji, H. Farraj, T. Yang, A. Kim, S. Fattahpour, I. Papailias, M. Diamond, S. Namvar, A. Ahmadiparidari, S. Wang, Z. Liu, S. Feng, K. Kumar, M. Ahart, J. Cabana, S. Kadkhodaei, J. Wang, Z. Huang, R. J. Hemley and A. Salehi-Khojin
   journal: Science
@@ -85,25 +181,52 @@
   themes: []
   themes_set_by: guess
 - year: 2025
+  published: 2025-05-27
   title: Cathode Upcycling for Direct Recycling of Lithium‐Ion Batteries Using a Precipitation Approach
-  authors: E. Allen, J. Macholz, M. Nisbet, N. Chowdhury, F. Wang, M. Porwal, D. T. Keane, W. Guise Jr., Z. Dundek, M. Caple, V. Nikitin, J. Cabana, Q. Dai and A. Lipson
+  authors: E. Allen, J. Macholz, M. Nisbet, N. Chowdhury, F. Wang, M. Porwal, D. T. Keane, W. Guise, Z. Dundek, M. Caple, V. Nikitin, J. Cabana, Q. Dai and A. Lipson
   journal: Adv. Energy Mater.
-  citation: "2500699"
+  citation: 15, 2500699
   url: https://doi.org/10.1002/aenm.202500699
   doi: 10.1002/aenm.202500699
   themes:
     - ion
   themes_set_by: guess
 - year: 2025
-  title: Thermal decomposition pathways of bulk electrolytes on vanadium oxide nanocrystals
-  authors: J. Z. Hu, W. Hu, H. Jeong, G. Alexander, N. D. Thien, V. Prabhakaran, K. S. Han, Y. Chen, J. Cabana, J. G. Connell, L. Cheng, V. Murugesan, K. R. Zavadil and K. T. Mueller
-  journal: Energy Storage Mater.
-  citation: 79, 104315
-  url: https://www.sciencedirect.com/science/article/abs/pii/S2405829725003137
+  published: 2025-04-10
+  title: Tailoring Oxygen Redox Activity and Accelerating Li+ Diffusion via Ti Substitution Within Li‐O‐Vacancy Configurations
+  authors: X. Zhao, I. Roy, C. Sheng, S. Gao, L. Xu, Y. Wang, P. Wu, P. He, C. Li, Y. Tang, J. Cabana, X. Cao and H. Zhou
+  journal: Adv. Funct. Mater.
+  citation: 35, 2504973
+  url: https://doi.org/10.1002/adfm.202504973
+  doi: 10.1002/adfm.202504973
   themes:
-    - interface
+    - redox
+    - ion
   themes_set_by: guess
 - year: 2025
+  published: 2025-03-23
+  title: Self‐Lubricating Tribo‐Catalytic Activity of 2D High Entropy Alloy Nanoflakes
+  authors: S. Wang, S. V. Sunkara, S. Manna, A. Ahmadiparidari, K. Kumar, T. Yang, S. Namvar, P. Seraji, Z. Huang, J. Cabana, S. K. R. S. Sankaranarayanan, Y. Liu, A. V. Sumant and A. Salehi‐Khojin
+  journal: Small
+  citation: 21, 2500322
+  url: https://doi.org/10.1002/smll.202500322
+  doi: 10.1002/smll.202500322
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2025
+  published: 2025-02-10
+  title: Elemental Stability Rules for High Entropy Disordered Rocksalt Type Li‐Ion Battery Positive Electrodes
+  authors: L. Wang, N. Sunariwal, Y. He, D. Kim, D. Yeon, Y. Zeng, J. Cabana and B. Ouyang
+  journal: Adv. Energy Mater.
+  citation: 15, 2404982
+  url: https://doi.org/10.1002/aenm.202404982
+  doi: 10.1002/aenm.202404982
+  themes:
+    - ion
+  themes_set_by: guess
+- year: 2025
+  published: 2025-02
   title: High-entropy Li-rich layered oxide cathode for Li-ion batteries
   authors: J. Kim, S. Yang, Y. Zhong, G. Tompsett, S. Jeong, J. Mun, N. Sunariwal, J. Cabana, Z. Yang and Y. Wang
   journal: J. Power Sources
@@ -114,27 +237,30 @@
     - ion
     - redox
   themes_set_by: guess
-  check: The DOI is from 2024 but the paper is filed under 2025, probably its issue year. Settle with the year rule.
 - year: 2025
-  title: Elemental Stability Rules for High Entropy Disordered Rocksalt Type Li‐Ion Battery Positive Electrodes
-  authors: L. Wang, N. Sunariwal, Y. He, D. Kim, D. Yeon, Y. Zeng, J. Cabana and B. Ouyang
-  journal: Adv. Energy Mater.
-  citation: "2404982"
-  url: https://doi.org/10.1002/aenm.202404982
-  doi: 10.1002/aenm.202404982
-  themes:
-    - ion
-  themes_set_by: guess
-- year: 2025
+  published: 2025-02
   title: Interlayer expansion of kinetically grown molybdenum oxide for Mg batteries with enhanced energy density
   authors: S. C. Reddy, H. Lee, N. Sunariwal, K. Kumar, W. J. No, J. Cabana, S. H. Oh and H. D. Yoo
   journal: Energy Storage Mater.
   citation: 75, 104002
   url: https://www.sciencedirect.com/science/article/abs/pii/S2405829725000030
+  doi: 10.1016/j.ensm.2025.104002
   themes:
     - ion
   themes_set_by: guess
+- year: 2025
+  published: "2025"
+  title: "An unwanted guest in the electrochemical oxidation of high-voltage Li-ion battery electrolytes: the life of highly reactive protons"
+  authors: S. Ilic, M. Martins, H. Liu, P. Farinazzo Bergamo Dias Martins, D. Haering, J. Yang, T. Hatsukade, B. Genorio, S. E. Weitzner, L. F. Wan, Z. Zhang, J. G. Connell, B. Key, J. Cabana and D. Strmcnik
+  journal: Energy Environ. Sci.
+  citation: 18, 8303–8312
+  url: https://doi.org/10.1039/d5ee02403j
+  doi: 10.1039/d5ee02403j
+  themes:
+    - interface
+  themes_set_by: guess
 - year: 2024
+  published: 2024-11-12
   title: Suppressing Atmospheric Degradation of Sulfide-Based Solid Electrolytes via Ultrathin Metal Oxide Layers
   authors: T. Kim, Z. D. Hood, A. Sundar, A. U. Mane, F. Lagunas, K. Kumar, N. Sunariwal, J. Cabana, S. Tepavcevic, J. W. Elam, P. Zapol and J. G. Connell
   journal: ACS Mater. Lett.
@@ -146,17 +272,20 @@
     - interface
   themes_set_by: guess
 - year: 2024
+  published: 2024-10-07
   title: Assessing cathode–electrolyte interphases in batteries
   authors: J. Xiao, N. Adelstein, Y. Bi, W. Bian, J. Cabana, C. L. Cobb, Y. Cui, S. J. Dillon, M. M. Doeff, S. M. Islam, K. Leung, M. Li, F. Lin, J. Liu, H. Luo, A. C. Marschilok, Y. S. Meng, Y. Qi, R. Sahore, K. G. Sprenger, R. C. Tenent, M. F. Toney, W. Tong, L. F. Wan, C. Wang, S. E. Weitzner, B. Wu and Y. Xu
   journal: Nat. Energy
   citation: 9, 1463–1473
   url: https://www.nature.com/articles/s41560-024-01639-y
+  doi: 10.1038/s41560-024-01639-y
   themes:
     - interface
   themes_set_by: guess
 - year: 2024
+  published: 2024-09-06
   title: Investigation of Key Electronic States in Layered Mixed Chalcogenides With a d0 Transition Metal as Li‐Ion Cathodes
-  authors: K. Kumar, N. Sunariwal, J. Louis, B. T. Leube, I. Roy, G. E. Sterbinsky, J.-M. Tarascon and J. Cabana
+  authors: K. Kumar, N. Sunariwal, J. Louis, B. T. Leube, I. Roy, G. E. Sterbinsky, J. Tarascon and J. Cabana
   journal: Adv. Funct. Mater.
   citation: 34, 2408060
   url: https://doi.org/10.1002/adfm.202408060
@@ -165,36 +294,7 @@
     - redox
   themes_set_by: guess
 - year: 2024
-  title: One-Step Solvothermal Synthesis of Perovskite-Type Li3xLa2/3−xTiO3 Nanomaterials
-  authors: M. A. Dato, L. Hu, D. McElheny and J. Cabana
-  journal: Chem. Mater.
-  citation: 36, 8349–8358
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.4c01349
-  doi: 10.1021/acs.chemmater.4c01349
-  themes:
-    - ion
-  themes_set_by: guess
-- year: 2024
-  title: "Rethinking Oxygen Redox: Does Oxygen Dimerization Occur without Oxidation in Li2NiO3?"
-  authors: M. J. W. Ogley, A. S. Menon, B. J. Johnston, G. Pandey, I. McClelland, X. Shi, S. Agrestini, V. Celorrio, G. E. Pérez, S. G. Booth, J. Cabana, S. A. Cussen and L. F. J. Piper
-  journal: ACS Energy Lett.
-  citation: 9, 4607–4613
-  url: https://pubs.acs.org/doi/full/10.1021/acsenergylett.4c02031
-  doi: 10.1021/acsenergylett.4c02031
-  themes:
-    - redox
-  themes_set_by: guess
-- year: 2024
-  title: Interfacial Electrochemistry of Catalyst-Coordinated Graphene Nanoribbons
-  authors: E. J. Askins, A. Sarkar, P. Navabi, K. Kumar, S. J. Finkelmeyer, M. Presselt, J. Cabana and K. D. Glusac
-  journal: J. Am. Chem. Soc.
-  citation: 146, 22360–22373
-  url: https://pubs.acs.org/doi/abs/10.1021/jacs.4c05250
-  doi: 10.1021/jacs.4c05250
-  themes:
-    - interface
-  themes_set_by: guess
-- year: 2024
+  published: 2024-09
   title: Structural and chemical evolutions of a magnesium vanadium oxide cathode under electrochemical cycling in magnesium batteries
   authors: D.-T. Nguyen, V. Prabhakaran, L. Kovarik, G. Alexander, J. Cabana, J. G. Connell, J. Z. Hu, V. Shutthanandan, B. M. Sivakumar, K. T. Mueller and V. Murugesan
   journal: Nano Energy
@@ -205,16 +305,40 @@
     - ion
   themes_set_by: guess
 - year: 2024
-  title: Fast Charge‐Transfer Rates in Li‐CO2 Batteries with a Coupled Cation‐Electron Transfer Process
-  authors: A. Jaradat, M. K. Ncube, I. Papailias, N. Rai, K. Kumar, V. Koverga, R. Y. Nemade, C. Zhang, N. Shan, H. Shahbazi, A. Namaeighasemi, P. Seraji, S. Namvar, V. Berry, J. Cabana, A. Subramanian, A. T. Ngo, L. A. Curtiss and A. Salehi-Khojin
-  journal: Adv. Energy Mater.
-  citation: 14, 2303467
-  url: https://doi.org/10.1002/aenm.202303467
-  doi: 10.1002/aenm.202303467
+  published: 2024-08-28
+  title: "Rethinking Oxygen Redox: Does Oxygen Dimerization Occur without Oxidation in Li2NiO3 ?"
+  authors: M. J. W. Ogley, A. S. Menon, B. J. Johnston, G. Pandey, I. McClelland, X. Shi, S. Agrestini, V. Celorrio, G. E. Pérez, S. G. Booth, J. Cabana, S. A. Cussen and L. F. J. Piper
+  journal: ACS Energy Lett.
+  citation: 9, 4607–4613
+  url: https://pubs.acs.org/doi/full/10.1021/acsenergylett.4c02031
+  doi: 10.1021/acsenergylett.4c02031
+  themes:
+    - redox
+  themes_set_by: guess
+- year: 2024
+  published: 2024-08-26
+  title: One-Step Solvothermal Synthesis of Perovskite-Type Li3xLa2/3–x□1/3–2xTiO3 Nanomaterials
+  authors: M. A. Dato, L. Hu, D. McElheny and J. Cabana
+  journal: Chem. Mater.
+  citation: 36, 8349–8358
+  url: https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.4c01349
+  doi: 10.1021/acs.chemmater.4c01349
+  themes:
+    - ion
+  themes_set_by: guess
+- year: 2024
+  published: 2024-08-01
+  title: Interfacial Electrochemistry of Catalyst-Coordinated Graphene Nanoribbons
+  authors: E. J. Askins, A. Sarkar, P. Navabi, K. Kumar, S. J. Finkelmeyer, M. Presselt, J. Cabana and K. D. Glusac
+  journal: J. Am. Chem. Soc.
+  citation: 146, 22360–22373
+  url: https://pubs.acs.org/doi/abs/10.1021/jacs.4c05250
+  doi: 10.1021/jacs.4c05250
   themes:
     - interface
   themes_set_by: guess
 - year: 2024
+  published: 2024-06
   title: Designing novel tunable Mn-based inorganic oxyfluoride pigments
   authors: B. Lehr, G. Zurowski, J. Chhoeun, K. Kumar, G. Nolis, J. Shanahan, K. Kilpatrick, K. Rojas, J. Cabana, D. Kissel, M. Avdeev and E. Sullivan
   journal: Mater. Res. Bull.
@@ -224,6 +348,52 @@
   themes: []
   themes_set_by: guess
 - year: 2024
+  published: 2024-03-11
+  title: Fast Charge‐Transfer Rates in Li‐CO2 Batteries with a Coupled Cation‐Electron Transfer Process
+  authors: A. Jaradat, M. K. Ncube, I. Papailias, N. Rai, K. Kumar, V. Koverga, R. Y. Nemade, C. Zhang, N. Shan, H. Shahbazi, A. Namaeighasemi, P. Seraji, S. Namvar, V. Berry, J. Cabana, A. Subramanian, A. T. Ngo, L. A. Curtiss and A. Salehi‐Khojin
+  journal: Adv. Energy Mater.
+  citation: 14, 2303467
+  url: https://doi.org/10.1002/aenm.202303467
+  doi: 10.1002/aenm.202303467
+  themes:
+    - interface
+  themes_set_by: guess
+- year: 2024
+  published: 2024-01-11
+  title: Achieving a high-performance sodium-ion pouch cell by regulating intergrowth structures in a layered oxide cathode with anionic redox
+  authors: X. Wang, Q. Zhang, C. Zhao, H. Li, B. Zhang, G. Zeng, Y. Tang, Z. Huang, I. Hwang, H. Zhang, S. Zhou, Y. Qiu, Y. Xiao, J. Cabana, C.-J. Sun, K. Amine, Y. Sun, Q. Wang, G.-L. Xu, L. Gu, Y. Qiao and S.-G. Sun
+  journal: Nat. Energy
+  citation: 9, 184–196
+  url: https://www.nature.com/articles/s41560-023-01425-2
+  doi: 10.1038/s41560-023-01425-2
+  themes:
+    - redox
+    - ion
+  themes_set_by: guess
+- year: 2024
+  published: "2024"
+  title: How machine learning can extend electroanalytical measurements beyond analytical interpretation
+  authors: A. Mistry, I. D. Johnson, J. Cabana, B. J. Ingram and V. Srinivasan
+  journal: Phys. Chem. Chem. Phys.
+  citation: 26, 2153–2167
+  url: https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp04628a/unauth
+  doi: 10.1039/d3cp04628a
+  themes:
+    - ion
+  themes_set_by: guess
+- year: 2023
+  published: 2023-12-19
+  title: Design Strategies of Spinel Oxide Frameworks Enabling Reversible Mg-Ion Intercalation
+  authors: B. J. Kwon, S. H. Lapidus, J. T. Vaughey, G. Ceder, J. Cabana and B. Key
+  journal: Acc. Chem. Res.
+  citation: 57, 1–9
+  url: https://pubs.acs.org/doi/abs/10.1021/acs.accounts.3c00282
+  doi: 10.1021/acs.accounts.3c00282
+  themes:
+    - ion
+  themes_set_by: guess
+- year: 2023
+  published: 2023-11-27
   title: Structural and Chemical Evolution of Highly Fluorinated Li‐Rich Disordered Rocksalt Oxyfluorides as a Function of Temperature
   authors: N. Sunariwal, F. Dogan, I. Roy, K. Kumar, D. Nordlund, Q. Ma and J. Cabana
   journal: Adv. Funct. Mater.
@@ -233,81 +403,21 @@
   themes:
     - ion
   themes_set_by: guess
-- year: 2024
-  title: Achieving a high-performance sodium-ion pouch cell by regulating intergrowth structures in a layered oxide cathode with anionic redox
-  authors: X. Wang, Q. Zhang, C. Zhao, H. Li, B. Zhang, G. Zeng, Y. Tang, Z. Huang, I. Hwang, H. Zhang, S. Zhou, Y. Qiu, Y. Xiao, J. Cabana, C.-J. Sun, K. Amine, Y. Sun, Q. Wang, G.-L. Xu, L. Gu, Y. Qiao and S.-G. Sun
-  journal: Nat. Energy
-  citation: 9, 184–196
-  url: https://www.nature.com/articles/s41560-023-01425-2
-  themes:
-    - redox
-    - ion
-  themes_set_by: guess
-- year: 2024
-  title: How machine learning can extend electroanalytical measurements beyond analytical interpretation
-  authors: A. Mistry, I. D. Johnson, J. Cabana, B. J. Ingram and V. Srinivasan
-  journal: Phys. Chem. Chem. Phys.
-  citation: 26, 2153–2167
-  url: https://pubs.rsc.org/en/content/articlelanding/2023/cp/d3cp04628a/unauth
-  themes:
-    - ion
-  themes_set_by: guess
-  check: The link says 2023 but the paper is filed under 2024. Settle with the year rule.
 - year: 2023
-  title: Defect identification in simulated Bragg coherent diffraction imaging by automated AI
-  authors: W. Judge, H. Chan, S. Sankaranarayanan, R. J. Harder, J. Cabana and M. J. Cherukara
-  journal: MRS Bull.
-  citation: 48, 124–133
-  url: https://doi.org/10.1557/s43577-022-00342-1
-  doi: 10.1557/s43577-022-00342-1
-  themes:
-    - xray
-  themes_set_by: guess
-- year: 2023
-  title: Origin of Rapid Delithiation In Secondary Particles Of LiNi0.8Co0.15Al0.05O2 and LiNiyMnzCo1−y−zO2 Cathodes
-  authors: M. Wolfman, B. M. May, V. Goel, S. Du, Y.-S. Yu, N. V. Faenza, N. Pereira, A. Grenier, K. M. Wiaderek, R. Xu, J. Wang, K. W. Chapman, G. G. Amatucci, K. Thornton and J. Cabana
-  journal: Adv. Energy Mater.
-  citation: 13, 2300895
-  url: https://doi.org/10.1002/aenm.202300895
-  doi: 10.1002/aenm.202300895
-  themes:
-    - ion
-  themes_set_by: guess
-- year: 2023
-  title: Design Strategies of Spinel Oxide Frameworks Enabling Reversible Mg-Ion Intercalation
-  authors: B. J. Kwon, S. H. Lapidus, J. T. Vaughey, G. Ceder, J. Cabana and B. Key
-  journal: Acc. Chem. Res.
-  citation: 57, 9–19
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.accounts.3c00282
-  doi: 10.1021/acs.accounts.3c00282
-  themes:
-    - ion
-  themes_set_by: guess
-  check: Volume 57 is a 2024 issue but the paper is filed under 2023, probably its online year. Settle with the year rule.
-- year: 2023
+  published: 2023-11-20
   title: Cation defect engineering of core–shell spinels nanoelectrocatalyst for enhanced oxygen evolution reaction
   authors: P. Wang, P. Kannan, L. Lu, K. Kumar, C. Pan, J. Guo, R. Klie and J. Cabana
   journal: Appl. Phys. Lett.
-  citation: 123, 213903
+  citation: 123, 213904
   url: https://pubs.aip.org/aip/apl/article-abstract/123/21/213904/2922375/Cation-defect-engineering-of-core-shell-spinels?redirectedFrom=fulltext
+  doi: 10.1063/5.0174481
   themes:
     - interface
   themes_set_by: guess
-  check: Article number here is 213903 but the link points to 213904. Check against the journal.
 - year: 2023
-  title: Insights into the reactivity and lithium plating mechanisms of ultra-thin metal oxide coatings for anode-free solid-state lithium metal batteries
-  authors: M. J. Counihan, T. Kim, R. Pathak, T. Zagorac, Y. Yang, M. E. Burns, J. Cabana, R. F. Klie, L. Hanley, J. G. Connell, A. U. Mane, J. W. Elam and S. Tepavcevic
-  journal: Front. Batter. Electrochem.
-  citation: 2, 1292622
-  url: https://doi.org/10.3389/fbael.2023.1292622
-  doi: 10.3389/fbael.2023.1292622
-  themes:
-    - interface
-    - ion
-  themes_set_by: guess
-- year: 2023
-  title: Effect of the Nature of Both Cation and Anion Substitution on the Structural Symmetry of Li‐Rich 3d‐Metal Chalcogenide Electrodes
-  authors: J. Louis, C. Robert, B. T. Leube, A. Chaupatnaik, N. Sunariwal, K. Kumar, I. Roy, G. Rousse, J. Cabana, M.-L. Doublet and J.-M. Tarascon
+  published: 2023-10-20
+  title: Effect of the Nature of Both Cation and Anion Substitution on the Structural Symmetry of Li‐Rich 3 d ‐Metal Chalcogenide Electrodes
+  authors: J. Louis, C. Robert, B. T. Leube, A. Chaupatnaik, N. Sunariwal, K. Kumar, I. Roy, G. Rousse, J. Cabana, M. Doublet and J. Tarascon
   journal: Adv. Energy Mater.
   citation: 13, 2302158
   url: https://doi.org/10.1002/aenm.202302158
@@ -316,6 +426,7 @@
     - redox
   themes_set_by: guess
 - year: 2023
+  published: 2023-10-09
   title: Elucidating Structural Transition Dynamics in the Magnesium Cathode MgCr2O4
   authors: J. Kim, S. Anand, C. Gilgenbach, I. D. Johnson, M. Murphy, T. Chen, M. Moy, A. Penn, J. Cabana, G. Ceder, B. J. Ingram and J. M. LeBeau
   journal: Chem. Mater.
@@ -326,6 +437,18 @@
     - ion
   themes_set_by: guess
 - year: 2023
+  published: 2023-09-03
+  title: Origin of Rapid Delithiation In Secondary Particles Of LiNi0.8Co0.15Al0.05O2 and LiNiyMnzCo1−y−zO2 Cathodes
+  authors: M. Wolfman, B. M. May, V. Goel, S. Du, Y. Yu, N. V. Faenza, N. Pereira, A. Grenier, K. M. Wiaderek, R. Xu, J. Wang, K. W. Chapman, G. G. Amatucci, K. Thornton and J. Cabana
+  journal: Adv. Energy Mater.
+  citation: 13, 2300895
+  url: https://doi.org/10.1002/aenm.202300895
+  doi: 10.1002/aenm.202300895
+  themes:
+    - ion
+  themes_set_by: guess
+- year: 2023
+  published: 2023-07-19
   title: Thermodynamics and Kinetics in Anisotropic Growth of One-Dimensional Midentropy Nanoribbons
   authors: S. Wang, T. Yang, K. Kumar, S. Namvar, S. Kim, A. Ahmadiparidari, H. Shahbazi, S. Singh, Z. Hemmat, V. Berry, J. Cabana, F. Khalili-Araghi, Z. Huang and A. Salehi-Khojin
   journal: ACS Nano
@@ -335,6 +458,7 @@
   themes: []
   themes_set_by: guess
 - year: 2023
+  published: 2023-06-02
   title: Cycling of block copolymer composites with lithium-conducting ceramic nanoparticles
   authors: V. Patel, M. A. Dato, S. Chakraborty, X. Jiang, M. Chen, M. Moy, X. Yu, J. A. Maslyn, L. Hu, J. Cabana and N. P. Balsara
   journal: Front. Chem.
@@ -345,6 +469,7 @@
     - ion
   themes_set_by: guess
 - year: 2023
+  published: 2023-05-16
   title: Structural Transformations at the Atomic Scale in Spinel Vanadium Oxides upon Mg2+ Extraction
   authors: F. Lagunas, G. Alexander, A. Lee Punaro, C. Moscosa, L. Hu, J. Cabana and R. F. Klie
   journal: ACS Appl. Energy Mater.
@@ -355,6 +480,7 @@
     - ion
   themes_set_by: guess
 - year: 2023
+  published: 2023-04-21
   title: X-ray Absorption Spectroscopy Illustrates the Participation of Oxygen in the Electrochemical Cycling of Li4Mn2O5
   authors: H. Li, I. Roy, M. Starczewski, J. Freeland and J. Cabana
   journal: J. Phys. Chem. C
@@ -366,19 +492,9 @@
     - xray
   themes_set_by: guess
 - year: 2023
-  title: Active States During the Reduction of CO2 by a MoS2 Electrocatalyst
-  authors: K. Kumar, S. Jamnuch, L. Majidi, S. Misal, A. Ahmadiparidari, M. A. Dato, G. E. Sterbinsky, T. Wu, A. Salehi-Khojin and T. A. Pascal
-  journal: J. Phys. Chem. Lett.
-  citation: 14, 3222–3229
-  url: https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c03942
-  doi: 10.1021/acs.jpclett.2c03942
-  themes:
-    - interface
-  themes_set_by: guess
-  check: J. Cabana is not in this author list, as copied from the old site. Check against the journal before keeping it.
-- year: 2023
+  published: 2023-04-02
   title: A High‐Rate Li–CO2 Battery Enabled by 2D Medium‐Entropy Catalyst
-  authors: A. Jaradat, C. Zhang, S. S. Sutar, N. Shan, S. Wang, S. K. Singh, T. Yang, K. Kumar, K. Sharma, S. Namvar, A. Alireza, T. Rojas, V. Berry, J. Cabana-Jimenez, Z. Huang, A. Subramanian, A. T. Ngo, L. A. Curtiss and A. Salehi-Khojin
+  authors: A. Jaradat, C. Zhang, S. Shashikant Sutar, N. Shan, S. Wang, S. K. Singh, T. Yang, K. Kumar, K. Sharma, S. Namvar, A. Alireza, T. Rojas, V. Berry, J. Cabana‐Jimenez, Z. Huang, A. Subramanian, A. T. Ngo, L. A. Curtiss and A. Salehi‐khojin
   journal: Adv. Funct. Mater.
   citation: 33, 2300814
   url: https://doi.org/10.1002/adfm.202300814
@@ -386,8 +502,29 @@
   themes:
     - interface
   themes_set_by: guess
-  check: Author appears as J. Cabana-Jimenez. Kept as published; the site highlights both spellings.
 - year: 2023
+  published: 2023-03-27
+  title: Active States During the Reduction of CO2 by a MoS2 Electrocatalyst
+  authors: K. Kumar, S. Jamnuch, L. Majidi, S. Misal, A. Ahmadiparidari, M. A. Dato, G. E. Sterbinsky, T. Wu, A. Salehi-Khojin, T. A. Pascal and J. Cabana
+  journal: J. Phys. Chem. Lett.
+  citation: 14, 3222–3229
+  url: https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c03942
+  doi: 10.1021/acs.jpclett.2c03942
+  themes:
+    - interface
+  themes_set_by: guess
+- year: 2023
+  published: 2023-03-23
+  title: A Collaborative Model-Based Symmetry Activity for the Inorganic Chemistry Laboratory
+  authors: J. J. Markut, J. Cabana, N. P. Mankad and D. J. Wink
+  journal: J. Chem. Educ.
+  citation: 100, 1633–1640
+  url: https://pubs.acs.org/doi/abs/10.1021/acs.jchemed.3c00037
+  doi: 10.1021/acs.jchemed.3c00037
+  themes: []
+  themes_set_by: guess
+- year: 2023
+  published: 2023-02-21
   title: Activity of Metal-Fluorine States upon Delithiation of Disordered Rocksalt Oxyfluorides
   authors: I. Roy, K. Kumar, H. Li, N. Sunariwal, G. C. B. Alexander, J. W. Freeland, F. Rodolakis and J. Cabana
   journal: Chem. Mater.
@@ -398,15 +535,7 @@
     - redox
   themes_set_by: guess
 - year: 2023
-  title: A Collaborative Model-Based Symmetry Activity for the Inorganic Chemistry Laboratory
-  authors: J. J. Markut, J. Cabana, N. P. Mankad and D. J. Wink
-  journal: J. Chem. Educ.
-  citation: 100, 1633–1640
-  url: https://pubs.acs.org/doi/abs/10.1021/acs.jchemed.3c00037
-  doi: 10.1021/acs.jchemed.3c00037
-  themes: []
-  themes_set_by: guess
-- year: 2023
+  published: 2023-02-13
   title: 3D Quantification of Elemental Gradients within Heterostructured Particles of Battery Cathodes
   authors: E. Allen, Y. Shin, W. Judge, M. Wolfman, V. De Andrade, S. M. Cologna and J. Cabana
   journal: ACS Energy Lett.
@@ -417,8 +546,20 @@
     - xray
   themes_set_by: guess
 - year: 2023
-  title: "NGenE 2022: Electrochemistry for decarbonization"
-  authors: J. Cabana, T. Alaan, G. W. Crabtree, P.-W. Huang, A. Jain, M. Murphy, J. N'Diaye, K. Ojha, G. Agbeworvi, H. Bergstrom, S. Gersib, H. Harb, A. Stejer, G. Quiles-Galarza, O. Rodriguez, I. Caruso, J. M. Goncalves, G. Y. Chen, C. A. Fernández, H. Pan, K. Ritter, Y. Yang, H. Zhang, A. C. Garcia-Alvarez, S. Ilic, K. Kumar, R. Silcox, Y. Yao, H. Song, S. Stoyanov, M. Saraf, C. H. Chen, S. M. S. Subasinghe, R. Gomes, S. Lang, E. Murphy, A. S. Thind and Y. Zheng
+  title: Insights into the reactivity and lithium plating mechanisms of ultra-thin metal oxide coatings for anode-free solid-state lithium metal batteries
+  authors: M. J. Counihan, T. Kim, R. Pathak, T. Zagorac, Y. Yang, M. E. Burns, J. Cabana, R. F. Klie, L. Hanley, J. G. Connell, A. U. Mane, J. W. Elam and S. Tepavcevic
+  journal: Front. Batter. Electrochem.
+  citation: 2, 1292622
+  url: https://doi.org/10.3389/fbael.2023.1292622
+  doi: 10.3389/fbael.2023.1292622
+  themes:
+    - interface
+    - ion
+  themes_set_by: guess
+- year: 2022
+  published: 2022-12-28
+  title: "NGenE 2022: Electrochemistry for Decarbonization"
+  authors: J. Cabana, T. Alaan, G. W. Crabtree, P.-W. Huang, A. Jain, M. Murphy, J. N’Diaye, K. Ojha, G. Agbeworvi, H. Bergstrom, S. Gersib, H. Harb, A. Stejer, G. Quiles-Galarza, O. Rodriguez, I. Caruso, J. M. Gonçalves, G. Y. Chen, C. A. Fernández, H. Pan, K. Ritter, Y. Yang, H. Zhang, A. C. García-Álvarez, S. Ilic, K. Kumar, R. Silcox, Y. Yao, H. Song, S. Stoyanov, M. Saraf, C. H. Chen, S. M. S. Subasinghe, R. Gomes, S. Lang, E. Murphy, A. S. Thind and Y. Zheng
   journal: ACS Energy Lett.
   citation: 8, 740–747
   url: https://pubs.acs.org/doi/full/10.1021/acsenergylett.2c02587
@@ -426,17 +567,18 @@
   themes: []
   themes_set_by: guess
 - year: 2022
-  title: Molecular Beam Epitaxy (MBE) Growth of Model Cathodes to Study Interfacial Ion Diffusion
-  authors: B. Kc, J. Guo, J. Farrell, G. M. Nolis, D. B. Buchholz, G. Evmenenko, J. Cabana, G. W. Crabtree and R. F. Klie
-  journal: Adv. Mater. Interfaces
-  citation: 9, 2201187
-  url: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/admi.202201187
-  doi: 10.1002/admi.202201187
+  published: 2022-11
+  title: Synthesis and Mg2+ deintercalation in manganese spinel nanocrystals
+  authors: L. Hu, S. Kim, J. R. Jokisaari, G. M. Nolis, H. D. Yoo, J. W. Freeland, R. F. Klie, T. T. Fister and J. Cabana
+  journal: J. Solid State Chem.
+  citation: 315, 123464
+  url: https://doi.org/10.1016/j.jssc.2022.123464
+  doi: 10.1016/j.jssc.2022.123464
   themes:
     - ion
-    - interface
   themes_set_by: guess
 - year: 2022
+  published: 2022-10-03
   title: β-V2O5 as Magnesium Intercalation Cathode
   authors: R. Trócoli, P. Parajuli, C. Frontera, A. P. Black, G. C. B. Alexander, I. Roy, M. E. Arroyo-de Dompablo, R. F. Klie, J. Cabana and M. R. Palacín
   journal: ACS Appl. Energy Mater.
@@ -447,6 +589,18 @@
     - ion
   themes_set_by: guess
 - year: 2022
+  published: 2022-09-26
+  title: Spatial Quantification of Microstructural Degradation during Fast Charge in 18650 Lithium-Ion Batteries through Operando X-ray Microtomography and Euclidean Distance Mapping
+  authors: E. Allen, L. Y. Lim, X. Xiao, A. Liu, M. F. Toney, J. Cabana and J. Nelson Weker
+  journal: ACS Appl. Energy Mater.
+  citation: 5, 12798–12808
+  url: https://pubs.acs.org/doi/abs/10.1021/acsaem.2c02397
+  doi: 10.1021/acsaem.2c02397
+  themes:
+    - xray
+  themes_set_by: guess
+- year: 2022
+  published: 2022-09-19
   title: Evaluation of Chemical and Structural Homogeneity in Single Particles of Li1–xNi0.33Mn0.33Co0.33O2
   authors: W. J. Judge, B. M. May, K. Kumar, M. F. Wolfman, D. A. Shapiro, Z. Cai, M. V. Holt and J. Cabana
   journal: J. Phys. Chem. C
@@ -458,16 +612,30 @@
     - ion
   themes_set_by: guess
 - year: 2022
-  title: Synthesis and Mg2+ deintercalation in manganese spinel nanocrystals
-  authors: L. Hu, S. Kim, J. R. Jokisaari, G. M. Nolis, H. D. Yoo, J. W. Freeland, R. F. Klie, T. T. Fister and J. Cabana
-  journal: J. Solid State Chem.
-  citation: 315, 123464
-  url: https://doi.org/10.1016/j.jssc.2022.123464
-  doi: 10.1016/j.jssc.2022.123464
+  published: 2022-09-13
+  title: Molecular Beam Epitaxy (MBE) Growth of Model Cathodes to Study Interfacial Ion Diffusion
+  authors: B. KC, J. Guo, J. Farrell, G. M. Nolis, D. B. Buchholz, G. Evmenenko, J. Cabana, G. W. Crabtree and R. F. Klie
+  journal: Adv. Mater. Interfaces
+  citation: 9, 2201187
+  url: https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/admi.202201187
+  doi: 10.1002/admi.202201187
   themes:
     - ion
+    - interface
   themes_set_by: guess
 - year: 2022
+  published: 2022-09-01
+  title: Defect identification in simulated Bragg coherent diffraction imaging by automated AI
+  authors: W. Judge, H. Chan, S. Sankaranarayanan, R. J. Harder, J. Cabana and M. J. Cherukara
+  journal: MRS Bull.
+  citation: 48, 124–133
+  url: https://doi.org/10.1557/s43577-022-00342-1
+  doi: 10.1557/s43577-022-00342-1
+  themes:
+    - xray
+  themes_set_by: guess
+- year: 2022
+  published: 2022-08-25
   title: The Origin of High‐Voltage Stability in Single‐Crystal Layered Ni‐Rich Cathode Materials
   authors: J. Sun, X. Cao, H. Yang, P. He, M. A. Dato, J. Cabana and H. Zhou
   journal: Angew. Chem. Int. Ed.
@@ -478,6 +646,7 @@
     - ion
   themes_set_by: guess
 - year: 2022
+  published: 2022-07-27
   title: Unconventional Charge Transport in MgCr2O4 and Implications for Battery Intercalation Hosts
   authors: I. D. Johnson, A. N. Mistry, L. Yin, M. Murphy, M. Wolfman, T. T. Fister, S. H. Lapidus, J. Cabana, V. Srinivasan and B. J. Ingram
   journal: J. Am. Chem. Soc.
@@ -488,6 +657,7 @@
     - ion
   themes_set_by: guess
 - year: 2022
+  published: 2022-06-22
   title: Triggering and Stabilizing Oxygen Redox Chemistry in Layered Li[Na1/3Ru2/3]O2 Enabled by Stable Li–O–Na Configuration
   authors: X. Cao, H. Li, Y. Qiao, Z. Chang, P. Wang, C. Li, X. Yue, P. He, J. Cabana and H. Zhou
   journal: ACS Energy Lett.
@@ -498,6 +668,17 @@
     - redox
   themes_set_by: guess
 - year: 2022
+  published: 2022-06-21
+  title: Unprecedented Multifunctionality in 1D Nb1‐xTaxS3 Transition Metal Trichalcogenide Alloy
+  authors: Z. Hemmat, A. Ahmadiparidari, S. Wang, K. Kumar, M. Zepeda, C. Zhang, N. Dandu, S. Rastegar, L. Majidi, A. Jaradat, A. Ngo, K. Thornton, L. A. Curtiss, J. Cabana, Z. Huang and A. Salehi‐Khojin
+  journal: Adv. Funct. Mater.
+  citation: 32, 2205214
+  url: https://doi.org/10.1002/adfm.202205214
+  doi: 10.1002/adfm.202205214
+  themes: []
+  themes_set_by: guess
+- year: 2022
+  published: 2022-06-20
   title: Capturing dynamic ligand-to-metal charge transfer with a long-lived cationic intermediate for anionic redox
   authors: B. Li, K. Kumar, I. Roy, A. V. Morozov, O. V. Emelyanova, L. Zhang, T. Koç, S. Belin, J. Cabana, R. Dedryvère, A. M. Abakumov and J.-M. Tarascon
   journal: Nat. Mater.
@@ -508,15 +689,7 @@
     - redox
   themes_set_by: guess
 - year: 2022
-  title: Unprecedented Multifunctionality in 1D Nb1−xTaxS3 Transition Metal Trichalcogenide Alloy
-  authors: Z. Hemmat, A. Ahmadiparidari, S. Wang, K. Kumar, M. Zepeda, C. Zhang, N. Dandu, S. Rastegar, L. Majidi, A. Jaradat, A. Ngo, K. Thornton, L. A. Curtiss, J. Cabana, Z. Huang and A. Salehi-Khojin
-  journal: Adv. Funct. Mater.
-  citation: 32, 2205214
-  url: https://doi.org/10.1002/adfm.202205214
-  doi: 10.1002/adfm.202205214
-  themes: []
-  themes_set_by: guess
-- year: 2022
+  published: 2022-06
   title: Reversible anionic redox chemistry in layered Li4/7[□1/7Mn6/7]O2 enabled by stable Li–O-vacancy configuration
   authors: X. Cao, H. Li, Y. Qiao, P. He, Y. Qian, X. Yue, M. Jia, J. Cabana and H. Zhou
   journal: Joule
@@ -527,6 +700,7 @@
     - redox
   themes_set_by: guess
 - year: 2022
+  published: 2022-04-15
   title: Access to Ru(IV)–Ru(V) and Ru(V)–Ru(VI) Redox in Layered Li7RuO6 via Intercalation Reactions
   authors: H. Li, B. Taudul, G. C. B. Alexander, J. Liu, J. W. Freeland, M.-L. Doublet and J. Cabana
   journal: Chem. Mater.
@@ -538,6 +712,7 @@
     - ion
   themes_set_by: guess
 - year: 2022
+  published: 2022-04-07
   title: Facile Electrochemical Mg-Ion Transport in a Defect-Free Spinel Oxide
   authors: B. J. Kwon, L. Yin, I. Roy, N. J. Leon, K. Kumar, J. J. Kim, J. Han, J. Gim, C. Liao, S. H. Lapidus, J. Cabana and B. Key
   journal: Chem. Mater.
@@ -548,6 +723,18 @@
     - ion
   themes_set_by: guess
 - year: 2022
+  published: 2022-02
+  title: Structure design enables stable anionic and cationic redox chemistry in a T2-type Li-excess layered oxide cathode
+  authors: X. Cao, H. Li, Y. Qiao, M. Jia, H. Kitaura, J. Zhang, P. He, J. Cabana and H. Zhou
+  journal: Sci. Bull.
+  citation: 67, 381–388
+  url: https://www.sciencedirect.com/science/article/abs/pii/S2095927321007210
+  doi: 10.1016/j.scib.2021.11.014
+  themes:
+    - redox
+  themes_set_by: guess
+- year: 2022
+  published: 2022-01-10
   title: Intercalation of Ca into a Highly Defective Manganese Oxide at Room Temperature
   authors: B. J. Kwon, L. Yin, C. J. Bartel, K. Kumar, P. Parajuli, J. Gim, S. Kim, Y. A. Wu, R. F. Klie, S. H. Lapidus, B. Key, G. Ceder and J. Cabana
   journal: Chem. Mater.
@@ -557,27 +744,9 @@
   themes:
     - ion
   themes_set_by: guess
-- year: 2022
-  title: Structure design enables stable anionic and cationic redox chemistry in a T2-type Li-excess layered oxide cathode
-  authors: X. Cao, H. Li, Y. Qiao, M. Jia, H. Kitaura, J. Zhang, P. He, J. Cabana and H. Zhou
-  journal: Sci. Bull.
-  citation: 67, 381–388
-  url: https://www.sciencedirect.com/science/article/abs/pii/S2095927321007210
-  themes:
-    - redox
-  themes_set_by: guess
-- year: 2022
-  title: Spatial Quantification of Microstructural Degradation during Fast Charge in 18650 Lithium-Ion Batteries through Operando X-ray Microtomography and Euclidean Distance Mapping
-  authors: E. Allen, L. Y. Lim, X. Xiao, A. Liu, M. F. Toney, J. Cabana and J. Nelson Weker
-  journal: ACS Appl. Energy Mater.
-  citation: 5, 12798–12808
-  url: https://pubs.acs.org/doi/abs/10.1021/acsaem.2c02397
-  doi: 10.1021/acsaem.2c02397
-  themes:
-    - xray
-  themes_set_by: guess
-- year: 2022
-  title: "NGenE 2021: Electrochemistry is Everywhere"
+- year: 2021
+  published: 2021-12-22
+  title: "NGenE 2021: Electrochemistry Is Everywhere"
   authors: J. Cabana, T. Alaan, G. W. Crabtree, M. C. Hatzell, K. Manthiram, D. A. Steingart, I. Zenyuk, F. Jiao, A. Vojvodic, J. Y. Yang, N. P. Balsara, K. A. Persson, D. J. Siegel, C. L. Haynes, J. Mauzeroll, M. Shen, B. J. Venton, N. Balke, J. Rodríguez-López, D. R. Rolison, R. Shahbazian-Yassar, V. Srinivasan, S. Chaudhuri, A. Couet and J. Hattrick-Simpers
   journal: ACS Energy Lett.
   citation: 7, 368–374
@@ -585,3 +754,1809 @@
   doi: 10.1021/acsenergylett.1c02608
   themes: []
   themes_set_by: guess
+- year: 2021
+  published: 2021-12-10
+  title: Nanostructured Conductive Metal Organic Frameworks for Sustainable Low Charge Overpotentials in Li–Air Batteries
+  authors: L. Majidi, A. Ahmadiparidari, N. Shan, S. Kumar Singh, C. Zhang, Z. Huang, S. Rastegar, K. Kumar, Z. Hemmat, A. T. Ngo, P. Zapol, J. Cabana, A. Subramanian, L. A. Curtiss and A. Salehi‐Khojin
+  journal: Small
+  citation: 18, 2102902
+  url: https://doi.org/10.1002/smll.202102902
+  doi: 10.1002/smll.202102902
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-11
+  title: Misconceptions and myths surrounding “negative emissions”
+  authors: R. D. Aines, R. Davidson, S. Banerjee, J. Cabana and C. W. Jones
+  journal: Chem
+  citation: 7, 2829–2830
+  url: https://doi.org/10.1016/j.chempr.2021.10.002
+  doi: 10.1016/j.chempr.2021.10.002
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-11
+  title: sxdm—A python framework for analysis of Scanning X-Ray Diffraction Microscopy data
+  authors: W. Judge, M. Plews, B. May, M. V. Holt and J. Cabana
+  journal: Software Impacts
+  citation: 10, 100172
+  url: https://doi.org/10.1016/j.simpa.2021.100172
+  doi: 10.1016/j.simpa.2021.100172
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-07-30
+  title: Protein crystallography and PUIs
+  authors: K. McLaughlin
+  journal: Acta Crystallogr A Found Adv
+  citation: 77, a119–a119
+  url: https://doi.org/10.1107/s0108767321098809
+  doi: 10.1107/s0108767321098809
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+  check: Crossref does not list J. Cabana among the authors. Confirm this paper belongs here.
+  hide: true
+- year: 2021
+  published: 2021-06-11
+  title: Database of ab initio L-edge X-ray absorption near edge structure
+  authors: Y. Chen, C. Chen, C. Zheng, S. Dwaraknath, M. K. Horton, J. Cabana, J. Rehr, J. Vinson, A. Dozier, J. J. Kas, K. A. Persson and S. P. Ong
+  journal: Sci Data
+  citation: 8, 153
+  url: https://doi.org/10.1038/s41597-021-00936-5
+  doi: 10.1038/s41597-021-00936-5
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-06-01
+  title: Evolution of Oxygen Ligands upon Large Redox Swings of Li3IrO4
+  authors: H. Li, A. J. Perez, B. Taudul, T. D. Boyko, J. W. Freeland, M.-L. Doublet, J.-M. Tarascon and J. Cabana
+  journal: J. Electrochem. Soc.
+  citation: 168, 060541
+  url: https://doi.org/10.1149/1945-7111/ac0ad4
+  doi: 10.1149/1945-7111/ac0ad4
+  themes:
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-06
+  title: Achieving stable anionic redox chemistry in Li-excess O2-type layered oxide cathode via chemical ion-exchange strategy
+  authors: X. Cao, H. Li, Y. Qiao, M. Jia, P. He, J. Cabana and H. Zhou
+  journal: Energy Storage Materials
+  citation: 38, 1–8
+  url: https://doi.org/10.1016/j.ensm.2021.02.047
+  doi: 10.1016/j.ensm.2021.02.047
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-05-24
+  title: Structural Evolution of Layered Manganese Oxysulfides during Reversible Electrochemical Lithium Insertion and Copper Extrusion
+  authors: S. Dey, D. Zeng, P. Adamson, J. Cabana, S. Indris, J. Lu, S. J. Clarke and C. P. Grey
+  journal: Chem. Mater.
+  citation: 33, 3989–4005
+  url: https://doi.org/10.1021/acs.chemmater.1c00375
+  doi: 10.1021/acs.chemmater.1c00375
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-04-26
+  title: "The Quest for Functional Oxide Cathodes for Magnesium Batteries: A Critical Perspective"
+  authors: I. D. Johnson, B. J. Ingram and J. Cabana
+  journal: ACS Energy Lett.
+  citation: 6, 1892–1900
+  url: https://doi.org/10.1021/acsenergylett.1c00416
+  doi: 10.1021/acsenergylett.1c00416
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-02
+  title: 2D Copper Tetrahydroxyquinone Conductive Metal–Organic Framework for Selective CO2 Electrocatalysis at Low Overpotentials
+  authors: L. Majidi, A. Ahmadiparidari, N. Shan, S. N. Misal, K. Kumar, Z. Huang, S. Rastegar, Z. Hemmat, X. Zou, P. Zapol, J. Cabana, L. A. Curtiss and A. Salehi‐Khojin
+  journal: Advanced Materials
+  citation: 33, 2004393
+  url: https://doi.org/10.1002/adma.202004393
+  doi: 10.1002/adma.202004393
+  themes:
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: 2021-01-11
+  title: Unlocking anionic redox activity in O3-type sodium 3d layered oxides via Li substitution
+  authors: Q. Wang, S. Mariyappan, G. Rousse, A. V. Morozov, B. Porcheron, R. Dedryvère, J. Wu, W. Yang, L. Zhang, M. Chakir, M. Avdeev, M. Deschamps, Y.-S. Yu, J. Cabana, M.-L. Doublet, A. M. Abakumov and J.-M. Tarascon
+  journal: Nat. Mater.
+  citation: 20, 353–361
+  url: https://doi.org/10.1038/s41563-020-00870-8
+  doi: 10.1038/s41563-020-00870-8
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2021
+  published: "2021"
+  title: Control of crystal size tailors the electrochemical performance of α-V2O5 as a Mg2+ intercalation host
+  authors: I. D. Johnson, N. Stapleton, G. Nolis, D. Bauer, P. Parajuli, H. D. Yoo, L. Yin, B. J. Ingram, R. F. Klie, S. Lapidus, J. A. Darr and J. Cabana
+  journal: Nanoscale
+  citation: 13, 10081–10091
+  url: https://doi.org/10.1039/d1nr03080a
+  doi: 10.1039/d1nr03080a
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-12-11
+  title: Elucidation of Active Oxygen Sites upon Delithiation of Li3IrO4
+  authors: H. Li, A. J. Perez, B. Taudul, T. D. Boyko, J. W. Freeland, M.-L. Doublet, J.-M. Tarascon and J. Cabana
+  journal: ACS Energy Lett.
+  citation: 6, 140–147
+  url: https://doi.org/10.1021/acsenergylett.0c02040
+  doi: 10.1021/acsenergylett.0c02040
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-12-03
+  title: Stabilizing Anionic Redox Chemistry in a Mn‐Based Layered Oxide Cathode Constructed by Li‐Deficient Pristine State
+  authors: X. Cao, H. Li, Y. Qiao, M. Jia, X. Li, J. Cabana and H. Zhou
+  journal: Advanced Materials
+  citation: 33, 2004280
+  url: https://doi.org/10.1002/adma.202004280
+  doi: 10.1002/adma.202004280
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-11-19
+  title: Charge Transport Properties of Lithium Superoxide in Li–O2Batteries
+  authors: S. T. Plunkett, H.-H. Wang, S. H. Park, Y. J. Lee, J. Cabana, K. Amine, S. Al-Hallaj, B. P. Chaplin and L. A. Curtiss
+  journal: ACS Appl. Energy Mater.
+  citation: 3, 12575–12583
+  url: https://doi.org/10.1021/acsaem.0c02495
+  doi: 10.1021/acsaem.0c02495
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-10-08
+  title: Does Water Enhance Mg Intercalation in Oxides? The Case of a Tunnel Framework
+  authors: M. Lopez, H. D. Yoo, L. Hu, J. L. Andrews, S. Banerjee and J. Cabana
+  journal: ACS Energy Lett.
+  citation: 5, 3357–3361
+  url: https://doi.org/10.1021/acsenergylett.0c01681
+  doi: 10.1021/acsenergylett.0c01681
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-09-22
+  title: Phase‐Dependent Band Gap Engineering in Alloys of Metal‐Semiconductor Transition Metal Dichalcogenides
+  authors: S. Wang, J. Cavin, Z. Hemmat, K. Kumar, A. Ruckel, L. Majidi, H. Gholivand, R. Dawood, J. Cabana, N. Guisinger, R. F. Klie, F. Khalili‐Araghi, R. Mishra and A. Salehi‐Khojin
+  journal: Adv Funct Materials
+  citation: 30, 2004912
+  url: https://doi.org/10.1002/adfm.202004912
+  doi: 10.1002/adfm.202004912
+  themes:
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-08-31
+  title: Factors Defining the Intercalation Electrochemistry of CaFe2O4-Type Manganese Oxides
+  authors: G. Nolis, J. M. Gallardo-Amores, J. Serrano-Sevillano, E. Jahrman, H. D. Yoo, L. Hu, J. C. Hancock, J. Bolotnikov, S. Kim, J. W. Freeland, Y.-S. Liu, K. R. Poeppelmeier, G. T. Seidler, J. Guo, M. A. Alario-Franco, M. Casas-Cabanas, E. Morán and J. Cabana
+  journal: Chem. Mater.
+  citation: 32, 8203–8215
+  url: https://doi.org/10.1021/acs.chemmater.0c01858
+  doi: 10.1021/acs.chemmater.0c01858
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-08-03
+  title: Elucidating Anionic Redox Chemistry in P3 Layered Cathode for Na-Ion Batteries
+  authors: M. Jia, H. Li, Y. Qiao, L. Wang, X. Cao, J. Cabana and H. Zhou
+  journal: ACS Appl. Mater. Interfaces
+  citation: 12, 38249–38255
+  url: https://doi.org/10.1021/acsami.0c11763
+  doi: 10.1021/acsami.0c11763
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-08
+  title: "Spinel-layered Li1.1[Mn0.6Co0.8Ni0.6]O4-σ nanocrystals: Synthesis and electrochemistry at high potentials"
+  authors: L. Hu, L. Yin, F. Hassan and J. Cabana
+  journal: Journal of Solid State Chemistry
+  citation: 288, 121365
+  url: https://doi.org/10.1016/j.jssc.2020.121365
+  doi: 10.1016/j.jssc.2020.121365
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-07-28
+  title: "Synthesis of Antiperovskite Solid Electrolytes: Comparing Li3SI, Na3SI, and Ag3SI"
+  authors: L. Yin, M. Murphy, K. Kim, L. Hu, J. Cabana, D. J. Siegel and S. H. Lapidus
+  journal: Inorg. Chem.
+  citation: 59, 11244–11247
+  url: https://doi.org/10.1021/acs.inorgchem.0c01705
+  doi: 10.1021/acs.inorgchem.0c01705
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-07-23
+  title: High Capacity for Mg2+ Deintercalation in Spinel Vanadium Oxide Nanocrystals
+  authors: L. Hu, J. R. Jokisaari, B. J. Kwon, L. Yin, S. Kim, H. Park, S. H. Lapidus, R. F. Klie, B. Key, P. Zapol, B. J. Ingram, J. T. Vaughey and J. Cabana
+  journal: ACS Energy Lett.
+  citation: 5, 2721–2727
+  url: https://doi.org/10.1021/acsenergylett.0c01189
+  doi: 10.1021/acsenergylett.0c01189
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-07-14
+  title: High Voltage Mg-Ion Battery Cathode via a Solid Solution Cr–Mn Spinel Oxide
+  authors: B. J. Kwon, L. Yin, H. Park, P. Parajuli, K. Kumar, S. Kim, M. Yang, M. Murphy, P. Zapol, C. Liao, T. T. Fister, R. F. Klie, J. Cabana, J. T. Vaughey, S. H. Lapidus and B. Key
+  journal: Chem. Mater.
+  citation: 32, 6577–6587
+  url: https://doi.org/10.1021/acs.chemmater.0c01988
+  doi: 10.1021/acs.chemmater.0c01988
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-07-07
+  title: Probing Mg Intercalation in the Tetragonal Tungsten Bronze Framework V4Nb18O55
+  authors: I. D. Johnson, G. Nolis, K. McColl, Y. A. Wu, D. Thornton, L. Hu, H. D. Yoo, J. W. Freeland, F. Corà, J. K. Cockcroft, I. P. Parkin, R. F. Klie, J. Cabana and J. A. Darr
+  journal: Inorg. Chem.
+  citation: 59, 9783–9797
+  url: https://doi.org/10.1021/acs.inorgchem.0c01013
+  doi: 10.1021/acs.inorgchem.0c01013
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-06-26
+  title: Redox Chemistry and Reversible Structural Changes in Rhombohedral VO2F Cathode during Li Intercalation
+  authors: A. Kuhn, M. R. Plews, J. C. Pérez-Flores, F. Fauth, M. Hoelzel, J. Cabana and F. García-Alvarado
+  journal: Inorg. Chem.
+  citation: 59, 10048–10058
+  url: https://doi.org/10.1021/acs.inorgchem.0c01197
+  doi: 10.1021/acs.inorgchem.0c01197
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-06-19
+  title: Intercalation of Mg into a Few-Layer Phyllomanganate in Nonaqueous Electrolytes at Room Temperature
+  authors: B. J. Kwon, C. Kim, J. R. Jokisaari, H. D. Yoo, S.-D. Han, S. Kim, K.-C. Lau, C. Liao, Y.-S. Liu, J. Guo, B. Key, R. F. Klie and J. Cabana
+  journal: Chem. Mater.
+  citation: 32, 6014–6025
+  url: https://doi.org/10.1021/acs.chemmater.0c01305
+  doi: 10.1021/acs.chemmater.0c01305
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-06-19
+  title: Mapping Competitive Reduction upon Charging in LiNi0.8Co0.15Al0.05O2 Primary Particles
+  authors: M. Wolfman, Y.-S. Yu, B. M. May, Z. W. Lebens-Higgins, S. Sallis, N. V. Faenza, N. Pereira, N. Shirato, V. Rose, D. A. Shapiro, G. G. Amatucci, L. F. J. Piper and J. Cabana
+  journal: Chem. Mater.
+  citation: 32, 6161–6175
+  url: https://doi.org/10.1021/acs.chemmater.0c01986
+  doi: 10.1021/acs.chemmater.0c01986
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-05-25
+  title: "Quasi‐Binary Transition Metal Dichalcogenide Alloys: Thermodynamic Stability Prediction, Scalable Synthesis, and Application"
+  authors: Z. Hemmat, J. Cavin, A. Ahmadiparidari, A. Ruckel, S. Rastegar, S. N. Misal, L. Majidi, K. Kumar, S. Wang, J. Guo, R. Dawood, F. Lagunas, P. Parajuli, A. T. Ngo, L. A. Curtiss, S. B. Cho, J. Cabana, R. F. Klie, R. Mishra and A. Salehi‐Khojin
+  journal: Advanced Materials
+  citation: 32, 1907041
+  url: https://doi.org/10.1002/adma.201907041
+  doi: 10.1002/adma.201907041
+  themes:
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-04-09
+  title: Definition of Redox Centers in Reactions of Lithium Intercalation in Li3RuO4 Polymorphs
+  authors: H. Li, S. Ramakrishnan, J. W. Freeland, B. D. McCloskey and J. Cabana
+  journal: J. Am. Chem. Soc.
+  citation: 142, 8160–8173
+  url: https://doi.org/10.1021/jacs.9b12438
+  doi: 10.1021/jacs.9b12438
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-04-09
+  title: Structural Changes and Reversibility Upon Deintercalation of Li from LiCoPO4 Derivatives
+  authors: J. G. Lapping, O. J. Borkiewicz, K. M. Wiaderek, J. L. Allen, T. R. Jow and J. Cabana
+  journal: ACS Appl. Mater. Interfaces
+  citation: 12, 20570–20578
+  url: https://doi.org/10.1021/acsami.0c04110
+  doi: 10.1021/acsami.0c04110
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-04-01
+  title: Machine-Learning-Assisted Synthesis of Polar Racemates
+  authors: M. L. Nisbet, I. M. Pendleton, G. M. Nolis, K. J. Griffith, J. Schrier, J. Cabana, A. J. Norquist and K. R. Poeppelmeier
+  journal: J. Am. Chem. Soc.
+  citation: 142, 7555–7566
+  url: https://doi.org/10.1021/jacs.0c01239
+  doi: 10.1021/jacs.0c01239
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-03-31
+  title: "First Example of Protonation of Ruddlesden–Popper Sr2IrO4: A Route to Enhanced Water Oxidation Catalysts"
+  authors: R. Zhang, P. E. Pearce, V. Pimenta, J. Cabana, H. Li, D. Alves Dalla Corte, A. M. Abakumov, G. Rousse, D. Giaume, M. Deschamps and A. Grimaud
+  journal: Chemistry of Materials
+  citation: 32, 3499–3509
+  url: https://doi.org/10.1021/acs.chemmater.0c00432
+  doi: 10.1021/acs.chemmater.0c00432
+  themes:
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-03-19
+  title: Highly Active Rhenium-, Ruthenium-, and Iridium-Based Dichalcogenide Electrocatalysts for Oxygen Reduction and Oxygen Evolution Reactions in Aprotic Media
+  authors: L. Majidi, Z. Hemmat, R. E. Warburton, K. Kumar, A. Ahmadiparidari, L. Hong, J. Guo, P. Zapol, R. F. Klie, J. Cabana, J. Greeley, L. A. Curtiss and A. Salehi-Khojin
+  journal: Chem. Mater.
+  citation: 32, 2764–2773
+  url: https://doi.org/10.1021/acs.chemmater.9b04117
+  doi: 10.1021/acs.chemmater.9b04117
+  themes:
+    - redox
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-03-02
+  title: Revealing High Na-Content P2-Type Layered Oxides as Advanced Sodium-Ion Cathodes
+  authors: C. Zhao, Z. Yao, Q. Wang, H. Li, J. Wang, M. Liu, S. Ganapathy, Y. Lu, J. Cabana, B. Li, X. Bai, A. Aspuru-Guzik, M. Wagemaker, L. Chen and Y.-S. Hu
+  journal: Journal of the American Chemical Society
+  citation: 142, 5742–5750
+  url: https://doi.org/10.1021/jacs.9b13572
+  doi: 10.1021/jacs.9b13572
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-02-26
+  title: Exploring Anomalous Charge Storage in Anode Materials for Next-Generation Li Rechargeable Batteries
+  authors: H. Kim, W. Choi, J. Yoon, J. H. Um, W. Lee, J. Kim, J. Cabana and W.-S. Yoon
+  journal: Chem. Rev.
+  citation: 120, 6934–6976
+  url: https://doi.org/10.1021/acs.chemrev.9b00618
+  doi: 10.1021/acs.chemrev.9b00618
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-02-26
+  title: Stabilizing Reversible Oxygen Redox Chemistry in Layered Oxides for Sodium‐Ion Batteries
+  authors: X. Cao, H. Li, Y. Qiao, X. Li, M. Jia, J. Cabana and H. Zhou
+  journal: Advanced Energy Materials
+  citation: 10, 1903785
+  url: https://doi.org/10.1002/aenm.201903785
+  doi: 10.1002/aenm.201903785
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-02-18
+  title: "Direct Evidence of Charge Transfer upon Anion Intercalation in Graphite Cathodes through New Electronic States: An Experimental and Theoretical Study of Hexafluorophosphate"
+  authors: T. de Boer, J. G. Lapping, J. A. Read, T. T. Fister, M. Balasubramanian, J. Cabana and A. Moewes
+  journal: Chem. Mater.
+  citation: 32, 2036–2043
+  url: https://doi.org/10.1021/acs.chemmater.9b05078
+  doi: 10.1021/acs.chemmater.9b05078
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: 2020-01-02
+  title: Mapping and Metastability of Heterogeneity in LiMn2O4 Battery Electrodes with High Energy Density
+  authors: M. Wolfman, S. Khawaja and J. Cabana
+  journal: J. Electrochem. Soc.
+  citation: 167, 020526
+  url: https://doi.org/10.1149/1945-7111/ab6298
+  doi: 10.1149/1945-7111/ab6298
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2020
+  published: "2020"
+  title: Enhanced charge storage of nanometric ζ-V2O5 in Mg electrolytes
+  authors: I. D. Johnson, G. Nolis, L. Yin, H. D. Yoo, P. Parajuli, A. Mukherjee, J. L. Andrews, M. Lopez, R. F. Klie, S. Banerjee, B. J. Ingram, S. Lapidus, J. Cabana and J. A. Darr
+  journal: Nanoscale
+  citation: 12, 22150–22160
+  url: https://doi.org/10.1039/d0nr05060a
+  doi: 10.1039/d0nr05060a
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-12-27
+  title: Probing Electrochemical Mg-Ion Activity in MgCr2– x V x O4 Spinel Oxides
+  authors: B. J. Kwon, K.-C. Lau, H. Park, Y. A. Wu, K. L. Hawthorne, H. Li, S. Kim, I. L. Bolotin, T. T. Fister, P. Zapol, R. F. Klie, J. Cabana, C. Liao, S. H. Lapidus, B. Key and J. T. Vaughey
+  journal: Chem. Mater.
+  citation: 32, 1162–1171
+  url: https://doi.org/10.1021/acs.chemmater.9b04206
+  doi: 10.1021/acs.chemmater.9b04206
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-12-19
+  title: Probing Mg Migration in Spinel Oxides
+  authors: R. D. Bayliss, B. Key, G. Sai Gautam, P. Canepa, B. J. Kwon, S. H. Lapidus, F. Dogan, A. A. Adil, A. S. Lipton, P. J. Baker, G. Ceder, J. T. Vaughey and J. Cabana
+  journal: Chem. Mater.
+  citation: 32, 663–670
+  url: https://doi.org/10.1021/acs.chemmater.9b02450
+  doi: 10.1021/acs.chemmater.9b02450
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-11-14
+  title: Exploring the bottlenecks of anionic redox in Li-rich layered sulfides
+  authors: S. Saha, G. Assat, M. T. Sougrati, D. Foix, H. Li, J. Vergnet, S. Turi, Y. Ha, W. Yang, J. Cabana, G. Rousse, A. M. Abakumov and J.-M. Tarascon
+  journal: Nat Energy
+  citation: 4, 977–987
+  url: https://doi.org/10.1038/s41560-019-0493-0
+  doi: 10.1038/s41560-019-0493-0
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-10-01
+  title: Synthesis and Characterization of Core-Shell Nanocrystals of Co-Rich Cathodes
+  authors: B. J. Kwon, F. Dogan, J. R. Jokisaari, B. Key, I. L. Bolotin, T. Paulauskas, C. Kim, R. F. Klie and J. Cabana
+  journal: J. Electrochem. Soc.
+  citation: 167, 050501
+  url: https://doi.org/10.1149/2.0012005jes
+  doi: 10.1149/2.0012005jes
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-08-15
+  title: "Layered Oxide Cathodes for Li-Ion Batteries: Oxygen Loss and Vacancy Evolution"
+  authors: H. Zhang, B. M. May, F. Omenya, M. S. Whittingham, J. Cabana and G. Zhou
+  journal: Chem. Mater.
+  citation: 31, 7790–7798
+  url: https://doi.org/10.1021/acs.chemmater.9b03245
+  doi: 10.1021/acs.chemmater.9b03245
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-06-25
+  title: Charge Transfer Band Gap as an Indicator of Hysteresis in Li-Disordered Rock Salt Cathodes for Li-Ion Batteries
+  authors: Q. Jacquet, A. Iadecola, M. Saubanère, H. Li, E. J. Berg, G. Rousse, J. Cabana, M.-L. Doublet and J.-M. Tarascon
+  journal: J. Am. Chem. Soc.
+  citation: 141, 11452–11464
+  url: https://doi.org/10.1021/jacs.8b11413
+  doi: 10.1021/jacs.8b11413
+  themes:
+    - ion
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-05-31
+  title: Intercalation of Magnesium into a Layered Vanadium Oxide with High Capacity
+  authors: H. D. Yoo, J. R. Jokisaari, Y.-S. Yu, B. J. Kwon, L. Hu, S. Kim, S.-D. Han, M. Lopez, S. H. Lapidus, G. M. Nolis, B. J. Ingram, I. Bolotin, S. Ahmed, R. F. Klie, J. T. Vaughey, T. T. Fister and J. Cabana
+  journal: ACS Energy Lett.
+  citation: 4, 1528–1534
+  url: https://doi.org/10.1021/acsenergylett.9b00788
+  doi: 10.1021/acsenergylett.9b00788
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-03-25
+  title: Probing Electrochemically Induced Structural Evolution and Oxygen Redox Reactions in Layered Lithium Iridate
+  authors: L. Li, F. C. Castro, J. S. Park, H. Li, E. Lee, T. D. Boyko, J. W. Freeland, Z. Yao, T. T. Fister, J. Vinson, E. L. Shirley, C. Wolverton, J. Cabana, V. P. Dravid, M. M. Thackeray and M. K. Y. Chan
+  journal: Chem. Mater.
+  citation: 31, 4341–4352
+  url: https://doi.org/10.1021/acs.chemmater.8b04591
+  doi: 10.1021/acs.chemmater.8b04591
+  themes:
+    - redox
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-03-18
+  title: Electronic Structure of LiCoO2 Surfaces and Effect of Al Substitution
+  authors: L. Hong, L. Hu, J. W. Freeland, J. Cabana, S. Öğüt and R. F. Klie
+  journal: J. Phys. Chem. C
+  citation: 123, 8851–8858
+  url: https://doi.org/10.1021/acs.jpcc.8b11661
+  doi: 10.1021/acs.jpcc.8b11661
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-03
+  title: Electronic structure changes upon lithium intercalation into graphite – Insights from ex situ and operando x-ray Raman spectroscopy
+  authors: U. Boesenberg, D. Sokaras, D. Nordlund, T.-C. Weng, E. Gorelov, T. J. Richardson, R. Kostecki and J. Cabana
+  journal: Carbon
+  citation: 143, 371–377
+  url: https://doi.org/10.1016/j.carbon.2018.11.031
+  doi: 10.1016/j.carbon.2018.11.031
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-02-22
+  title: Surface Chemistry, Passivation, and Electrode Performance in Core–Shell Architectures of LiCoO2 Nanoplates
+  authors: L. Hu, J. W. Freeland and J. Cabana
+  journal: ACS Appl. Energy Mater.
+  citation: 2, 2149–2160
+  url: https://doi.org/10.1021/acsaem.8b02162
+  doi: 10.1021/acsaem.8b02162
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: 2019-01-07
+  title: Effect of Passivating Shells on the Chemistry and Electrode Properties of LiMn2O4 Nanocrystal Heterostructures
+  authors: B. J. Kwon, F. Dogan, J. R. Jokisaari, B. Key, C. Kim, Y.-S. Liu, J. Guo, R. F. Klie and J. Cabana
+  journal: ACS Appl. Mater. Interfaces
+  citation: 11, 3823–3833
+  url: https://doi.org/10.1021/acsami.8b14668
+  doi: 10.1021/acsami.8b14668
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: "2019"
+  title: Electrochemical Lithium Extraction and Insertion Process of Sol-Gel Synthesized LiMnPO4via Two-Phase Mechanism
+  authors: L. Esmezjan, D. Mikhailova, M. Etter, J. Cabana, C. P. Grey, S. Indris and H. Ehrenberg
+  journal: J. Electrochem. Soc.
+  citation: 166, A1257–A1265
+  url: https://doi.org/10.1149/2.1311906jes
+  doi: 10.1149/2.1311906jes
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: "2019"
+  title: Synthesis and X-ray absorption spectroscopy of potassium transition metal fluoride nanocrystals
+  authors: M. R. Plews, T. Yi, J. Lee, E. Chan, J. W. Freeland, D. Nordlund and J. Cabana
+  journal: CrystEngComm
+  citation: 21, 135–144
+  url: https://doi.org/10.1039/c8ce01349g
+  doi: 10.1039/c8ce01349g
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2019
+  published: "2019"
+  title: Tailoring the electrochemical activity of magnesium chromium oxide towards Mg batteries through control of size and crystal structure
+  authors: L. Hu, I. D. Johnson, S. Kim, G. M. Nolis, J. W. Freeland, H. D. Yoo, T. T. Fister, L. McCafferty, T. E. Ashton, J. A. Darr and J. Cabana
+  journal: Nanoscale
+  citation: 11, 639–646
+  url: https://doi.org/10.1039/c8nr08347a
+  doi: 10.1039/c8nr08347a
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-10-02
+  title: Control of Size and Composition of Colloidal Nanocrystals of Manganese Oxide
+  authors: G. M. Nolis, J. M. Bolotnikov and J. Cabana
+  journal: Inorg. Chem.
+  citation: 57, 12900–12907
+  url: https://doi.org/10.1021/acs.inorgchem.8b02124
+  doi: 10.1021/acs.inorgchem.8b02124
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-05-21
+  title: "Chemical Activity of the Peroxide/Oxide Redox Couple: Case Study of Ba5Ru2O11 in Aqueous and Organic Solvents"
+  authors: A. Grimaud, A. Iadecola, D. Batuk, M. Saubanère, A. M. Abakumov, J. W. Freeland, J. Cabana, H. Li, M.-L. Doublet, G. Rousse and J.-M. Tarascon
+  journal: Chemistry of Materials
+  citation: 30, 3882–3893
+  url: https://doi.org/10.1021/acs.chemmater.8b01372
+  doi: 10.1021/acs.chemmater.8b01372
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-03-02
+  title: Three-dimensional localization of nanoscale battery reactions using soft X-ray tomography
+  authors: Y.-S. Yu, M. Farmand, C. Kim, Y. Liu, C. P. Grey, F. C. Strobridge, T. Tyliszczak, R. Celestre, P. Denes, J. Joseph, H. Krishnan, F. R. N. C. Maia, A. L. D. Kilcoyne, S. Marchesini, T. P. C. Leite, T. Warwick, H. Padmore, J. Cabana and D. A. Shapiro
+  journal: Nat Commun
+  citation: 9, 921
+  url: https://doi.org/10.1038/s41467-018-03401-x
+  doi: 10.1038/s41467-018-03401-x
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-03
+  title: Reversible Mg-Ion Insertion in a Metastable One-Dimensional Polymorph of V2O5
+  authors: J. L. Andrews, A. Mukherjee, H. D. Yoo, A. Parija, P. M. Marley, S. Fakra, D. Prendergast, J. Cabana, R. F. Klie and S. Banerjee
+  journal: Chem
+  citation: 4, 564–585
+  url: https://doi.org/10.1016/j.chempr.2017.12.018
+  doi: 10.1016/j.chempr.2017.12.018
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-02-23
+  title: Changes in Electronic Structure upon Li Deintercalation from LiCoPO4 Derivatives
+  authors: J. G. Lapping, S. A. Delp, J. L. Allen, J. L. Allen, J. W. Freeland, M. D. Johannes, L. Hu, D. T. Tran, T. R. Jow and J. Cabana
+  journal: Chem. Mater.
+  citation: 30, 1898–1906
+  url: https://doi.org/10.1021/acs.chemmater.7b04739
+  doi: 10.1021/acs.chemmater.7b04739
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-02-20
+  title: Multivalent Electrochemistry of Spinel MgxMn3–xO4 Nanocrystals
+  authors: C. Kim, A. A. Adil, R. D. Bayliss, T. L. Kinnibrugh, S. H. Lapidus, G. M. Nolis, J. W. Freeland, P. J. Phillips, T. Yi, H. D. Yoo, B. J. Kwon, Y.-S. Yu, R. Klie, P. J. Chupas, K. W. Chapman and J. Cabana
+  journal: Chem. Mater.
+  citation: 30, 1496–1504
+  url: https://doi.org/10.1021/acs.chemmater.7b03640
+  doi: 10.1021/acs.chemmater.7b03640
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-02-19
+  title: Electrochemical Reduction of a Spinel-Type Manganese Oxide Cathode in Aqueous Electrolytes with Ca2+ or Zn2+
+  authors: G. M. Nolis, A. Adil, H. D. Yoo, L. Hu, R. D. Bayliss, S. H. Lapidus, L. Berkland, P. J. Phillips, J. W. Freeland, C. Kim, R. F. Klie and J. Cabana
+  journal: J. Phys. Chem. C
+  citation: 122, 4182–4188
+  url: https://doi.org/10.1021/acs.jpcc.7b12084
+  doi: 10.1021/acs.jpcc.7b12084
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-01-31
+  title: Mechanisms of Degradation and Strategies for the Stabilization of Cathode–Electrolyte Interfaces in Li-Ion Batteries
+  authors: J. Cabana, B. J. Kwon and L. Hu
+  journal: Acc. Chem. Res.
+  citation: 51, 299–308
+  url: https://doi.org/10.1021/acs.accounts.7b00482
+  doi: 10.1021/acs.accounts.7b00482
+  themes:
+    - ion
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: 2018-01-18
+  title: Facet-Dependent Rock-Salt Reconstruction on the Surface of Layered Oxide Cathodes
+  authors: H. Zhang, B. M. May, J. Serrano-Sevillano, M. Casas-Cabanas, J. Cabana, C. Wang and G. Zhou
+  journal: Chem. Mater.
+  citation: 30, 692–699
+  url: https://doi.org/10.1021/acs.chemmater.7b03901
+  doi: 10.1021/acs.chemmater.7b03901
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: "2018"
+  title: Effect of Synthetic Parameters on Defects, Structure, and Electrochemical Properties of Layered Oxide LiNi0.80Co0.15Al0.05O2
+  authors: B. M. May, J. Serrano-Sevillano, A. L. Dauphin, A. Nazib, N. Lima, M. Casas-Cabanas and J. Cabana
+  journal: J. Electrochem. Soc.
+  citation: 165, A3537–A3543
+  url: https://doi.org/10.1149/2.1211814jes
+  doi: 10.1149/2.1211814jes
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: "2018"
+  title: Nanocrystal heterostructures of LiCoO2 with conformal passivating shells
+  authors: B. J. Kwon, P. J. Phillips, B. Key, F. Dogan, J. W. Freeland, C. Kim, R. F. Klie and J. Cabana
+  journal: Nanoscale
+  citation: 10, 6954–6961
+  url: https://doi.org/10.1039/c7nr08612a
+  doi: 10.1039/c7nr08612a
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2018
+  published: "2018"
+  title: Single-particle measurements of electrochemical kinetics in NMC and NCA cathodes for Li-ion batteries
+  authors: P.-C. Tsai, B. Wen, M. Wolfman, M.-J. Choe, M. S. Pan, L. Su, K. Thornton, J. Cabana and Y.-M. Chiang
+  journal: Energy Environ. Sci.
+  citation: 11, 860–871
+  url: https://doi.org/10.1039/c8ee00001h
+  doi: 10.1039/c8ee00001h
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-12-18
+  title: "NaV1.25Ti0.75O4: A Potential Post-Spinel Cathode Material for Mg Batteries"
+  authors: X. Sun, L. Blanc, G. M. Nolis, P. Bonnick, J. Cabana and L. F. Nazar
+  journal: Chem. Mater.
+  citation: 30, 121–128
+  url: https://doi.org/10.1021/acs.chemmater.7b03383
+  doi: 10.1021/acs.chemmater.7b03383
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-11-30
+  title: Nanoscale Detection of Intermediate Solid Solutions in Equilibrated LixFePO4 Microcrystals
+  authors: B. M. May, Y.-S. Yu, M. V. Holt, F. C. Strobridge, U. Boesenberg, C. P. Grey and J. Cabana
+  journal: Nano Lett.
+  citation: 17, 7364–7371
+  url: https://doi.org/10.1021/acs.nanolett.7b03086
+  doi: 10.1021/acs.nanolett.7b03086
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-07-13
+  title: Control of Chemical Structure in Core–Shell Nanocrystals for the Stabilization of Battery Electrode/Electrolyte Interfaces
+  authors: L. Hu, P. Brüner, T. Grehl, H. H. Brongersma and J. Cabana
+  journal: Chem. Mater.
+  citation: 29, 5896–5905
+  url: https://doi.org/10.1021/acs.chemmater.7b01269
+  doi: 10.1021/acs.chemmater.7b01269
+  themes:
+    - ion
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-07-05
+  title: Degradation Mechanisms of Magnesium Metal Anodes in Electrolytes Based on (CF3SO2)2N– at High Current Densities
+  authors: H. D. Yoo, S.-D. Han, I. L. Bolotin, G. M. Nolis, R. D. Bayliss, A. K. Burrell, J. T. Vaughey and J. Cabana
+  journal: Langmuir
+  citation: 33, 9398–9406
+  url: https://doi.org/10.1021/acs.langmuir.7b01051
+  doi: 10.1021/acs.langmuir.7b01051
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-05-26
+  title: Intergranular Cracking as a Major Cause of Long-Term Capacity Fading of Layered Cathodes
+  authors: H. Liu, M. Wolfman, K. Karki, Y.-S. Yu, E. A. Stach, J. Cabana, K. W. Chapman and P. J. Chupas
+  journal: Nano Lett.
+  citation: 17, 3452–3457
+  url: https://doi.org/10.1021/acs.nanolett.7b00379
+  doi: 10.1021/acs.nanolett.7b00379
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-05-22
+  title: Direct characterization of the Li intercalation mechanism into α-V2O5 nanowires using in-situ transmission electron microscopy
+  authors: A. Mukherjee, H. A. Ardakani, T. Yi, J. Cabana, R. Shahbazian-Yassar and R. F. Klie
+  journal: Applied Physics Letters
+  citation: 110, 213903
+  url: https://doi.org/10.1063/1.4984111
+  doi: 10.1063/1.4984111
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-05-19
+  title: "Mechanism of Zn Insertion into Nanostructured δ-MnO2 : A Nonaqueous Rechargeable Zn Metal Battery"
+  authors: S.-D. Han, S. Kim, D. Li, V. Petkov, H. D. Yoo, P. J. Phillips, H. Wang, J. J. Kim, K. L. More, B. Key, R. F. Klie, J. Cabana, V. R. Stamenkovic, T. T. Fister, N. M. Markovic, A. K. Burrell, S. Tepavcevic and J. T. Vaughey
+  journal: Chem. Mater.
+  citation: 29, 4874–4884
+  url: https://doi.org/10.1021/acs.chemmater.7b00852
+  doi: 10.1021/acs.chemmater.7b00852
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-03-21
+  title: Visualization of Electrochemical Reactions in Battery Materials with X-ray Microscopy and Mapping
+  authors: M. Wolfman, B. M. May and J. Cabana
+  journal: Chemistry of Materials
+  citation: 29, 3347–3362
+  url: https://doi.org/10.1021/acs.chemmater.6b05114
+  doi: 10.1021/acs.chemmater.6b05114
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-02-07
+  title: Investigating the Intercalation Chemistry of Alkali Ions in Fluoride Perovskites
+  authors: T. Yi, W. Chen, L. Cheng, R. D. Bayliss, F. Lin, M. R. Plews, D. Nordlund, M. M. Doeff, K. A. Persson and J. Cabana
+  journal: Chem. Mater.
+  citation: 29, 1561–1568
+  url: https://doi.org/10.1021/acs.chemmater.6b04181
+  doi: 10.1021/acs.chemmater.6b04181
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2017
+  published: 2017-02-06
+  title: Near-edge X-ray refraction fine structure microscopy
+  authors: M. Farmand, R. Celestre, P. Denes, A. L. D. Kilcoyne, S. Marchesini, H. Padmore, T. Tyliszczak, T. Warwick, X. Shi, J. Lee, Y.-S. Yu, J. Cabana, J. Joseph, H. Krishnan, T. Perciano, F. R. N. C. Maia and D. A. Shapiro
+  journal: Applied Physics Letters
+  citation: 110, 063101
+  url: https://doi.org/10.1063/1.4975377
+  doi: 10.1063/1.4975377
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2016
+  published: 2016-11-28
+  title: Visualization of the Phase Propagation within Carbon-Free Li4Ti5O12 Battery Electrodes
+  authors: C. Kim, Y.-S. Yu, B. Moyon, C. Sirisopanaporn, T. J. Richardson and J. Cabana
+  journal: The Journal of Physical Chemistry C
+  citation: 120, 29030–29038
+  url: https://doi.org/10.1021/acs.jpcc.6b11459
+  doi: 10.1021/acs.jpcc.6b11459
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2016
+  published: 2016-10-24
+  title: “Rocking-Chair”-Type Metal Hybrid Supercapacitors
+  authors: H. D. Yoo, S.-D. Han, R. D. Bayliss, A. A. Gewirth, B. Genorio, N. N. Rajput, K. A. Persson, A. K. Burrell and J. Cabana
+  journal: ACS Applied Materials & Interfaces
+  citation: 8, 30853–30862
+  url: https://doi.org/10.1021/acsami.6b08367
+  doi: 10.1021/acsami.6b08367
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2016
+  published: 2016-05-06
+  title: Structure and Sodium Ion Dynamics in Sodium Strontium Silicate Investigated by Multinuclear Solid-State NMR
+  authors: K. K. Inglis, J. P. Corley, P. Florian, J. Cabana, R. D. Bayliss and F. Blanc
+  journal: Chemistry of Materials
+  citation: 28, 3850–3861
+  url: https://doi.org/10.1021/acs.chemmater.6b00941
+  doi: 10.1021/acs.chemmater.6b00941
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2016
+  published: 2016-05
+  title: "Graphene quantum dots: structural integrity and oxygen functional groups for high sulfur/sulfide utilization in lithium sulfur batteries"
+  authors: J. Park, J. Moon, C. Kim, J. H. Kang, E. Lim, J. Park, K. J. Lee, S.-H. Yu, J.-H. Seo, J. Lee, J. Heo, N. Tanaka, S.-P. Cho, J. Pyun, J. Cabana, B. H. Hong and Y.-E. Sung
+  journal: NPG Asia Mater
+  citation: 8, e272–e272
+  url: https://doi.org/10.1038/am.2016.61
+  doi: 10.1038/am.2016.61
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2016
+  published: "2016"
+  title: Atomic defects during ordering transitions in LiNi0.5Mn1.5O4 and their relationship with electrochemical properties
+  authors: M. Casas-Cabanas, C. Kim, J. Rodríguez-Carvajal and J. Cabana
+  journal: J. Mater. Chem. A
+  citation: 4, 8255–8262
+  url: https://doi.org/10.1039/c6ta00424e
+  doi: 10.1039/c6ta00424e
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2016
+  published: "2016"
+  title: Lithium Metal-Copper Vanadium Oxide Battery with a Block Copolymer Electrolyte
+  authors: D. Devaux, X. Wang, J. L. Thelen, D. Y. Parkinson, J. Cabana, F. Wang and N. P. Balsara
+  journal: J. Electrochem. Soc.
+  citation: 163, A2447–A2455
+  url: https://doi.org/10.1149/2.1331610jes
+  doi: 10.1149/2.1331610jes
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-12-18
+  title: Phase-Controlled Electrochemical Activity of Epitaxial Mg-Spinel Thin Films
+  authors: Z. Feng, X. Chen, L. Qiao, A. L. Lipson, T. T. Fister, L. Zeng, C. Kim, T. Yi, N. Sa, D. L. Proffit, A. K. Burrell, J. Cabana, B. J. Ingram, M. D. Biegalski, M. J. Bedzyk and P. Fenter
+  journal: ACS Appl. Mater. Interfaces
+  citation: 7, 28438–28443
+  url: https://doi.org/10.1021/acsami.5b09346
+  doi: 10.1021/acsami.5b09346
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-08
+  title: The Role of Aberration-Corrected STEM in the Characterization of Oxide Cathode Materials
+  authors: P. Phillips, D. Abraham, J. Bareno, C. Kim, T. Yi, J. Cabana and R. Klie
+  journal: Microsc Microanal
+  citation: 21, 1547–1548
+  url: https://doi.org/10.1017/s143192761500851x
+  doi: 10.1017/s143192761500851x
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-06-10
+  title: Dependence on Crystal Size of the Nanoscale Chemical Phase Distribution and Fracture in Li x FePO4
+  authors: Y.-S. Yu, C. Kim, D. A. Shapiro, M. Farmand, D. Qian, T. Tyliszczak, A. L. D. Kilcoyne, R. Celestre, S. Marchesini, J. Joseph, P. Denes, T. Warwick, F. C. Strobridge, C. P. Grey, H. Padmore, Y. S. Meng, R. Kostecki and J. Cabana
+  journal: Nano Letters
+  citation: 15, 4282–4288
+  url: https://doi.org/10.1021/acs.nanolett.5b01314
+  doi: 10.1021/acs.nanolett.5b01314
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-04-20
+  title: Visualization of electrochemically driven solid-state phase transformations using operando hard X-ray spectro-imaging
+  authors: L. Li, Y.-C. K. Chen-Wiegart, J. Wang, P. Gao, Q. Ding, Y.-S. Yu, F. Wang, J. Cabana, J. Wang and S. Jin
+  journal: Nat Commun
+  citation: 6, 6883
+  url: https://doi.org/10.1038/ncomms7883
+  doi: 10.1038/ncomms7883
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-04-17
+  title: Direct Observation of Reversible Magnesium Ion Intercalation into a Spinel Oxide Host
+  authors: C. Kim, P. J. Phillips, B. Key, T. Yi, D. Nordlund, Y. Yu, R. D. Bayliss, S. Han, M. He, Z. Zhang, A. K. Burrell, R. F. Klie and J. Cabana
+  journal: Advanced Materials
+  citation: 27, 3377–3384
+  url: https://doi.org/10.1002/adma.201500083
+  doi: 10.1002/adma.201500083
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-03-05
+  title: The Formation Mechanism of Fluorescent Metal Complexes at the LixNi0.5Mn1.5O4−δ/Carbonate Ester Electrolyte Interface
+  authors: A. Jarry, S. Gottis, Y.-S. Yu, J. Roque-Rosell, C. Kim, J. Cabana, J. Kerr and R. Kostecki
+  journal: J. Am. Chem. Soc.
+  citation: 137, 3533–3539
+  url: https://doi.org/10.1021/ja5116698
+  doi: 10.1021/ja5116698
+  themes:
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-02-27
+  title: "High-Voltage Cathode Materials for Lithium-Ion Batteries: Freeze-Dried LiMn0.8Fe0.1M0.1PO4/C (M = Fe, Co, Ni, Cu) Nanocomposites"
+  authors: A. Iturrondobeitia, A. Goñi, I. Gil de Muro, L. Lezama, C. Kim, M. Doeff, J. Cabana and T. Rojo
+  journal: Inorg. Chem.
+  citation: 54, 2671–2678
+  url: https://doi.org/10.1021/ic5028306
+  doi: 10.1021/ic5028306
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2015
+  published: 2015-02
+  title: Effects of crystallinity and impurities on the electrical conductivity of Li–La–Zr–O thin films
+  authors: J. S. Park, L. Cheng, V. Zorba, A. Mehta, J. Cabana, G. Chen, M. M. Doeff, T. J. Richardson, J. H. Park, J.-W. Son and W.-S. Hong
+  journal: Thin Solid Films
+  citation: 576, 55–60
+  url: https://doi.org/10.1016/j.tsf.2014.11.019
+  doi: 10.1016/j.tsf.2014.11.019
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-12-22
+  title: Nonequilibrium Pathways during Electrochemical Phase Transformations in Single Crystals Revealed by Dynamic Chemical Imaging at Nanoscale Resolution
+  authors: Y. Yu, C. Kim, Y. Liu, A. van der Ven, Y. S. Meng, R. Kostecki and J. Cabana
+  journal: Advanced Energy Materials
+  citation: 5, 1402040
+  url: https://doi.org/10.1002/aenm.201402040
+  doi: 10.1002/aenm.201402040
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-12-17
+  title: Stabilization of Battery Electrode/Electrolyte Interfaces Employing Nanocrystals with Passivating Epitaxial Shells
+  authors: C. Kim, P. J. Phillips, L. Xu, A. Dong, R. Buonsanti, R. F. Klie and J. Cabana
+  journal: Chem. Mater.
+  citation: 27, 394–399
+  url: https://doi.org/10.1021/cm503615w
+  doi: 10.1021/cm503615w
+  themes:
+    - ion
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-11-20
+  title: Asymmetric pathways in the electrochemical conversion reaction of NiO as battery electrode with high storage capacity
+  authors: U. Boesenberg, M. A. Marcus, A. K. Shukla, T. Yi, E. McDermott, P. F. Teh, M. Srinivasan, A. Moewes and J. Cabana
+  journal: Sci Rep
+  citation: 4, 7133
+  url: https://doi.org/10.1038/srep07133
+  doi: 10.1038/srep07133
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-09-24
+  title: "Understanding the defect chemistry of alkali metal strontium silicate solid solutions: insights from experiment and theory"
+  authors: R. D. Bayliss, S. N. Cook, D. O. Scanlon, S. Fearn, J. Cabana, C. Greaves, J. A. Kilner and S. J. Skinner
+  journal: J. Mater. Chem. A
+  citation: 2, 17919–17924
+  url: https://doi.org/10.1039/c4ta04299a
+  doi: 10.1039/c4ta04299a
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-09-07
+  title: Chemical composition mapping with nanometre resolution by soft X-ray microscopy
+  authors: D. A. Shapiro, Y.-S. Yu, T. Tyliszczak, J. Cabana, R. Celestre, W. Chao, K. Kaznatcheev, A. L. D. Kilcoyne, F. Maia, S. Marchesini, Y. S. Meng, T. Warwick, L. L. Yang and H. A. Padmore
+  journal: Nature Photon
+  citation: 8, 765–769
+  url: https://doi.org/10.1038/nphoton.2014.207
+  doi: 10.1038/nphoton.2014.207
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-05-12
+  title: Surface Chemistry Consequences of Mg-Based Coatings on LiNi0.5Mn1.5O4 Electrode Materials upon Operation at High Voltage
+  authors: G. Alva, C. Kim, T. Yi, J. B. Cook, L. Xu, G. M. Nolis and J. Cabana
+  journal: J. Phys. Chem. C
+  citation: 118, 10596–10605
+  url: https://doi.org/10.1021/jp5003148
+  doi: 10.1021/jp5003148
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-05-05
+  title: Ultrathin Lithium-Ion Conducting Coatings for Increased Interfacial Stability in High Voltage Lithium-Ion Batteries
+  authors: J. S. Park, X. Meng, J. W. Elam, S. Hao, C. Wolverton, C. Kim and J. Cabana
+  journal: Chem. Mater.
+  citation: 26, 3128–3134
+  url: https://doi.org/10.1021/cm500512n
+  doi: 10.1021/cm500512n
+  themes:
+    - ion
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-04-14
+  title: X-ray Absorption Spectra of Dissolved Polysulfides in Lithium–Sulfur Batteries from First-Principles
+  authors: T. A. Pascal, K. H. Wujcik, J. Velasco-Velez, C. Wu, A. A. Teran, M. Kapilashrami, J. Cabana, J. Guo, M. Salmeron, N. Balsara and D. Prendergast
+  journal: J. Phys. Chem. Lett.
+  citation: 5, 1547–1551
+  url: https://doi.org/10.1021/jz500260s
+  doi: 10.1021/jz500260s
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-04-01
+  title: "Lepidocrocite-type Layered Titanate Structures: New Lithium and Sodium Ion Intercalation Anode Materials"
+  authors: M. Shirpour, J. Cabana and M. Doeff
+  journal: Chem. Mater.
+  citation: 26, 2502–2512
+  url: https://doi.org/10.1021/cm500342m
+  doi: 10.1021/cm500342m
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-03-26
+  title: Electron Tomography Analysis of Reaction Path during Formation of Nanoporous NiO by Solid State Decomposition
+  authors: A. K. Shukla, P. Ercius, A. R. S. Gautam, J. Cabana and U. Dahmen
+  journal: Crystal Growth & Design
+  citation: 14, 2453–2459
+  url: https://doi.org/10.1021/cg5001649
+  doi: 10.1021/cg5001649
+  themes:
+    - interface
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-02-26
+  title: Toward General Rules for the Design of Battery Electrodes Based on Titanium Oxides and Free of Conductive Additives
+  authors: C. T. Alexander, C. Kim, R. Yaylian and J. Cabana
+  journal: Energy Tech
+  citation: 2, 383–390
+  url: https://doi.org/10.1002/ente.201300143
+  doi: 10.1002/ente.201300143
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: 2014-01-15
+  title: "Finite temperature effects on the X-ray absorption spectra of lithium compounds: First-principles interpretation of X-ray Raman measurements"
+  authors: T. A. Pascal, U. Boesenberg, R. Kostecki, T. J. Richardson, T.-C. Weng, D. Sokaras, D. Nordlund, E. McDermott, A. Moewes, J. Cabana and D. Prendergast
+  journal: The Journal of Chemical Physics
+  citation: 140, 034107
+  url: https://doi.org/10.1063/1.4856835
+  doi: 10.1063/1.4856835
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: "2014"
+  title: Effect of microstructure and surface impurity segregation on the electrical and electrochemical properties of dense Al-substituted Li7La3Zr2O12
+  authors: L. Cheng, J. S. Park, H. Hou, V. Zorba, G. Chen, T. Richardson, J. Cabana, R. Russo and M. Doeff
+  journal: J. Mater. Chem. A
+  citation: 2, 172–181
+  url: https://doi.org/10.1039/c3ta13999a
+  doi: 10.1039/c3ta13999a
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: "2014"
+  title: Effective wrapping of graphene on individual Li4Ti5O12 grains for high-rate Li-ion batteries
+  authors: Y. Oh, S. Nam, S. Wi, J. Kang, T. Hwang, S. Lee, H. H. Park, J. Cabana, C. Kim and B. Park
+  journal: J. Mater. Chem. A
+  citation: 2, 2023–2027
+  url: https://doi.org/10.1039/c3ta14347c
+  doi: 10.1039/c3ta14347c
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: "2014"
+  title: Electroanalytical study of the viability of conversion reactions as energy storage mechanisms
+  authors: A. Ponrouch, J. Cabana, R. Dugas, J. L. Slack and M. R. Palacín
+  journal: RSC Adv.
+  citation: 4, 35988–35996
+  url: https://doi.org/10.1039/c4ra05189k
+  doi: 10.1039/c4ra05189k
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: "2014"
+  title: Fingerprinting Lithium-Sulfur Battery Reaction Products by X-ray Absorption Spectroscopy
+  authors: K. H. Wujcik, J. Velasco-Velez, C. H. Wu, T. Pascal, A. A. Teran, M. A. Marcus, J. Cabana, J. Guo, D. Prendergast, M. Salmeron and N. P. Balsara
+  journal: J. Electrochem. Soc.
+  citation: 161, A1100–A1106
+  url: https://doi.org/10.1149/2.078406jes
+  doi: 10.1149/2.078406jes
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: "2014"
+  title: Modification of the electrochemical activity of LiMn1.95Si0.05O4 spinel via addition of phases with different physico-chemical properties
+  authors: A. Iturrondobeitia, A. Goñi, L. Lezama, C. Kim, M. Doeff, J. Cabana and T. Rojo
+  journal: J. Mater. Chem. A
+  citation: 2, 3216
+  url: https://doi.org/10.1039/c3ta14793b
+  doi: 10.1039/c3ta14793b
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2014
+  published: "2014"
+  title: The origin of high electrolyte–electrode interfacial resistances in lithium cells containing garnet type solid electrolytes
+  authors: L. Cheng, E. J. Crumlin, W. Chen, R. Qiao, H. Hou, S. Franz Lux, V. Zorba, R. Russo, R. Kostecki, Z. Liu, K. Persson, W. Yang, J. Cabana, T. Richardson, G. Chen and M. Doeff
+  journal: Phys. Chem. Chem. Phys.
+  citation: 16, 18294–18300
+  url: https://doi.org/10.1039/c4cp02921f
+  doi: 10.1039/c4cp02921f
+  themes:
+    - ion
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-11-11
+  title: Characterization of Electrode Materials for Lithium Ion and Sodium Ion Batteries Using Synchrotron Radiation Techniques
+  authors: M. M. Doeff, G. Chen, J. Cabana, T. J. Richardson, A. Mehta, M. Shirpour, H. Duncan, C. Kim, K. C. Kam and T. Conry
+  journal: JoVE
+  citation: online ahead of print
+  url: https://doi.org/10.3791/50594
+  doi: 10.3791/50594
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-11-07
+  title: Electrochemical Reactivity with Lithium of Spinel-type ZnFe2– yCryO4 (0 ≤ y ≤ 2)
+  authors: P. F. Teh, S. S. Pramana, C. Kim, C.-M. Chen, C.-H. Chuang, Y. Sharma, J. Cabana and S. Madhavi
+  journal: J. Phys. Chem. C
+  citation: 117, 24213–24223
+  url: https://doi.org/10.1021/jp408762v
+  doi: 10.1021/jp408762v
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-09-27
+  title: Titanate Anodes for Sodium Ion Batteries
+  authors: M. M. Doeff, J. Cabana and M. Shirpour
+  journal: J Inorg Organomet Polym
+  citation: 24, 5–14
+  url: https://doi.org/10.1007/s10904-013-9977-8
+  doi: 10.1007/s10904-013-9977-8
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-07-24
+  title: Study of the Transition Metal Ordering in Layered NaxNix/2Mn1–x/2O2 (2/3 ≤ x ≤ 1) and Consequences of Na/Li Exchange
+  authors: J. Cabana, N. A. Chernova, J. Xiao, M. Roppolo, K. A. Aldi, M. S. Whittingham and C. P. Grey
+  journal: Inorg. Chem.
+  citation: 52, 8540–8550
+  url: https://doi.org/10.1021/ic400579w
+  doi: 10.1021/ic400579w
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-06-26
+  title: Carbon‐Free TiO2 Battery Electrodes Enabled by Morphological Control at the Nanoscale
+  authors: C. Kim, R. Buonsanti, R. Yaylian, D. J. Milliron and J. Cabana
+  journal: Advanced Energy Materials
+  citation: 3, 1286–1291
+  url: https://doi.org/10.1002/aenm.201300264
+  doi: 10.1002/aenm.201300264
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-04-03
+  title: Mesoscale Phase Distribution in Single Particles of LiFePO4 following Lithium Deintercalation
+  authors: U. Boesenberg, F. Meirer, Y. Liu, A. K. Shukla, R. Dell’Anna, T. Tyliszczak, G. Chen, J. C. Andrews, T. J. Richardson, R. Kostecki and J. Cabana
+  journal: Chem. Mater.
+  citation: 25, 1664–1672
+  url: https://doi.org/10.1021/cm400106k
+  doi: 10.1021/cm400106k
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-03-15
+  title: Monodisperse Sn Nanocrystals as a Platform for the Study of Mechanical Damage during Electrochemical Reactions with Li
+  authors: L. Xu, C. Kim, A. K. Shukla, A. Dong, T. M. Mattox, D. J. Milliron and J. Cabana
+  journal: Nano Lett.
+  citation: 13, 1800–1805
+  url: https://doi.org/10.1021/nl400418c
+  doi: 10.1021/nl400418c
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: 2013-02
+  title: Effect of lithium borate addition on the physical and electrochemical properties of the lithium ion conductor Li3.4Si0.4P0.6O4
+  authors: L. Zhang, L. Cheng, J. Cabana, G. Chen, M. M. Doeff and T. J. Richardson
+  journal: Solid State Ionics
+  citation: 231, 109–115
+  url: https://doi.org/10.1016/j.ssi.2012.09.002
+  doi: 10.1016/j.ssi.2012.09.002
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: "2013"
+  title: Effect of Si(iv) substitution on electrochemical, magnetic and spectroscopic performance of nanosized LiMn2−xSixO4
+  authors: A. Iturrondobeitia, A. Goñi, L. Lezama, C. Kim, M. Doeff, J. Cabana and T. Rojo
+  journal: J. Mater. Chem. A
+  citation: 1, 10857
+  url: https://doi.org/10.1039/c3ta11659j
+  doi: 10.1039/c3ta11659j
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: "2013"
+  title: Nanocomposites of Titanium Dioxide and Polystyrene-Poly(ethylene oxide) Block Copolymer as Solid-State Electrolytes for Lithium Metal Batteries
+  authors: I. Gurevitch, R. Buonsanti, A. A. Teran, B. Gludovatz, R. O. Ritchie, J. Cabana and N. P. Balsara
+  journal: J. Electrochem. Soc.
+  citation: 160, A1611–A1617
+  url: https://doi.org/10.1149/2.117309jes
+  doi: 10.1149/2.117309jes
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2013
+  published: "2013"
+  title: New materials based on a layered sodium titanate for dual electrochemical Na and Li intercalation systems
+  authors: M. Shirpour, J. Cabana and M. Doeff
+  journal: Energy Environ. Sci.
+  citation: 6, 2538
+  url: https://doi.org/10.1039/c3ee41037d
+  doi: 10.1039/c3ee41037d
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2012
+  published: 2012-11-06
+  title: The Effect of Al Substitution on the Chemical and Electrochemical Phase Stability of Orthorhombic LiMnO2
+  authors: J. B. Cook, C. Kim, L. Xu and J. Cabana
+  journal: J. Electrochem. Soc.
+  citation: 160, A46–A52
+  url: https://doi.org/10.1149/2.048301jes
+  doi: 10.1149/2.048301jes
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2012
+  published: 2012-11
+  title: Electronic structure study of ordering and interfacial interaction in graphene/Cu composites
+  authors: L. Zhang, E. Pollak, W.-C. Wang, P. Jiang, P.-A. Glans, Y. Zhang, J. Cabana, R. Kostecki, C. Chang, M. Salmeron, J. Zhu and J. Guo
+  journal: Carbon
+  citation: 50, 5316–5322
+  url: https://doi.org/10.1016/j.carbon.2012.07.020
+  doi: 10.1016/j.carbon.2012.07.020
+  themes:
+    - interface
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2012
+  published: 2012-10-04
+  title: Mechanism of Phase Propagation During Lithiation in Carbon‐Free Li4Ti5O12 Battery Electrodes
+  authors: C. Kim, N. S. Norberg, C. T. Alexander, R. Kostecki and J. Cabana
+  journal: Adv Funct Materials
+  citation: 23, 1214–1222
+  url: https://doi.org/10.1002/adfm.201201684
+  doi: 10.1002/adfm.201201684
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2012
+  published: 2012-08-27
+  title: Structural Underpinnings of the Enhanced Cycling Stability upon Al-Substitution in LiNi0.45Mn0.45Co0.1–yAlyO2 Positive Electrode Materials for Li-ion Batteries
+  authors: T. E. Conry, A. Mehta, J. Cabana and M. M. Doeff
+  journal: Chem. Mater.
+  citation: 24, 3307–3317
+  url: https://doi.org/10.1021/cm3011937
+  doi: 10.1021/cm3011937
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2012
+  published: 2012-08-03
+  title: Composition-Structure Relationships in the Li-Ion Battery Electrode Material LiNi0.5Mn1.5O4
+  authors: J. Cabana, M. Casas-Cabanas, F. O. Omenya, N. A. Chernova, D. Zeng, M. S. Whittingham and C. P. Grey
+  journal: Chem. Mater.
+  citation: 24, 2952–2964
+  url: https://doi.org/10.1021/cm301148d
+  doi: 10.1021/cm301148d
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2012
+  published: 2012-05-01
+  title: Investigation of cation ordering in triclinic sodium birnessite via 23Na MAS NMR spectroscopy
+  authors: K. A. Aldi, J. Cabana, P. J. Sideris and C. P. Grey
+  journal: American Mineralogist
+  citation: 97, 883–889
+  url: https://doi.org/10.2138/am.2012.3933
+  doi: 10.2138/am.2012.3933
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2012
+  published: "2012"
+  title: XAFS Investigations of LiNi0.45Mn0.45Co0.1−yAlyO2Positive Electrode Materials
+  authors: T. E. Conry, A. Mehta, J. Cabana and M. M. Doeff
+  journal: J. Electrochem. Soc.
+  citation: 159, A1562–A1571
+  url: https://doi.org/10.1149/2.048209jes
+  doi: 10.1149/2.048209jes
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2011
+  published: 2011-12-12
+  title: Crystal Structure, Physical Properties, and Electrochemistry of Copper Substituted LiFePO4 Single Crystals
+  authors: S. Upreti, N. A. Chernova, J. Xiao, J. K. Miller, O. V. Yakubovich, J. Cabana, C. P. Grey, V. L. Chevrier, G. Ceder, J. L. Musfeldt and M. S. Whittingham
+  journal: Chem. Mater.
+  citation: 24, 166–173
+  url: https://doi.org/10.1021/cm2026619
+  doi: 10.1021/cm2026619
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2011
+  published: 2011-07-08
+  title: Three-dimensional imaging of chemical phase transformations at the nanoscale with full-field transmission X-ray microscopy
+  authors: F. Meirer, J. Cabana, Y. Liu, A. Mehta, J. C. Andrews and P. Pianetta
+  journal: J Synchrotron Rad
+  citation: 18, 773–781
+  url: https://doi.org/10.1107/s0909049511019364
+  doi: 10.1107/s0909049511019364
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2011
+  published: "2011"
+  title: Comparison of the Performance of LiNi1/2Mn3/2O4 with Different Microstructures
+  authors: J. Cabana, H. Zheng, A. K. Shukla, C. Kim, V. S. Battaglia and M. Kunduraci
+  journal: J. Electrochem. Soc.
+  citation: 158, A997
+  url: https://doi.org/10.1149/1.3606570
+  doi: 10.1149/1.3606570
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2011
+  published: "2011"
+  title: Effect of ball-milling and lithium insertion on the lithium mobility and structure of Li3Fe2(PO4)3
+  authors: J. Cabana, J. Shirakawa, M. Nakayama, M. Wakihara and C. P. Grey
+  journal: J. Mater. Chem.
+  citation: 21, 10012
+  url: https://doi.org/10.1039/c0jm04197a
+  doi: 10.1039/c0jm04197a
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2010
+  published: 2010-08-20
+  title: "Beyond Intercalation‐Based Li‐Ion Batteries: The State of the Art and Challenges of Electrode Materials Reacting Through Conversion Reactions"
+  authors: J. Cabana, L. Monconduit, D. Larcher and M. R. Palacín
+  journal: Advanced Materials
+  citation: "22"
+  url: https://doi.org/10.1002/adma.201000717
+  doi: 10.1002/adma.201000717
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2010
+  published: 2010-08
+  title: Structural complexity of layered-spinel composite electrodes for Li-ion batteries
+  authors: J. Cabana, C. S. Johnson, X.-Q. Yang, K.-Y. Chung, W.-S. Yoon, S.-H. Kang, M. M. Thackeray and C. P. Grey
+  journal: J. Mater. Res.
+  citation: 25, 1601–1616
+  url: https://doi.org/10.1557/jmr.2010.0206
+  doi: 10.1557/jmr.2010.0206
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2010
+  published: 2010-07
+  title: "Exploring order–disorder structural transitions in the Li–Nb–N–O system: The new antifluorite oxynitride Li11NbN4O2"
+  authors: J. Cabana, M. Casas-Cabanas, H. Santner, A. Fuertes and M. Palacín
+  journal: Journal of Solid State Chemistry
+  citation: 183, 1609–1614
+  url: https://doi.org/10.1016/j.jssc.2010.05.012
+  doi: 10.1016/j.jssc.2010.05.012
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2010
+  published: 2010-02
+  title: High rate performance of lithium manganese nitride and oxynitride as negative electrodes in lithium batteries
+  authors: J. Cabana, C. M. Ionica-Bousquet, C. P. Grey and M. R. Palacín
+  journal: Electrochemistry Communications
+  citation: 12, 315–318
+  url: https://doi.org/10.1016/j.elecom.2009.12.027
+  doi: 10.1016/j.elecom.2009.12.027
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2010
+  published: 2010-01-06
+  title: MAS NMR Study of the Metastable Solid Solutions Found in the LiFePO4/FePO4 System
+  authors: J. Cabana, J. Shirakawa, G. Chen, T. J. Richardson and C. P. Grey
+  journal: Chem. Mater.
+  citation: 22, 1249–1262
+  url: https://doi.org/10.1021/cm902714v
+  doi: 10.1021/cm902714v
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2010
+  published: 2010-01-04
+  title: Investigation of the Structural Changes in Li[NiyMnyCo(1−2y)]O2 (y = 0.05) upon Electrochemical Lithium Deintercalation
+  authors: D. Zeng, J. Cabana, W.-S. Yoon and C. P. Grey
+  journal: Chem. Mater.
+  citation: 22, 1209–1219
+  url: https://doi.org/10.1021/cm902721w
+  doi: 10.1021/cm902721w
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2009
+  published: 2009-06-15
+  title: Synthesis, Short-Range Structure, and Electrochemical Properties of New Phases in the Li−Mn−N−O System
+  authors: J. Cabana, N. Dupré, F. Gillot, A. V. Chadwick, C. P. Grey and M. R. Palacín
+  journal: Inorg. Chem.
+  citation: 48, 5141–5153
+  url: https://doi.org/10.1021/ic900082u
+  doi: 10.1021/ic900082u
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2009
+  published: 2009-04-02
+  title: Influence of the Benzoquinone Sorption on the Structure and Electrochemical Performance of the MIL-53(Fe) Hybrid Porous Material in a Lithium-Ion Battery
+  authors: G. de Combarieu, M. Morcrette, F. Millange, N. Guillou, J. Cabana, C. P. Grey, I. Margiolaki, G. Férey and J.-M. Tarascon
+  journal: Chem. Mater.
+  citation: 21, 1602–1611
+  url: https://doi.org/10.1021/cm8032324
+  doi: 10.1021/cm8032324
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2009
+  published: "2009"
+  title: Structural and Electrochemical Characterization of Composite Layered-Spinel Electrodes Containing Ni and Mn for Li-Ion Batteries
+  authors: J. Cabana, S.-H. Kang, C. S. Johnson, M. M. Thackeray and C. P. Grey
+  journal: J. Electrochem. Soc.
+  citation: 156, A730
+  url: https://doi.org/10.1149/1.3151963
+  doi: 10.1149/1.3151963
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2009
+  published: "2009"
+  title: The effects of moderate thermal treatments under air on LiFePO4-based nano powders
+  authors: S. Hamelet, P. Gibot, M. Casas-Cabanas, D. Bonnin, C. P. Grey, J. Cabana, J.-B. Leriche, J. Rodriguez-Carvajal, M. Courty, S. Levasseur, P. Carlach, M. Van Thournout, J.-M. Tarascon and C. Masquelier
+  journal: J. Mater. Chem.
+  citation: 19, 3979
+  url: https://doi.org/10.1039/b901491h
+  doi: 10.1039/b901491h
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2008
+  published: 2008-10-22
+  title: Formation of a Complete Solid Solution between the Triphylite and Fayalite Olivine Structures
+  authors: N. Recham, M. Casas-Cabanas, J. Cabana, C. P. Grey, J.-C. Jumas, L. Dupont, M. Armand and J.-M. Tarascon
+  journal: Chem. Mater.
+  citation: 20, 6798–6809
+  url: https://doi.org/10.1021/cm801817n
+  doi: 10.1021/cm801817n
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2008
+  published: 2008-02-13
+  title: "Towards New Negative Electrode Materials for Li-Ion Batteries: Electrochemical Properties of LiNiN"
+  authors: J. Cabana, Z. Stoeva, J. J. Titman, D. H. Gregory and M. R. Palacín
+  journal: Chem. Mater.
+  citation: 20, 1676–1678
+  url: https://doi.org/10.1021/cm7034486
+  doi: 10.1021/cm7034486
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2007
+  published: 2007-11-15
+  title: "Cation Ordering in Li[NixMnxCo(1–2x)]O2-Layered Cathode Materials: A Nuclear Magnetic Resonance (NMR), Pair Distribution Function, X-ray Absorption Spectroscopy, and Electrochemical Study"
+  authors: D. Zeng, J. Cabana, J. Bréger, W.-S. Yoon and C. P. Grey
+  journal: Chem. Mater.
+  citation: 19, 6277–6289
+  url: https://doi.org/10.1021/cm702241a
+  doi: 10.1021/cm702241a
+  themes:
+    - ion
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2007
+  published: 2007-04
+  title: Enhanced high rate performance of LiMn2O4 spinel nanoparticles synthesized by a hard-template route
+  authors: J. Cabana, T. Valdés-Solís, M. Palacín, J. Oró-Solé, A. Fuertes, G. Marbán and A. Fuertes
+  journal: Journal of Power Sources
+  citation: 166, 492–498
+  url: https://doi.org/10.1016/j.jpowsour.2006.12.107
+  doi: 10.1016/j.jpowsour.2006.12.107
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2007
+  published: 2007-03
+  title: Intermediate phases during alkali metal intercalation in HfNCl
+  authors: J. Oró-Solé, V. Meignen, J. Cabana, M. R. Palacín and A. Fuertes
+  journal: Solid State Sciences
+  citation: 9, 310–317
+  url: https://doi.org/10.1016/j.solidstatesciences.2007.02.006
+  doi: 10.1016/j.solidstatesciences.2007.02.006
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2007
+  published: "2007"
+  title: NMR, PDF and RMC study of the positive electrode material Li(Ni0.5Mn0.5)O2 synthesized by ion-exchange methods
+  authors: J. Bréger, K. Kang, J. Cabana, G. Ceder and C. P. Grey
+  journal: J. Mater. Chem.
+  citation: 17, 3167
+  url: https://doi.org/10.1039/b702745a
+  doi: 10.1039/b702745a
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2006
+  published: 2006-09-28
+  title: Layered Oxysulfides Sr2MnO2Cu2m-0.5Sm+1 (m = 1, 2, and 3) as Insertion Hosts for Li Ion Batteries
+  authors: S. Indris, J. Cabana, O. J. Rutt, S. J. Clarke and C. P. Grey
+  journal: J. Am. Chem. Soc.
+  citation: 128, 13354–13355
+  url: https://doi.org/10.1021/ja064961a
+  doi: 10.1021/ja064961a
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2005
+  published: 2005-09
+  title: Ex situ NMR and neutron diffraction study of structure and lithium motion in LiMnN
+  authors: J. CABANA, N. DUPRE, G. ROUSSE, C. GREY and M. PALACIN
+  journal: Solid State Ionics
+  citation: 176, 2205–2218
+  url: https://doi.org/10.1016/j.ssi.2005.07.001
+  doi: 10.1016/j.ssi.2005.07.001
+  themes:
+    - xray
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2005
+  published: 2005-08
+  title: Synthesis and Electrochemical Study of Antifluorite‐type Phases in the Li‐M‐N‐O (M = Ti, V) Systems
+  authors: J. Cabana, C. Mercier, D. Gautier and M. R. Palacín
+  journal: Zeitschrift anorg allge chemie
+  citation: 631, 2136–2141
+  url: https://doi.org/10.1002/zaac.200570030
+  doi: 10.1002/zaac.200570030
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2005
+  published: "2005"
+  title: Oxynitrides as Electrode Materials for Lithium-Ion Batteries
+  authors: J. Cabana, N. Dupré, C. P. Grey, G. Subías, M. T. Caldés, A.-M. Marie and M. R. Palacín
+  journal: J. Electrochem. Soc.
+  citation: 152, A2246
+  url: https://doi.org/10.1149/1.2048267
+  doi: 10.1149/1.2048267
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2004
+  published: 2004-09-28
+  title: "Antifluorite-Type Lithium Chromium Oxide Nitrides: Synthesis, Structure, Order, and Electrochemical Properties"
+  authors: J. Cabana, C. D. Ling, J. Oró-Solé, D. Gautier, G. Tobías, S. Adams, E. Canadell and M. R. Palacín
+  journal: Inorg. Chem.
+  citation: 43, 7050–7060
+  url: https://doi.org/10.1021/ic049138z
+  doi: 10.1021/ic049138z
+  themes: []
+  themes_set_by: guess
+  added: 2026-11-15
+- year: 2003
+  published: "2003"
+  title: "The first lithium manganese oxynitride, Li7.9MnN5 − yOy : preparation and use as electrode material in lithium batteries"
+  authors: J. Cabana, G. Rousse, A. Fuertes and M. R. Palacín
+  journal: J. Mater. Chem.
+  citation: 13, 2402–2404
+  url: https://doi.org/10.1039/b305040h
+  doi: 10.1039/b305040h
+  themes:
+    - ion
+  themes_set_by: guess
+  added: 2026-11-15
