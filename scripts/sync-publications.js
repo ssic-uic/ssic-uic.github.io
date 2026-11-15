@@ -27,6 +27,14 @@ const UA = `ssic-website publication sync (mailto:${EMAIL})`;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const normDoi = d => (d || "").trim().toLowerCase().replace(/^https?:\/\/(dx\.)?doi\.org\//, "").replace(/^doi:\s*/, "");
+const SKIP_TITLE = /^(publisher|author)?\s*correction|^correction to|^erratum|^retraction|^expression of concern/i;
+const bigrams = s => { const b = new Map(); for (let i = 0; i < s.length - 1; i++) { const k = s.slice(i, i + 2); b.set(k, (b.get(k) || 0) + 1); } return b; };
+function similar(a, b) {
+  if (!a || !b) return 0;
+  const A = bigrams(a), B = bigrams(b); let both = 0;
+  for (const [k, n] of A) both += Math.min(n, B.get(k) || 0);
+  return (2 * both) / (a.length + b.length - 2);
+}
 const normTitle = t => (t || "").toLowerCase().normalize("NFKD").replace(/<[^>]+>/g, "").replace(/[^a-z0-9]+/g, "");
 
 async function getJSON(url, headers = {}) {
@@ -86,7 +94,14 @@ async function openalexDois(orcid) {
 
 // ---------- formatting ----------
 const decode = s => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
-const plain = s => decode((s || "").replace(/<mml:math[\s\S]*?<\/mml:math>/g, m => m.replace(/<[^>]+>/g, "")).replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
+function plain(s) {
+  let t = (s || "").replace(/<mml:math[\s\S]*?<\/mml:math>/g, m => m.replace(/<[^>]+>/g, ""));
+  // join formula pieces that markup split apart: "V <sub>2</sub> O <sub>5</sub>" -> "V2O5"
+  t = t.replace(/<(sub|sup)>\s*([\s\S]*?)\s*<\/\1>/g, "<$1>$2</$1>")
+       .replace(/\s+(?=<(sub|sup)>)/g, "")
+       .replace(/<\/(sub|sup)>\s+(?=[A-Z][A-Za-z]*<(sub|sup)>)/g, "</$1>");
+  return decode(t.replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
+}
 
 function initials(given) {
   return given.trim().split(/\s+/).map(part =>
@@ -136,13 +151,15 @@ async function main() {
   const byDoi = new Map(), byTitle = new Map();
   existing.forEach(p => { if (p.doi) byDoi.set(normDoi(p.doi), p); byTitle.set(normTitle(p.title), p); });
 
-  const works = (await orcidWorks(ORCID)).filter(w => !w.type || KEEP_TYPES.has(w.type));
+  const works = (await orcidWorks(ORCID)).filter(w => (!w.type || KEEP_TYPES.has(w.type)) && !SKIP_TITLE.test(w.title.trim()));
+  const findSimilar = (title, year) => existing.find(e => Math.abs(Number(e.year) - Number(year || e.year)) <= 1 && similar(normTitle(e.title), normTitle(title)) >= 0.9);
+  const done = new Set();
   console.log(`ORCID: ${works.length} works`);
   const report = { added: [], updated: [], flagged: [], unmatched: [] };
   const seen = new Set();
 
   for (const w of works) {
-    let p = (w.doi && byDoi.get(w.doi)) || byTitle.get(normTitle(w.title));
+    let p = (w.doi && byDoi.get(w.doi)) || byTitle.get(normTitle(w.title)) || findSimilar(w.title, w.year);
     const doi = w.doi || (p && p.doi) || "";
     if (doi && seen.has(doi)) continue;
     if (doi) seen.add(doi);
@@ -153,9 +170,13 @@ async function main() {
       continue;
     }
     const c = fromCrossref(m);
-    if (!c.year || !c.title) continue;
+    if (!c.year || !c.title || SKIP_TITLE.test(c.title)) continue;
+    if (!p) p = byTitle.get(normTitle(c.title)) || findSimilar(c.title, c.year);
+    // the same paper listed twice on ORCID (for example a cover-art DOI): keep the first record
+    if (p && done.has(p)) continue;
+    if (p && p.doi && normDoi(p.doi) !== doi && byDoi.get(normDoi(p.doi)) === p && works.some(o => o.doi === normDoi(p.doi))) continue;
     if (!p) {
-      p = { year: c.year, published: c.published, title: c.title, authors: c.authors, journal: c.journal,
+      p = { year: c.year, published: c.published, title: c.title, authors: c.authors, journal: c.journal || w.journal,
             citation: c.citation, url: `https://doi.org/${doi}`, doi, themes: guessThemes(c.title),
             themes_set_by: "guess", added: today };
       existing.push(p);
@@ -164,14 +185,16 @@ async function main() {
     } else {
       const before = JSON.stringify(p);
       p.doi = doi;
+      p.title = c.title;
       p.year = c.year;
       p.published = c.published;
       p.authors = c.authors;
       p.citation = c.citation;
-      if (!p.journal) p.journal = c.journal;
+      if (!p.journal) p.journal = c.journal || w.journal;
       if (p.check) delete p.check;
       if (JSON.stringify(p) !== before) report.updated.push(`${c.year} ${p.title}`);
     }
+    done.add(p);
     if (!c.hasCabana) {
       p.check = "Crossref does not list J. Cabana among the authors. Confirm this paper belongs here.";
       report.flagged.push(`${c.year} ${p.title}`);

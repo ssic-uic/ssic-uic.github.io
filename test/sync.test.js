@@ -48,3 +48,9 @@ test("theme guesses and DOI normalisation", () => {
   assert.deepStrictEqual(guessThemes("Operando X-ray imaging of oxygen redox in Li-rich cathodes"), ["ion", "redox", "xray"]);
   assert.strictEqual(normDoi("https://doi.org/10.1021/JACS.5C07442"), "10.1021/jacs.5c07442");
 });
+
+test("formula pieces split by Crossref markup are rejoined", () => {
+  assert.strictEqual(plain("performance of α-V <sub>2</sub> O <sub>5</sub> as a Mg <sup>2+</sup> intercalation host"), "performance of α-V2O5 as a Mg2+ intercalation host");
+  assert.strictEqual(plain("Evolution upon Redox Swings of Li <sub>3</sub> IrO <sub>4</sub>"), "Evolution upon Redox Swings of Li3IrO4");
+  assert.strictEqual(plain("CO <sub>2</sub> reduction"), "CO2 reduction");
+});

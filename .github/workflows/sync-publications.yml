@@ -36,7 +36,7 @@ jobs:
       - name: Check the data and the page still build
         run: npm test
       - name: Keep the result for review (trial run)
-        if: ${{ inputs.trial }}
+        if: ${{ always() && inputs.trial }}
         uses: actions/upload-artifact@v4
         with:
           name: sync-result
