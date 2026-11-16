@@ -23,3 +23,7 @@
   not:
     - 10.1021/acsnano.3c04178 # S. Singh is Sakshi Singh (UIC Chemical Engineering)
     - 10.1002/adfm.202300814 # S. K. Singh is Sachin Kumar Singh (UIC Mechanical Engineering)
+- name: Khagesh Kumar
+  until: 2024
+- name: Chao Li
+  until: 2021
