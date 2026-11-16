@@ -5,6 +5,7 @@
 #   until: last year to bold (afterwards they collaborate with the group as independent researchers)
 #   also:  DOIs to bold anyway after `until`
 #   not:   DOIs where a same-initial author is someone else
+#   unbold: DOIs where it is the member, but they had left the group by then
 #   as:    extra spellings to match exactly, for names the first-initial rule misses
 #   confirmed: DOIs where the owner confirmed the author is this member
 # On every paper the weekly sync adds, the group members it would bold are held (the paper's
@@ -25,6 +26,8 @@
     - 10.1002/adfm.202300814 # S. K. Singh is Sachin Kumar Singh (UIC Mechanical Engineering)
 - name: Khagesh Kumar
   until: 2024
+  unbold:
+    - 10.1021/acsmaterialslett.4c01923 # Sulfide solid electrolytes, ultrathin metal oxide layers (ACS Mater. Lett. 2024): him, after he left
 - name: Chao Li
   # he never published his thesis work; neither "C. Li" in the list is him (owner, 16 Nov 2026)
   not:

@@ -69,7 +69,7 @@ function validate(d) {
     d.groupAuthors.forEach((r, i) => {
       if (!names.has(r.name)) errs.push(`group-authors.yml rule ${i + 1}: "${r.name}" is not in people.yml or alumni.yml (spell it as there)`);
       if (r.until !== undefined && !/^\d{4}$/.test(String(r.until))) errs.push(`group-authors.yml ${r.name}: until must be a year`);
-      for (const f of ["also", "not", "confirmed"]) (r[f] || []).forEach(x => { if (!pubDois.has(String(x).toLowerCase())) errs.push(`group-authors.yml ${r.name} ${f}: DOI ${x} is not in publications.yml`); });
+      for (const f of ["also", "not", "confirmed", "unbold"]) (r[f] || []).forEach(x => { if (!pubDois.has(String(x).toLowerCase())) errs.push(`group-authors.yml ${r.name} ${f}: DOI ${x} is not in publications.yml`); });
     });
   }
 

@@ -33,6 +33,9 @@ test("until, also and not", () => {
   assert.deepStrictEqual(bold("E. Allen and J. Cabana", 2030), ["E. Allen"], "no rule, no limit");
   assert.deepStrictEqual(bold("S. Singh and J. Cabana", 2023, "10.1/sakshi"), [], "same initial, someone else");
   assert.deepStrictEqual(bold("S. Singh and J. Cabana", 2027), ["S. Singh"]);
+  const r2 = [{ name: "Eva Allen", unbold: ["10.1/left"] }];
+  assert.deepStrictEqual(boldAuthors({ authors: "E. Allen and J. Cabana", year: 2020, doi: "10.1/left" }, M, r2), [], "unbold: it's them, after they left");
+  assert.deepStrictEqual(boldAuthors({ authors: "E. Allen and J. Cabana", year: 2020, doi: "10.1/other" }, M, r2), ["E. Allen"]);
 });
 
 test("uncertain matches: two members, or outsiders share the family name; held until answered", () => {
