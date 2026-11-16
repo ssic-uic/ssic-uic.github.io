@@ -99,14 +99,17 @@ test("listed papers stay; only new items reach the owner", async () => {
   // the new 2026 article has no OpenAlex flags but a guessed theme could put it on the Research page
   const newOne = by("10.1/new");
   assert.strictEqual(newOne.corresponding, undefined);
-  // group members: the uncertain "H. Li" on the new paper is held and asked about; Sunariwal is not
-  assert.deepStrictEqual(newOne.group_check, ["H. Li"], "uncertain group author not held");
+  // group members: every proposed bold on the new paper is held and asked about; the doubtful one says why
+  assert.deepStrictEqual(newOne.group_check, ["H. Li", "N. Sunariwal"], "proposed bolds not held");
   const ga = review.filter(i => i.kind === "group-author");
-  assert.strictEqual(ga.length, 1);
-  assert.match(ga[0].detail, /Is "H\. Li" on this paper Haifeng Li/);
+  assert.strictEqual(ga.length, 2, "one question per proposed bold");
+  assert.match(ga.find(i => /H\. Li/.test(i.detail)).detail, /Is "H\. Li" on this paper Haifeng Li.*Check carefully: other people named Li/);
+  assert.match(ga.find(i => /Sunariwal/.test(i.detail)).detail, /New paper; please confirm/);
+  assert.ok(!kinds["A listed paper that became odd"] || kinds["A listed paper that became odd"].kind !== "group-author", "listed papers are not asked about");
   const { boldAuthors, groupMembers } = require("../lib/group-authors.js");
   const M = groupMembers({ grads: [{ name: "Neelam Sunariwal" }] }, [{ people: ["Haifeng Li"] }]);
-  assert.deepStrictEqual(boldAuthors(newOne, M, []), ["N. Sunariwal"], "held author was bolded");
+  assert.deepStrictEqual(boldAuthors(newOne, M, []), [], "held authors were bolded");
+  assert.deepStrictEqual(boldAuthors(newOne, M, [{ name: "Neelam Sunariwal", confirmed: ["10.1/new"] }]), ["N. Sunariwal"], "confirmed author not bolded");
 
   // Research page: a newer ion paper (corresponding unknown) is a question; nothing changes by itself
   assert.strictEqual(kinds["Recent, nobody flagged"]?.kind, "research-candidate", "newer candidate not raised");

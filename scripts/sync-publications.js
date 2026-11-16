@@ -32,9 +32,9 @@
 //   changes them by itself. A paper in a theme that is newer than the theme's shown papers,
 //   with J. Cabana as corresponding author or unknown, goes to review.yml as a
 //   research-candidate, unless the owner already put it in that theme's not_shown.
-// - group members are bolded in author lists (lib/group-authors.js). On a paper added by the
-//   sync, an author who might or might not be a group member is held back (group_check: on the
-//   paper, not bolded) and the owner is asked (review.yml, kind group-author). The answer goes in
+// - group members are bolded in author lists (lib/group-authors.js). On every paper added by the
+//   sync, the group members it would bold are held back (group_check: on the paper, not bolded)
+//   and the owner confirms each one (review.yml, kind group-author). The answer goes in
 //   data/group-authors.yml (confirmed: or not:); decided entries leave group_check.
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
@@ -57,7 +57,7 @@ const REVIEW = path.join(DATA, "review.yml");
 const KNOWN = path.join(DATA, "known.yml");
 const RESEARCH = path.join(DATA, "research.yml");
 const GROUP_AUTHORS = path.join(DATA, "group-authors.yml");
-const { groupMembers, ambiguousAuthors, splitAuthors, matchMembers } = require("../lib/group-authors");
+const { groupMembers, ambiguousAuthors, splitAuthors, matchMembers, boldAuthors } = require("../lib/group-authors");
 // ORCID work types that can be peer-reviewed articles; Crossref has the final say
 const KEEP_TYPES = new Set(["journal-article", "review", "letter"]);
 const UA = `ssic-website publication sync (mailto:${EMAIL})`;
@@ -386,13 +386,13 @@ async function main() {
     if (v === undefined) continue; // unknown this week: keep what we had
     p.corresponding = v; p.corresponding_set_by = "openalex";
   }
-  // group members in author lists: ask about uncertain matches on new papers, hold them unbolded
+  // group members in author lists: on new papers, hold every proposed bold until the owner confirms it
   const members = groupMembers(readYaml(path.join(DATA, "people.yml"), {}), (readYaml(path.join(DATA, "alumni.yml"), {}) || {}).groups || []);
   const gaRules = readYaml(GROUP_AUTHORS, []) || [];
   const before = existing.filter(p => permanent.has(p));
   for (const p of addedNow) {
-    const amb = ambiguousAuthors(p, before, members, gaRules);
-    if (amb.length) p.group_check = amb.map(x => x.author);
+    const proposed = boldAuthors({ ...p, group_check: [] }, members, gaRules);
+    if (proposed.length) p.group_check = proposed;
   }
   for (const p of existing.filter(p => p.group_check)) {
     // a held author stays held until the owner answers (confirmed: or not: for this DOI)
@@ -403,7 +403,7 @@ async function main() {
     const why = new Map(ambiguousAuthors(p, before.filter(q => q !== p), members, gaRules).map(x => [x.author, x.reason]));
     for (const a of p.group_check) {
       const names = matchMembers(a, doi, members, gaRules).map(x => x.member.name);
-      ask("group-author", p.title, p.doi, `${p.journal} ${p.year}. Is "${a}" on this paper ${names.join(" or ")} (group member)? Asking because ${why.get(a) || "the match was uncertain when the paper was added"}. Not shown in bold until you answer.`);
+      ask("group-author", p.title, p.doi, `${p.journal} ${p.year}. Is "${a}" on this paper ${names.join(" or ")} (group member)? ${why.has(a) ? `Check carefully: ${why.get(a)}.` : "New paper; please confirm."} Not shown in bold until you answer.`);
     }
   }
 

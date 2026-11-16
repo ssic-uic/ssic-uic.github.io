@@ -7,10 +7,10 @@
 #   not:   DOIs where a same-initial author is someone else
 #   as:    extra spellings to match exactly, for names the first-initial rule misses
 #   confirmed: DOIs where the owner confirmed the author is this member
-# Uncertain matches on newly added papers are not bolded until the owner answers (the paper's
-# group_check in publications.yml; the question goes to review.yml as group-author). Asked when the
-# author could be two members, the spelling is new for the member, or people outside the group share
-# the family name. Answer yes -> DOI in confirmed:, no -> DOI in not:; then drop it from group_check.
+# On every paper the weekly sync adds, the group members it would bold are held (the paper's
+# group_check in publications.yml) and the owner confirms them (review.yml, kind group-author)
+# before they are bolded (owner, 16 Nov 2026). Answer yes -> DOI in confirmed:, no -> DOI in not:;
+# then drop the author from group_check.
 - name: Mark Wolfman
   until: 2022
   also:
@@ -26,4 +26,7 @@
 - name: Khagesh Kumar
   until: 2024
 - name: Chao Li
-  until: 2021
+  # he never published his thesis work; neither "C. Li" in the list is him (owner, 16 Nov 2026)
+  not:
+    - 10.1021/acsenergylett.2c01072 # Triggering and Stabilizing Oxygen Redox, Li[Na1/3Ru2/3]O2 (ACS Energy Lett. 2022)
+    - 10.1002/adfm.202504973 # Tailoring Oxygen Redox Activity via Ti Substitution (Adv. Funct. Mater. 2025)
