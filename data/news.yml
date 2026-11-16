@@ -1,6 +1,11 @@
 # News items, newest first. status: draft items are kept out of the public site
 # until approved; set status: published to show one.
 items:
+  - date: "October 2026"
+    title: Static and dynamic disorder, decoupled
+    body: Total scattering and ab initio molecular dynamics show that BH₄⁻ anions in the Na-ion conductor Na₂[NH₂][BH₄] translate and carry static orientational disorder, as well as rotating (Chem. Mater.).
+    url: https://doi.org/10.1021/acs.chemmater.6c01680
+    status: published
   - date: "2025"
     title: Paper in Science on high-entropy oxide nanoribbons
     body: Husam Farraj and Jordi Cabana are coauthors on a Science study, with the Salehi-Khojin group, of how high-entropy oxide nanoribbons hold their structure and transform.
