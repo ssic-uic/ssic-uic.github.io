@@ -2,6 +2,7 @@
 # kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),
 # orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,
 # research-candidate (newer than a theme's Research-page papers: show it, replacing which, or add the DOI to
-# that theme's not_shown in research.yml).
+# that theme's not_shown in research.yml), group-author (is this author a group member? answer in
+# data/group-authors.yml: confirmed or not), journal-name (journal missing from data/journals.yml: add its CAS form).
 # An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.
 []
