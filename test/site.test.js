@@ -13,6 +13,20 @@ test("data files are valid", () => {
   assert.deepStrictEqual(validate(loadData()), []);
 });
 
+test("build writes canonical link, sitemap and robots.txt for search engines", () => {
+  execFileSync("node", [path.join(root, "scripts", "build.js")], { stdio: "pipe" });
+  const dist = path.join(root, "dist");
+  const html = fs.readFileSync(path.join(dist, "index.html"), "utf8");
+  const canon = html.match(/<link rel="canonical" href="([^"]+)">/);
+  assert.ok(canon, "canonical link missing");
+  const site = canon[1];
+  assert.match(site, /^https:\/\/[^#]+\/$/);
+  const sitemap = fs.readFileSync(path.join(dist, "sitemap.xml"), "utf8");
+  assert.ok(sitemap.includes(`<loc>${site}</loc>`), "sitemap lacks the site URL");
+  assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+  assert.ok(fs.readFileSync(path.join(dist, "robots.txt"), "utf8").includes(`Sitemap: ${site}sitemap.xml`));
+});
+
 test("built page renders every section without script errors", async () => {
   execFileSync("node", [path.join(root, "scripts", "build.js")], { stdio: "pipe" });
   const { JSDOM, VirtualConsole } = require("jsdom");

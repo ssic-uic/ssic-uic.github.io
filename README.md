@@ -62,3 +62,5 @@ npm run build   # writes the site to dist/
 ```
 
 The build stops with a list of problems if a data file is missing a required field or uses an unknown research theme.
+
+The build also writes a canonical link, `sitemap.xml` and `robots.txt` from the `SITE_URL` constant in `scripts/build.js`. If the site moves to a custom domain, change that one line.

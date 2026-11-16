@@ -9,6 +9,9 @@ const { validate } = require("./validate");
 const root = path.join(__dirname, "..");
 const out = path.join(root, "dist");
 const PHOTOS = path.join(root, "data", "photos");
+// The site's public address. If a custom domain is added later, change it here only:
+// the canonical link, sitemap.xml and robots.txt all follow.
+const SITE_URL = "https://ssic-uic.github.io/";
 const read = f => YAML.parse(fs.readFileSync(path.join(root, "data", f), "utf8"));
 
 function loadData() {
@@ -61,7 +64,15 @@ function build() {
   fs.rmSync(out, { recursive: true, force: true });
   fs.mkdirSync(path.join(out, "assets", "fonts"), { recursive: true });
 
-  fs.copyFileSync(path.join(root, "src", "index.html"), path.join(out, "index.html"));
+  const html = fs.readFileSync(path.join(root, "src", "index.html"), "utf8")
+    .replace("</title>", `</title>\n<link rel="canonical" href="${SITE_URL}">\n<meta property="og:url" content="${SITE_URL}">`);
+  fs.writeFileSync(path.join(out, "index.html"), html);
+  // For search engines. The pages are #sections of one URL, so the sitemap lists that one URL.
+  const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Chicago" });
+  fs.writeFileSync(path.join(out, "sitemap.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+    `  <url><loc>${SITE_URL}</loc><lastmod>${today}</lastmod></url>\n</urlset>\n`);
+  fs.writeFileSync(path.join(out, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}sitemap.xml\n`);
   for (const f of ["tokens.css", "styles.css", "app.js"]) {
     fs.copyFileSync(path.join(root, "src", f), path.join(out, "assets", f));
   }
