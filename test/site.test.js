@@ -36,7 +36,7 @@ test("built page renders every section without script errors", async () => {
   const dist = path.join(root, "dist");
   let html = fs.readFileSync(path.join(dist, "index.html"), "utf8");
   // inline the local scripts so jsdom runs them without a server
-  html = html.replace(/<script src="(assets\/[^"]+)"><\/script>/g, (_, f) => `<script>${fs.readFileSync(path.join(dist, f), "utf8")}</script>`);
+  html = html.replace(/<script src="(assets\/[^"?]+)(?:\?v=[0-9a-f]+)?"><\/script>/g, (_, f) => `<script>${fs.readFileSync(path.join(dist, f), "utf8")}</script>`);
   const dom = new JSDOM(html, { runScripts: "dangerously", virtualConsole: vc, pretendToBeVisual: true, url: "https://example.test/#home" });
   dom.window.scrollTo = () => {};
   await new Promise(r => setTimeout(r, 200));
@@ -68,4 +68,12 @@ test("built page renders every section without script errors", async () => {
   assert.strictEqual(d.querySelectorAll("#alumni > div").length, data.alumni.length, "alums groups");
   const roleLinks = [...d.querySelectorAll("#pi .role a")].map(a => a.href);
   data.people.pi.roles.filter(r => r.url).forEach(r => assert.ok(roleLinks.includes(r.url), `PI role link ${r.url} missing`));
+});
+
+test("build adds a content hash to every script and stylesheet link, so updates are not hidden by browser caches", () => {
+  execFileSync("node", [path.join(root, "scripts", "build.js")], { stdio: "pipe" });
+  const html = fs.readFileSync(path.join(root, "dist", "index.html"), "utf8");
+  const refs = [...html.matchAll(/(?:src|href)="(assets\/[^"]+\.(?:js|css)[^"]*)"/g)].map(m => m[1]);
+  assert.ok(refs.length >= 5, "expected the three scripts and two stylesheets");
+  for (const r of refs) assert.match(r, /\?v=[0-9a-f]{8}$/, `${r} has no ?v= hash`);
 });

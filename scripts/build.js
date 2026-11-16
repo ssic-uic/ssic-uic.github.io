@@ -64,9 +64,6 @@ function build() {
   fs.rmSync(out, { recursive: true, force: true });
   fs.mkdirSync(path.join(out, "assets", "fonts"), { recursive: true });
 
-  const html = fs.readFileSync(path.join(root, "src", "index.html"), "utf8")
-    .replace("</title>", `</title>\n<link rel="canonical" href="${SITE_URL}">\n<meta property="og:url" content="${SITE_URL}">`);
-  fs.writeFileSync(path.join(out, "index.html"), html);
   // For search engines. The pages are #sections of one URL, so the sitemap lists that one URL.
   const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Chicago" });
   fs.writeFileSync(path.join(out, "sitemap.xml"),
@@ -88,6 +85,19 @@ function build() {
   fs.writeFileSync(path.join(out, "assets", "data.js"), "window.SITE = " + JSON.stringify(siteFrom(data)) + ";\n");
   const chem = fs.readFileSync(path.join(root, "lib", "chem.js"), "utf8");
   fs.writeFileSync(path.join(out, "assets", "chem.js"), "(function(){ var module;\n" + chem + "\nwindow.chem = chem; })();\n");
+
+  // index.html is written last so each script and stylesheet link can carry ?v=<hash of the built file>.
+  // A change to the data or design then reaches visitors at once instead of waiting for
+  // browsers (phones especially) to drop their cached copies.
+  const html = fs.readFileSync(path.join(root, "src", "index.html"), "utf8")
+    .replace("</title>", `</title>\n<link rel="canonical" href="${SITE_URL}">\n<meta property="og:url" content="${SITE_URL}">`)
+    .replace(/(src|href)="assets\/([\w.-]+\.(?:js|css))"/g, (m, attr, f) => {
+      const file = path.join(out, "assets", f);
+      if (!fs.existsSync(file)) return m;
+      const hash = crypto.createHash("sha1").update(fs.readFileSync(file)).digest("hex").slice(0, 8);
+      return `${attr}="assets/${f}?v=${hash}"`;
+    });
+  fs.writeFileSync(path.join(out, "index.html"), html);
 
   console.log(`Built dist/: ${data.publications.length} papers, ${data.news.filter(n => n.status === "published").length} published news items.`);
 }
