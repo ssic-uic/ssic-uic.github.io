@@ -1,0 +1,168 @@
+# Journal names on the site follow CAS (CASSI) abbreviations, as in ACS reference lists
+# (owner, 16 Nov 2026). Place qualifiers that CASSI adds to a few titles, e.g. "Chem (Cambridge, MA, U. S.)",
+# are left out, as ACS reference lists usually do.
+# cas: the abbreviation shown. also: other spellings (Crossref full titles, ISO/NLM forms) that map to it.
+# Matching ignores case, punctuation, "&" vs "and", and a leading "The".
+# The weekly sync applies this list; a journal not in it becomes a question for the owner (journal-name).
+- cas: Acc. Chem. Res.
+  also: [Accounts of Chemical Research]
+- cas: ACS Appl. Energy Mater.
+  also: [ACS Applied Energy Materials]
+- cas: ACS Appl. Mater. Interfaces
+  also: [ACS Applied Materials & Interfaces]
+- cas: ACS Catal.
+  also: [ACS Catalysis]
+- cas: ACS Cent. Sci.
+  also: [ACS Central Science]
+- cas: ACS Energy Lett.
+  also: [ACS Energy Letters]
+- cas: ACS Mater. Lett.
+  also: [ACS Materials Letters]
+- cas: ACS Nano
+- cas: ACS Sustainable Chem. Eng.
+  also: [ACS Sustainable Chemistry & Engineering]
+- cas: Adv. Energy Mater.
+  also: [Advanced Energy Materials]
+- cas: Adv. Funct. Mater.
+  also: [Advanced Functional Materials, Adv Funct Materials]
+- cas: Adv. Mater.
+  also: [Advanced Materials]
+- cas: Adv. Mater. Interfaces
+  also: [Advanced Materials Interfaces]
+- cas: Adv. Sci.
+  also: [Advanced Science]
+- cas: Am. Mineral.
+  also: [American Mineralogist]
+- cas: Angew. Chem., Int. Ed.
+  also: [Angew. Chem. Int. Ed., Angewandte Chemie International Edition]
+- cas: Appl. Phys. Lett.
+  also: [Applied Physics Letters]
+- cas: Batteries Supercaps
+- cas: Carbon
+- cas: Carbon Trends
+- cas: Chem
+- cas: Chem. Commun.
+  also: [Chemical Communications, ChemComm]
+- cas: Chem. Mater.
+  also: [Chemistry of Materials]
+- cas: Chem. Rev.
+  also: [Chemical Reviews]
+- cas: Chem. Sci.
+  also: [Chemical Science]
+- cas: ChemElectroChem
+- cas: ChemSusChem
+- cas: Commun. Chem.
+  also: [Communications Chemistry]
+- cas: Cryst. Growth Des.
+  also: [Crystal Growth & Design]
+- cas: CrystEngComm
+- cas: Dalton Trans.
+  also: [Dalton Transactions]
+- cas: EES Batteries
+- cas: Electrochem. Commun.
+  also: [Electrochemistry Communications]
+- cas: Electrochim. Acta
+  also: [Electrochimica Acta]
+- cas: Energy Environ. Sci.
+  also: [Energy & Environmental Science]
+- cas: Energy Fuels
+  also: [Energy & Fuels]
+- cas: Energy Storage Mater.
+  also: [Energy Storage Materials]
+- cas: Energy Technol.
+  also: [Energy Technology, Energy Tech]
+- cas: Front. Batter. Electrochem.
+  also: [Frontiers in Batteries and Electrochemistry]
+- cas: Front. Chem.
+  also: [Frontiers in Chemistry]
+- cas: Inorg. Chem.
+  also: [Inorganic Chemistry]
+- cas: J. Am. Chem. Soc.
+  also: [Journal of the American Chemical Society]
+- cas: J. Chem. Educ.
+  also: [Journal of Chemical Education]
+- cas: J. Chem. Phys.
+  also: [Journal of Chemical Physics]
+- cas: J. Electrochem. Soc.
+  also: [Journal of the Electrochemical Society]
+- cas: J. Inorg. Organomet. Polym. Mater.
+  also: [Journal of Inorganic and Organometallic Polymers and Materials, J Inorg Organomet Polym]
+- cas: J. Mater. Chem.
+  also: [Journal of Materials Chemistry]
+- cas: J. Mater. Chem. A
+  also: [Journal of Materials Chemistry A]
+- cas: J. Mater. Res.
+  also: [Journal of Materials Research]
+- cas: J. Phys. Chem. B
+  also: [Journal of Physical Chemistry B]
+- cas: J. Phys. Chem. C
+  also: [Journal of Physical Chemistry C]
+- cas: J. Phys. Chem. Lett.
+  also: [Journal of Physical Chemistry Letters]
+- cas: "J. Phys.: Energy"
+  also: [Journal of Physics: Energy, J. Phys. Energy, JPhys Energy]
+- cas: J. Power Sources
+  also: [Journal of Power Sources]
+- cas: J. Solid State Chem.
+  also: [Journal of Solid State Chemistry]
+- cas: J. Synchrotron Radiat.
+  also: [Journal of Synchrotron Radiation, J Synchrotron Rad]
+- cas: J. Visualized Exp.
+  also: [Journal of Visualized Experiments, JoVE]
+- cas: Joule
+- cas: Langmuir
+- cas: Mater. Res. Bull.
+  also: [Materials Research Bulletin]
+- cas: Matter
+- cas: MRS Bull.
+  also: [MRS Bulletin]
+- cas: Nano Energy
+- cas: Nano Lett.
+  also: [Nano Letters]
+- cas: Nanoscale
+- cas: Nat. Catal.
+  also: [Nature Catalysis]
+- cas: Nat. Chem.
+  also: [Nature Chemistry]
+- cas: Nat. Commun.
+  also: [Nature Communications]
+- cas: Nat. Energy
+  also: [Nature Energy]
+- cas: Nat. Mater.
+  also: [Nature Materials]
+- cas: Nat. Nanotechnol.
+  also: [Nature Nanotechnology]
+- cas: Nat. Photonics
+  also: [Nature Photonics, Nature Photon, Nat Photon]
+- cas: Nature
+- cas: NPG Asia Mater.
+  also: [NPG Asia Materials]
+- cas: Phys. Chem. Chem. Phys.
+  also: [Physical Chemistry Chemical Physics]
+- cas: Phys. Rev. B
+  also: [Physical Review B]
+- cas: Phys. Rev. Mater.
+  also: [Physical Review Materials]
+- cas: Proc. Natl. Acad. Sci. U. S. A.
+  also: [Proceedings of the National Academy of Sciences, PNAS]
+- cas: RSC Adv.
+  also: [RSC Advances]
+- cas: Sci. Adv.
+  also: [Science Advances]
+- cas: Sci. Bull.
+  also: [Science Bulletin]
+- cas: Sci. Data
+  also: [Scientific Data]
+- cas: Sci. Rep.
+  also: [Scientific Reports]
+- cas: Science
+- cas: Small
+- cas: Small Methods
+- cas: Software Impacts
+  also: [Softw. Impacts]
+- cas: Solid State Ionics
+- cas: Solid State Sci.
+  also: [Solid State Sciences]
+- cas: Thin Solid Films
+- cas: Z. Anorg. Allg. Chem.
+  also: [Zeitschrift für anorganische und allgemeine Chemie, Zeitschrift anorg allge chemie, Z. Anorg. Allg. Chem]

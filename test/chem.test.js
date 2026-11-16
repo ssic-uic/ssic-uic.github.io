@@ -36,3 +36,16 @@ const cases = [
 for (const [input, want] of cases) {
   test(input, () => assert.strictEqual(chem(input), want));
 }
+
+test("journal names map to CAS abbreviations", () => {
+  const { journalLookup } = require("../lib/journals.js");
+  const fs = require("fs"), path = require("path"), YAML = require("yaml");
+  const look = journalLookup(YAML.parse(fs.readFileSync(path.join(__dirname, "..", "data", "journals.yml"), "utf8")));
+  assert.deepStrictEqual(look("Chemistry of Materials"), { name: "Chem. Mater.", known: true });
+  assert.strictEqual(look("The Journal of Physical Chemistry C").name, "J. Phys. Chem. C");
+  assert.strictEqual(look("ACS Applied Materials & Interfaces").name, "ACS Appl. Mater. Interfaces");
+  assert.strictEqual(look("Adv Funct Materials").name, "Adv. Funct. Mater.");
+  assert.strictEqual(look("J. Phys. Energy").name, "J. Phys.: Energy");
+  assert.strictEqual(look("Chem. Mater.").name, "Chem. Mater.", "CAS forms map to themselves");
+  assert.deepStrictEqual(look("Unheard-of Journal"), { name: "Unheard-of Journal", known: false });
+});

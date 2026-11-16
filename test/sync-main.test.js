@@ -47,9 +47,9 @@ test("listed papers stay; only new items reach the owner", async () => {
     listed("10.1/listed", "A listed paper that became odd", 2025, { corresponding: true, corresponding_set_by: "owner" }),
     listed("10.1/corr", "Mine as corresponding", 2025),
     listed("10.1/notcorr", "Someone else corresponding", 2025),
-    listed("10.1/kept", "Known before, silent now", 2024, { corresponding: true, corresponding_set_by: "openalex" }),
+    listed("10.1/kept", "Known before, silent now", 2024, { corresponding: true, corresponding_set_by: "openalex", journal: "Chemistry of Materials" }),
     listed("10.1/unknown", "Recent, nobody flagged", 2026),
-    listed("10.1/old", "Old, nobody flagged", 2003, { authors: "X. Li and J. Cabana" }),
+    listed("10.1/old", "Old, nobody flagged", 2003, { authors: "X. Li and J. Cabana", journal: "Weird J." }),
   ]));
   for (const [d, t] of [["10.1/unknown", "Recent, nobody flagged"], ["10.1/old", "Old, nobody flagged"], ["10.1/corr", "Mine as corresponding"], ["10.1/notcorr", "Someone else corresponding"], ["10.1/kept", "Known before, silent now"]]) crossref[d] = article(t, { issued: { "date-parts": [[{ K: 2024, R: 2026, O: 2003 }[t[0]] || 2025, t[0] === "R" ? 6 : 1, 1]] },
     ...(t[0] === "O" ? { author: [{ given: "Xin", family: "Li" }, { given: "Jordi", family: "Cabana" }] } : {}) });
@@ -58,6 +58,7 @@ test("listed papers stay; only new items reach the owner", async () => {
   w("people.yml", { pi: { name: "Jordi Cabana" }, grads: [{ name: "Neelam Sunariwal" }] });
   w("alumni.yml", { groups: [{ role: "Graduate Students", people: ["Haifeng Li"] }] });
   w("group-authors.yml", []);
+  w("journals.yml", [{ cas: "Chem. Mater.", also: ["Chemistry of Materials"] }]);
   // the owner's Research-page choice for ion: two papers shown, one declined
   w("research.yml", { themes: [{ key: "ion", title: "Ion transport", question: "q", text: "t", papers: ["10.1/listed", "10.1/kept"], not_shown: ["10.1/corr"] }] });
   w("known.yml", [{ kind: "orcid-no-doi", title: "A seen entry without a DOI" }]);
@@ -115,7 +116,11 @@ test("listed papers stay; only new items reach the owner", async () => {
   assert.strictEqual(kinds["Recent, nobody flagged"]?.kind, "research-candidate", "newer candidate not raised");
   assert.ok(!kinds["Mine as corresponding"], "a paper the owner declined was raised");
   assert.ok(!kinds["Someone else corresponding"], "a paper where he isn't corresponding was raised");
-  assert.ok(!kinds["Old, nobody flagged"], "a paper older than the shown ones was raised");
+  assert.notStrictEqual(kinds["Old, nobody flagged"]?.kind, "research-candidate", "a paper older than the shown ones was raised");
+  // journals: full titles become CAS forms; an unknown journal is a question and keeps its name
+  assert.strictEqual(by("10.1/kept").journal, "Chem. Mater.", "journal not abbreviated");
+  assert.strictEqual(by("10.1/old").journal, "Weird J.");
+  assert.ok(review.some(i => i.kind === "journal-name" && i.doi === "10.1/old" && /Weird J\./.test(i.detail)), "unknown journal not asked about");
   const research = YAML.parse(fs.readFileSync(path.join(dir, "research.yml"), "utf8"));
   assert.deepStrictEqual(research.themes[0].papers, ["10.1/listed", "10.1/kept"], "the sync changed the owner's papers");
   assert.ok(!kinds["Mine as corresponding"] && !kinds["Someone else corresponding"], "known papers raised");

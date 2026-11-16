@@ -36,6 +36,8 @@
 //   sync, the group members it would bold are held back (group_check: on the paper, not bolded)
 //   and the owner confirms each one (review.yml, kind group-author). The answer goes in
 //   data/group-authors.yml (confirmed: or not:); decided entries leave group_check.
+// - journal names follow CAS (CASSI) abbreviations from data/journals.yml, applied to every paper
+//   each run. A journal not in that list keeps its name and becomes a question (journal-name).
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
 // OPENALEX_API_KEY (optional; the OpenAlex check also runs without one).
@@ -57,6 +59,8 @@ const REVIEW = path.join(DATA, "review.yml");
 const KNOWN = path.join(DATA, "known.yml");
 const RESEARCH = path.join(DATA, "research.yml");
 const GROUP_AUTHORS = path.join(DATA, "group-authors.yml");
+const JOURNALS = path.join(DATA, "journals.yml");
+const { journalLookup } = require("../lib/journals");
 const { groupMembers, ambiguousAuthors, splitAuthors, matchMembers, boldAuthors } = require("../lib/group-authors");
 // ORCID work types that can be peer-reviewed articles; Crossref has the final say
 const KEEP_TYPES = new Set(["journal-article", "review", "letter"]);
@@ -386,6 +390,16 @@ async function main() {
     if (v === undefined) continue; // unknown this week: keep what we had
     p.corresponding = v; p.corresponding_set_by = "openalex";
   }
+  // journal names: CAS abbreviations; unknown journals are questions
+  if (fs.existsSync(JOURNALS)) {
+    const look = journalLookup(readYaml(JOURNALS, []));
+    for (const p of existing) {
+      const j = look(p.journal);
+      if (j.known) { if (p.journal !== j.name) { report.updated.push(`${p.year} ${p.title} (journal: ${p.journal} → ${j.name})`); p.journal = j.name; } }
+      else ask("journal-name", p.title, p.doi, `${p.year}. The journal "${p.journal}" isn't in the site's list of CAS abbreviations (data/journals.yml). What is its CAS abbreviation?`);
+    }
+  }
+
   // group members in author lists: on new papers, hold every proposed bold until the owner confirms it
   const members = groupMembers(readYaml(path.join(DATA, "people.yml"), {}), (readYaml(path.join(DATA, "alumni.yml"), {}) || {}).groups || []);
   const gaRules = readYaml(GROUP_AUTHORS, []) || [];
@@ -419,7 +433,7 @@ async function main() {
   const keyOf = i => `${i.kind}|${i.doi ? normDoi(i.doi) : normTitle(i.title)}${i.kind === "group-author" ? "|" + (String(i.detail).match(/Is "([^"]+)"/) || [])[1] : ""}`;
   const knownKeys = new Set(readYaml(KNOWN, []).map(keyOf));
   const prev = new Map(readYaml(REVIEW, []).map(i => [keyOf(i), i]));
-  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && !["orcid-wrong-doi", "research-candidate", "group-author"].includes(i.kind);
+  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && !["orcid-wrong-doi", "research-candidate", "group-author", "journal-name"].includes(i.kind);
   const review = [];
   const keys = new Set();
   for (const i of pending) {
@@ -437,7 +451,7 @@ async function main() {
   const tidy = existing.map(p => Object.fromEntries(order.filter(k => p[k] !== undefined && p[k] !== "").map(k => [k, p[k]])));
   fs.writeFileSync(PUBS, header + "\n" + YAML.stringify(tidy, { lineWidth: 0 }));
   fs.writeFileSync(EXCLUDED, "# Works left out of the site because they are not peer-reviewed journal articles\n# (conference abstracts, proceedings, book chapters, preprints, editorials).\n# by: rule = left out automatically; owner = the owner's decision. The sync never re-adds\n# anything listed here. To revisit one, delete its entry.\n" + YAML.stringify(excludedList, { lineWidth: 0 }));
-  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,\n# research-candidate (newer than a theme's Research-page papers: show it, replacing which, or add the DOI to\n# that theme's not_shown in research.yml), group-author (is this author a group member? answer in\n# data/group-authors.yml: confirmed or not).\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
+  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,\n# research-candidate (newer than a theme's Research-page papers: show it, replacing which, or add the DOI to\n# that theme's not_shown in research.yml), group-author (is this author a group member? answer in\n# data/group-authors.yml: confirmed or not), journal-name (journal missing from data/journals.yml: add its CAS form).\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
 
   const lines = [
     `## Publication sync, ${today}`,
