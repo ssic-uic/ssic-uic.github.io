@@ -16,6 +16,8 @@ themes:
     not_shown:
       - 10.1016/j.chempr.2025.102703 # Intercalation chemistry goes nuclear (Chem 2025)
       - 10.1021/acs.chemmater.5c02186 # Sodium Content and Copper Activity, O3 cathodes (Chem. Mater. 2025)
+      - 10.1039/d6eb00043f # Nanoparticle surface modification in composite polymer electrolytes (EES Batteries 2026)
+      - 10.1039/d5ta08873a # Preconditioning of aqueous Zn-ion batteries (J. Mater. Chem. A 2026)
   - key: redox
     title: Redox beyond the metal
     question: How do electronic and crystal structure respond when ions enter a lattice?
@@ -26,6 +28,7 @@ themes:
       - 10.1021/acsenergylett.0c02040 # Elucidation of Active Oxygen Sites upon Delithiation of Li3IrO4 (ACS Energy Lett. 2020)
     not_shown:
       - 10.1021/acs.jpcc.2c08733 # XAS: Participation of Oxygen in the Cycling of Li4Mn2O5 (J. Phys. Chem. C 2023)
+      - 10.1103/pk6l-ds6m # Structural and electronic changes in Li2RuO3 upon Li intercalation (Phys. Rev. Mater. 2025)
   - key: interface
     title: Reactivity at electrochemical interfaces
     question: What starting chemistry favors efficient electrochemical transformations, molecule to molecule or molecule to metal?

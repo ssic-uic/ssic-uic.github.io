@@ -118,6 +118,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: owner
   added: 2026-11-15
 - year: 2026
   published: "2026"
@@ -130,6 +132,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: owner
   added: 2026-11-15
 - year: 2025
   published: 2025-12-05
@@ -143,6 +147,8 @@
     - ion
     - redox
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: owner
 - year: 2025
   published: 2025-11-20
   title: Relationship between Sodium Content and Copper Activity for High Voltage Stability in O3-Type Layered Oxide Cathodes

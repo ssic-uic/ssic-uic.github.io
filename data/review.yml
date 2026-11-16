@@ -4,18 +4,4 @@
 # research-candidate (newer than a theme's Research-page papers: show it, replacing which, or add the DOI to
 # that theme's not_shown in research.yml).
 # An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.
-- kind: research-candidate
-  title: Effect of nanoparticle surface modification on lithium-ion transport in composite polymer electrolytes
-  doi: 10.1039/d6eb00043f
-  detail: EES Batteries 2026. Newer than the papers on the Research page for Ion transport in solids; OpenAlex doesn't say who the corresponding author is. Show it there (replacing which paper?), or keep the page as it is?
-  first_seen: 2026-11-15
-- kind: research-candidate
-  title: Effect of preconditioning on cycling performance of aqueous Zn-ion batteries
-  doi: 10.1039/d5ta08873a
-  detail: J. Mater. Chem. A 2026. Newer than the papers on the Research page for Ion transport in solids; OpenAlex doesn't say who the corresponding author is. Show it there (replacing which paper?), or keep the page as it is?
-  first_seen: 2026-11-15
-- kind: research-candidate
-  title: Structural and electronic changes in Li2RuO3 induced by lithium intercalation
-  doi: 10.1103/pk6l-ds6m
-  detail: Phys. Rev. Mater. 2025. Newer than the papers on the Research page for Redox beyond the metal; OpenAlex doesn't say who the corresponding author is. Show it there (replacing which paper?), or keep the page as it is?
-  first_seen: 2026-11-15
+[]
