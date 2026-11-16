@@ -60,6 +60,18 @@ function validate(d) {
 
   (d.alumni || []).forEach((g, i) => need(g, ["role", "people"], `alumni.yml group ${i + 1}`));
 
+  // group-authors.yml: each rule names a current member or alum, and its DOIs are listed papers
+  if (d.groupAuthors) {
+    const { groupMembers } = require("../lib/group-authors");
+    const names = new Set(groupMembers(d.people, d.alumni).map(m => m.name));
+    const pubDois = new Set((d.publications || []).map(p => String(p.doi || "").toLowerCase()));
+    d.groupAuthors.forEach((r, i) => {
+      if (!names.has(r.name)) errs.push(`group-authors.yml rule ${i + 1}: "${r.name}" is not in people.yml or alumni.yml (spell it as there)`);
+      if (r.until !== undefined && !/^\d{4}$/.test(String(r.until))) errs.push(`group-authors.yml ${r.name}: until must be a year`);
+      for (const f of ["also", "not"]) (r[f] || []).forEach(x => { if (!pubDois.has(String(x).toLowerCase())) errs.push(`group-authors.yml ${r.name} ${f}: DOI ${x} is not in publications.yml`); });
+    });
+  }
+
   (d.news || []).forEach((n, i) => {
     need(n, ["date", "title", "body", "url", "status"], `news.yml item ${i + 1}`);
     if (n.status && !["draft", "published"].includes(n.status)) errs.push(`news.yml item ${i + 1}: status must be draft or published`);

@@ -5,6 +5,7 @@ const path = require("path");
 const YAML = require("yaml");
 const crypto = require("crypto");
 const { validate } = require("./validate");
+const { groupMembers, boldAuthors } = require("../lib/group-authors");
 
 const root = path.join(__dirname, "..");
 const out = path.join(root, "dist");
@@ -23,6 +24,7 @@ function loadData() {
     news: read("news.yml").items || [],
     publications: read("publications.yml") || [],
     openings: read("join.yml").openings || [],
+    groupAuthors: fs.existsSync(path.join(root, "data", "group-authors.yml")) ? read("group-authors.yml") || [] : [],
   };
 }
 
@@ -36,6 +38,7 @@ const withPhoto = ({ family, ...m }) => (m.photo ? { ...m, photo: photoURL(m.pho
 
 function siteFrom(d) {
   const ppl = d.people;
+  const members = groupMembers(d.people, d.alumni);
   return {
     research: d.research,
     people: { ...ppl, pi: withPhoto(ppl.pi),
@@ -48,6 +51,8 @@ function siteFrom(d) {
       year: String(p.year), title: p.title, authors: p.authors, journal: p.journal,
       citation: String(p.citation ?? ""), url: p.url, doi: String(p.doi || "").toLowerCase(), themes: p.themes || [],
       ...(p.corresponding === true ? { corresponding: true } : {}),
+      // group members on the paper, bolded on the page (lib/group-authors.js, data/group-authors.yml)
+      ...((b => (b.length ? { bold: b } : {}))(boldAuthors(p, members, d.groupAuthors))),
     })),
     openings: d.openings,
     updated: new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "America/Chicago" }),

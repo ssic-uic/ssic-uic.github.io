@@ -48,6 +48,14 @@ test("built page renders every section without script errors", async () => {
   assert.ok(d.querySelector("#pi h2").textContent.length > 0, "PI profile missing");
   assert.ok(d.querySelectorAll("#research-rows .rrow").length > 0, "research themes missing");
 
+  // Publications: group members (worked out at build time) are bold in the author lists
+  const site = JSON.parse(fs.readFileSync(path.join(dist, "assets", "data.js"), "utf8").replace(/^window\.SITE = /, "").replace(/;\s*$/, ""));
+  const pubEls = [...d.querySelectorAll("#publist .pub")];
+  site.publications.forEach((p, i) => {
+    const shown = [...pubEls[i].querySelectorAll(".a b")].map(b => b.textContent).filter(n => !/Cabana/.test(n));
+    assert.deepStrictEqual(shown, p.bold || [], `bold authors on "${p.title.slice(0, 40)}"`);
+  });
+
   // Research: each theme shows the papers the owner chose
   const rows = [...d.querySelectorAll("#research-rows .rrow")];
   data0.research.forEach((r, i) => {

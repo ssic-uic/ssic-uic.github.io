@@ -1,0 +1,20 @@
+# Group members are bolded in author lists (Publications and the home page).
+# Everyone in people.yml and alumni.yml counts: an author is bolded when the family name and first
+# initial match ("H. D. Yoo" = Hyun Deog (Sam) Yoo). The PI is always bolded.
+# Exceptions, by name exactly as in people.yml / alumni.yml:
+#   until: last year to bold (afterwards they collaborate with the group as independent researchers)
+#   also:  DOIs to bold anyway after `until`
+#   not:   DOIs where a same-initial author is someone else
+#   as:    extra spellings to match exactly, for names the first-initial rule misses
+- name: Mark Wolfman
+  until: 2022
+  also:
+    - 10.1002/aenm.202300895 # Origin of Rapid Delithiation in Secondary Particles (Adv. Energy Mater. 2023)
+- name: Hyun Deog (Sam) Yoo
+  until: 2022
+- name: Eva Allen
+  until: 2024
+- name: Shivam Singh
+  not:
+    - 10.1021/acsnano.3c04178 # S. Singh is Sakshi Singh (UIC Chemical Engineering)
+    - 10.1002/adfm.202300814 # S. K. Singh is Sachin Kumar Singh (UIC Mechanical Engineering)

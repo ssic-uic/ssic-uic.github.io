@@ -18,7 +18,9 @@ const inArea = (p,k) => k==="other" ? !themesOf(p).length : themesOf(p).includes
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const authors = a => esc(a).replace(/J\. Cabana(-Jimenez)?/g, m => '<b>'+m+'</b>');
+/* the PI and group members (p.bold, worked out at build time) in bold */
+const authors = (a, bold = []) => String(a).split(/(, | and )/).map((s, i) => i % 2 ? esc(s)
+  : bold.includes(s.trim()) ? '<b>'+esc(s)+'</b>' : esc(s).replace(/J\. Cabana(-Jimenez)?/g, m => '<b>'+m+'</b>')).join('');
 const initials = n => { const w = n.replace(/\(.*?\)/g,'').trim().split(/\s+/); return (w[0][0] + w[w.length-1][0]).toUpperCase(); };
 /* thumbnail: the member's photo when there is one, otherwise their initials */
 const thumb = (p, style='') => p.photo
@@ -29,7 +31,7 @@ function pubHTML(p){
   const ks = themesOf(p).length ? themesOf(p) : ["other"];
   return `<article class="pub"><span class="dots">${ks.map(k=>`<span class="dot" style="--c:${AREAS[k].c}" title="${AREAS[k].name}"></span>`).join("")}</span><div>
     <a class="t" href="${esc(p.url)}">${chem(p.title)}</a>
-    <div class="a">${authors(p.authors)}</div>
+    <div class="a">${authors(p.authors, p.bold)}</div>
     <div class="j"><i>${esc(p.journal)}</i> ${p.year}, ${esc(p.citation)}</div></div></article>`;
 }
 function newsHTML(n){
