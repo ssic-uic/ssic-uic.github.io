@@ -6,6 +6,7 @@
 # corresponding: true when J. Cabana is a corresponding author (the Research page shows each theme's three
 #   most recent such papers); false when he isn't; absent when unknown. corresponding_set_by: "openalex"
 #   (from OpenAlex, refreshed weekly) or "owner" (the owner's word; the sync never overwrites it).
+# group_check: authors who might be group members, held unbolded until the owner answers (see group-authors.yml).
 # check: something to verify against the journal; the sync clears it once Crossref confirms.
 # Copied from the v0 design (cabana.chem.uic.edu, 13 Nov 2026); 2022-2025 only so far.
 - year: 2026

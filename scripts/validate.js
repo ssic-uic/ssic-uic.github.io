@@ -25,6 +25,7 @@ function validate(d) {
     need(p, ["year", "title", "authors", "journal", "url"], where);
     if (p.year && !/^\d{4}$/.test(String(p.year))) errs.push(`${where}: year "${p.year}" is not a 4-digit year`);
     (p.themes || []).forEach(t => { if (!THEMES.includes(t)) errs.push(`${where}: unknown theme "${t}"`); });
+    (p.group_check || []).forEach(a => { if (!String(p.authors || "").split(/, | and /).map(x => x.trim()).includes(a)) errs.push(`${where}: group_check "${a}" is not on the author list`); });
     if (p.corresponding !== undefined && typeof p.corresponding !== "boolean") errs.push(`${where}: corresponding must be true or false`);
     if (p.corresponding_set_by !== undefined && !["openalex", "owner"].includes(p.corresponding_set_by)) errs.push(`${where}: corresponding_set_by must be openalex or owner`);
   });
@@ -68,7 +69,7 @@ function validate(d) {
     d.groupAuthors.forEach((r, i) => {
       if (!names.has(r.name)) errs.push(`group-authors.yml rule ${i + 1}: "${r.name}" is not in people.yml or alumni.yml (spell it as there)`);
       if (r.until !== undefined && !/^\d{4}$/.test(String(r.until))) errs.push(`group-authors.yml ${r.name}: until must be a year`);
-      for (const f of ["also", "not"]) (r[f] || []).forEach(x => { if (!pubDois.has(String(x).toLowerCase())) errs.push(`group-authors.yml ${r.name} ${f}: DOI ${x} is not in publications.yml`); });
+      for (const f of ["also", "not", "confirmed"]) (r[f] || []).forEach(x => { if (!pubDois.has(String(x).toLowerCase())) errs.push(`group-authors.yml ${r.name} ${f}: DOI ${x} is not in publications.yml`); });
     });
   }
 

@@ -32,6 +32,10 @@
 //   changes them by itself. A paper in a theme that is newer than the theme's shown papers,
 //   with J. Cabana as corresponding author or unknown, goes to review.yml as a
 //   research-candidate, unless the owner already put it in that theme's not_shown.
+// - group members are bolded in author lists (lib/group-authors.js). On a paper added by the
+//   sync, an author who might or might not be a group member is held back (group_check: on the
+//   paper, not bolded) and the owner is asked (review.yml, kind group-author). The answer goes in
+//   data/group-authors.yml (confirmed: or not:); decided entries leave group_check.
 //
 // Env: ORCID (required), CONTACT_EMAIL (sent to Crossref as a courtesy),
 // OPENALEX_API_KEY (optional; the OpenAlex check also runs without one).
@@ -52,6 +56,8 @@ const EXCLUDED = path.join(DATA, "excluded.yml");
 const REVIEW = path.join(DATA, "review.yml");
 const KNOWN = path.join(DATA, "known.yml");
 const RESEARCH = path.join(DATA, "research.yml");
+const GROUP_AUTHORS = path.join(DATA, "group-authors.yml");
+const { groupMembers, ambiguousAuthors, splitAuthors, matchMembers } = require("../lib/group-authors");
 // ORCID work types that can be peer-reviewed articles; Crossref has the final say
 const KEEP_TYPES = new Set(["journal-article", "review", "letter"]);
 const UA = `ssic-website publication sync (mailto:${EMAIL})`;
@@ -242,6 +248,7 @@ async function main() {
   const header = text.split("\n").filter(l => l.startsWith("#")).join("\n");
   const existing = YAML.parse(text) || [];
   const permanent = new Set(existing); // listed before this run: never removed
+  const addedNow = []; // papers added this run
   const byDoi = new Map(), byTitle = new Map();
   const index = p => { if (p.doi) byDoi.set(normDoi(p.doi), p); byTitle.set(normTitle(p.title), p); };
   existing.forEach(index);
@@ -345,7 +352,7 @@ async function main() {
     if (twin) { if (PREPRINT_VENUE.test(twin.journal || "")) { exclude(normDoi(twin.doi), twin.title, "preprint; the published version is listed"); refresh(twin, doi, m, w); } continue; }
     const np = { year: c.year, published: c.published, title: c.title, authors: c.authors, journal: c.journal || w.journal,
       citation: c.citation, url: `https://doi.org/${doi}`, doi, themes: guessThemes(c.title), themes_set_by: "guess", added: today };
-    existing.push(np); index(np);
+    existing.push(np); index(np); addedNow.push(np);
     report.added.push(`${c.year} ${c.title}`);
   }
 
@@ -364,7 +371,7 @@ async function main() {
     if (c.hasCabana && droppedPreprints.some(t => similar(normTitle(t), normTitle(c.title)) >= 0.9)) {
       const np = { year: c.year, published: c.published, title: c.title, authors: c.authors, journal: c.journal,
         citation: c.citation, url: `https://doi.org/${w.doi}`, doi: w.doi, themes: guessThemes(c.title), themes_set_by: "guess", added: today };
-      existing.push(np); index(np);
+      existing.push(np); index(np); addedNow.push(np);
       report.added.push(`${c.year} ${c.title} (published version of a preprint)`);
       continue;
     }
@@ -379,6 +386,27 @@ async function main() {
     if (v === undefined) continue; // unknown this week: keep what we had
     p.corresponding = v; p.corresponding_set_by = "openalex";
   }
+  // group members in author lists: ask about uncertain matches on new papers, hold them unbolded
+  const members = groupMembers(readYaml(path.join(DATA, "people.yml"), {}), (readYaml(path.join(DATA, "alumni.yml"), {}) || {}).groups || []);
+  const gaRules = readYaml(GROUP_AUTHORS, []) || [];
+  const before = existing.filter(p => permanent.has(p));
+  for (const p of addedNow) {
+    const amb = ambiguousAuthors(p, before, members, gaRules);
+    if (amb.length) p.group_check = amb.map(x => x.author);
+  }
+  for (const p of existing.filter(p => p.group_check)) {
+    // a held author stays held until the owner answers (confirmed: or not: for this DOI)
+    const doi = normDoi(p.doi);
+    const undecided = a => { const ms = matchMembers(a, doi, members, gaRules); return ms.length && !ms.some(x => (x.rule.confirmed || []).map(normDoi).includes(doi)); };
+    p.group_check = p.group_check.filter(a => splitAuthors(p.authors).includes(a) && undecided(a));
+    if (!p.group_check.length) { delete p.group_check; continue; }
+    const why = new Map(ambiguousAuthors(p, before.filter(q => q !== p), members, gaRules).map(x => [x.author, x.reason]));
+    for (const a of p.group_check) {
+      const names = matchMembers(a, doi, members, gaRules).map(x => x.member.name);
+      ask("group-author", p.title, p.doi, `${p.journal} ${p.year}. Is "${a}" on this paper ${names.join(" or ")} (group member)? Asking because ${why.get(a) || "the match was uncertain when the paper was added"}. Not shown in bold until you answer.`);
+    }
+  }
+
   // Research page: the owner's lists never change by themselves; newer candidates are questions
   const candidates = researchCandidates(existing, readYaml(RESEARCH, {}).themes || []);
   for (const { paper: p, themes } of candidates) {
@@ -387,10 +415,11 @@ async function main() {
   }
 
   // ---- the review list: pending decisions, minus anything known or already decided ----
-  const keyOf = i => `${i.kind}|${i.doi ? normDoi(i.doi) : normTitle(i.title)}`;
+  // group-author items are per author, so a paper can carry more than one
+  const keyOf = i => `${i.kind}|${i.doi ? normDoi(i.doi) : normTitle(i.title)}${i.kind === "group-author" ? "|" + (String(i.detail).match(/Is "([^"]+)"/) || [])[1] : ""}`;
   const knownKeys = new Set(readYaml(KNOWN, []).map(keyOf));
   const prev = new Map(readYaml(REVIEW, []).map(i => [keyOf(i), i]));
-  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && !["orcid-wrong-doi", "research-candidate"].includes(i.kind);
+  const decided = i => i.doi && (byDoi.has(normDoi(i.doi)) || excludedDois.has(normDoi(i.doi)) || ownerListed.has(normDoi(i.doi))) && !["orcid-wrong-doi", "research-candidate", "group-author"].includes(i.kind);
   const review = [];
   const keys = new Set();
   for (const i of pending) {
@@ -404,11 +433,11 @@ async function main() {
 
   // ---- write ----
   existing.sort((a, b) => (b.year - a.year) || String(b.published || "").localeCompare(String(a.published || "")) || a.title.localeCompare(b.title));
-  const order = ["year", "published", "title", "authors", "journal", "citation", "url", "doi", "themes", "themes_set_by", "corresponding", "corresponding_set_by", "added"];
+  const order = ["year", "published", "title", "authors", "journal", "citation", "url", "doi", "themes", "themes_set_by", "corresponding", "corresponding_set_by", "group_check", "added"];
   const tidy = existing.map(p => Object.fromEntries(order.filter(k => p[k] !== undefined && p[k] !== "").map(k => [k, p[k]])));
   fs.writeFileSync(PUBS, header + "\n" + YAML.stringify(tidy, { lineWidth: 0 }));
   fs.writeFileSync(EXCLUDED, "# Works left out of the site because they are not peer-reviewed journal articles\n# (conference abstracts, proceedings, book chapters, preprints, editorials).\n# by: rule = left out automatically; owner = the owner's decision. The sync never re-adds\n# anything listed here. To revisit one, delete its entry.\n" + YAML.stringify(excludedList, { lineWidth: 0 }));
-  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,\n# research-candidate (newer than a theme's Research-page papers: show it, replacing which, or add the DOI to\n# that theme's not_shown in research.yml).\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
+  fs.writeFileSync(REVIEW, "# Decisions waiting for the owner, newest first. Written by the weekly sync; don't edit by hand.\n# kinds: openalex-find (a paper ORCID lacks), not-author (Crossref doesn't list J. Cabana),\n# orcid-wrong-doi (an ORCID entry's DOI points to another work), orcid-no-doi,\n# research-candidate (newer than a theme's Research-page papers: show it, replacing which, or add the DOI to\n# that theme's not_shown in research.yml), group-author (is this author a group member? answer in\n# data/group-authors.yml: confirmed or not).\n# An item leaves this list once it is decided: added to extra-papers.yml, excluded.yml, or known.yml.\n" + (review.length ? YAML.stringify(review, { lineWidth: 0 }) : "[]\n"));
 
   const lines = [
     `## Publication sync, ${today}`,

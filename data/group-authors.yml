@@ -6,6 +6,11 @@
 #   also:  DOIs to bold anyway after `until`
 #   not:   DOIs where a same-initial author is someone else
 #   as:    extra spellings to match exactly, for names the first-initial rule misses
+#   confirmed: DOIs where the owner confirmed the author is this member
+# Uncertain matches on newly added papers are not bolded until the owner answers (the paper's
+# group_check in publications.yml; the question goes to review.yml as group-author). Asked when the
+# author could be two members, the spelling is new for the member, or people outside the group share
+# the family name. Answer yes -> DOI in confirmed:, no -> DOI in not:; then drop it from group_check.
 - name: Mark Wolfman
   until: 2022
   also:

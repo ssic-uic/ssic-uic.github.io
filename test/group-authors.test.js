@@ -34,3 +34,23 @@ test("until, also and not", () => {
   assert.deepStrictEqual(bold("S. Singh and J. Cabana", 2023, "10.1/sakshi"), [], "same initial, someone else");
   assert.deepStrictEqual(bold("S. Singh and J. Cabana", 2027), ["S. Singh"]);
 });
+
+test("uncertain matches: two members, or outsiders share the family name; held until answered", () => {
+  const { ambiguousAuthors } = require("../lib/group-authors.js");
+  const al = [{ role: "Graduate Students", people: ["Haifeng Li", "Hong Li", "Neelam Sunariwal", "Eva Allen"] }];
+  const M2 = groupMembers({}, al);
+  const listed = [{ doi: "10.1/old", year: 2020, authors: "X. Li, J. L. Allen, N. Sunariwal and J. Cabana" }];
+  const rules2 = [{ name: "Eva Allen", until: 2024 }, { name: "Hong Li", not: ["10.1/new2"] }];
+  const p = { doi: "10.1/new", year: 2026, authors: "H. Li, N. Sunariwal, E. Allen and J. Cabana" };
+  const amb = ambiguousAuthors(p, listed, M2, rules2);
+  assert.deepStrictEqual(amb.map(x => x.author), ["H. Li"], "two members match H. Li; Sunariwal is unique; Allen is past her until");
+  assert.match(amb[0].reason, /Haifeng Li or Hong Li/);
+  // the owner said "not Hong Li" for this paper: one member left, but other Lis exist, so still asked
+  const amb2 = ambiguousAuthors({ ...p, doi: "10.1/new2" }, listed, M2, rules2);
+  assert.match(amb2[0].reason, /other people named Li/);
+  // held back from bold until confirmed
+  assert.deepStrictEqual(boldAuthors({ ...p, group_check: ["H. Li"] }, M2, rules2), ["N. Sunariwal"]);
+  const yes = [...rules2, { name: "Haifeng Li", confirmed: ["10.1/new2"] }];
+  assert.deepStrictEqual(boldAuthors({ ...p, doi: "10.1/new2", group_check: ["H. Li"] }, M2, yes), ["H. Li", "N. Sunariwal"]);
+  assert.deepStrictEqual(ambiguousAuthors({ ...p, doi: "10.1/new2" }, listed, M2, yes), [], "confirmed: no longer asked");
+});

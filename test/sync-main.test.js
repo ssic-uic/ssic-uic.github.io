@@ -10,7 +10,7 @@ const article = (title, extra = {}) => ({ type: "journal-article", title: [title
   "container-title": ["Chemistry of Materials"], "short-container-title": ["Chem. Mater."], volume: "1", page: "1-10", issued: { "date-parts": [[2026, 1, 5]] }, ...extra });
 const crossref = {
   "10.1/listed": article("A listed paper that became odd", { type: "posted-content" }), // must stay anyway
-  "10.1/new": article("A new peer-reviewed article"),
+  "10.1/new": article("A new peer-reviewed article", { author: [{ given: "Hong", family: "Li" }, { given: "Neelam", family: "Sunariwal" }, { given: "Jordi", family: "Cabana" }] }),
   "10.1/abstract": article("A meeting abstract", { "container-title": ["Microscopy and Microanalysis"], page: "1-2" }),
   "10.1/notours": article("Somebody else's paper", { author: [{ given: "A", family: "Other" }] }),
   "10.1/other": article("Another work entirely"),
@@ -49,10 +49,15 @@ test("listed papers stay; only new items reach the owner", async () => {
     listed("10.1/notcorr", "Someone else corresponding", 2025),
     listed("10.1/kept", "Known before, silent now", 2024, { corresponding: true, corresponding_set_by: "openalex" }),
     listed("10.1/unknown", "Recent, nobody flagged", 2026),
-    listed("10.1/old", "Old, nobody flagged", 2003),
+    listed("10.1/old", "Old, nobody flagged", 2003, { authors: "X. Li and J. Cabana" }),
   ]));
-  for (const [d, t] of [["10.1/unknown", "Recent, nobody flagged"], ["10.1/old", "Old, nobody flagged"], ["10.1/corr", "Mine as corresponding"], ["10.1/notcorr", "Someone else corresponding"], ["10.1/kept", "Known before, silent now"]]) crossref[d] = article(t, { issued: { "date-parts": [[{ K: 2024, R: 2026, O: 2003 }[t[0]] || 2025, t[0] === "R" ? 6 : 1, 1]] } });
+  for (const [d, t] of [["10.1/unknown", "Recent, nobody flagged"], ["10.1/old", "Old, nobody flagged"], ["10.1/corr", "Mine as corresponding"], ["10.1/notcorr", "Someone else corresponding"], ["10.1/kept", "Known before, silent now"]]) crossref[d] = article(t, { issued: { "date-parts": [[{ K: 2024, R: 2026, O: 2003 }[t[0]] || 2025, t[0] === "R" ? 6 : 1, 1]] },
+    ...(t[0] === "O" ? { author: [{ given: "Xin", family: "Li" }, { given: "Jordi", family: "Cabana" }] } : {}) });
   w("extra-papers.yml", []); w("excluded.yml", []);
+  // group members: Haifeng Li is an alum; other Lis are on listed papers, so a new "H. Li" is uncertain
+  w("people.yml", { pi: { name: "Jordi Cabana" }, grads: [{ name: "Neelam Sunariwal" }] });
+  w("alumni.yml", { groups: [{ role: "Graduate Students", people: ["Haifeng Li"] }] });
+  w("group-authors.yml", []);
   // the owner's Research-page choice for ion: two papers shown, one declined
   w("research.yml", { themes: [{ key: "ion", title: "Ion transport", question: "q", text: "t", papers: ["10.1/listed", "10.1/kept"], not_shown: ["10.1/corr"] }] });
   w("known.yml", [{ kind: "orcid-no-doi", title: "A seen entry without a DOI" }]);
@@ -94,6 +99,15 @@ test("listed papers stay; only new items reach the owner", async () => {
   // the new 2026 article has no OpenAlex flags but a guessed theme could put it on the Research page
   const newOne = by("10.1/new");
   assert.strictEqual(newOne.corresponding, undefined);
+  // group members: the uncertain "H. Li" on the new paper is held and asked about; Sunariwal is not
+  assert.deepStrictEqual(newOne.group_check, ["H. Li"], "uncertain group author not held");
+  const ga = review.filter(i => i.kind === "group-author");
+  assert.strictEqual(ga.length, 1);
+  assert.match(ga[0].detail, /Is "H\. Li" on this paper Haifeng Li/);
+  const { boldAuthors, groupMembers } = require("../lib/group-authors.js");
+  const M = groupMembers({ grads: [{ name: "Neelam Sunariwal" }] }, [{ people: ["Haifeng Li"] }]);
+  assert.deepStrictEqual(boldAuthors(newOne, M, []), ["N. Sunariwal"], "held author was bolded");
+
   // Research page: a newer ion paper (corresponding unknown) is a question; nothing changes by itself
   assert.strictEqual(kinds["Recent, nobody flagged"]?.kind, "research-candidate", "newer candidate not raised");
   assert.ok(!kinds["Mine as corresponding"], "a paper the owner declined was raised");
