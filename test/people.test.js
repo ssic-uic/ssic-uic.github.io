@@ -87,6 +87,8 @@ test("photos are cropped square, resized, rotated upright and stripped of metada
 test("members with a photo show it; everyone else keeps their initials", async () => {
   const { JSDOM, VirtualConsole } = require("jsdom");
   const site = siteFrom(loadData());
+  // start from nobody having a photo, whatever the real data holds
+  for (const m of [site.people.pi, ...site.people.postdocs, ...site.people.grads, ...site.people.undergrads]) delete m.photo;
   site.people.pi.photo = "assets/photos/jordi-cabana.webp?v=1";
   site.people.grads[0].photo = "assets/photos/prasadi.webp?v=1";
   const errors = [];

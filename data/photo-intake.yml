@@ -1,0 +1,27 @@
+# Photos imported by scripts/import-photos.js, by content hash, so a file is never
+# imported twice. Only the hash is kept; the original photo is never stored.
+imported:
+  - sha1: 66ba93f6aa38bb784fc4cef82200532173b30aaa
+    name: Erica Strojny
+    date: 2026-11-23
+  - sha1: 8c278cfe411d0a8c6b4727750fc0e7e67aa65a35
+    name: Karla Escobar
+    date: 2026-11-23
+  - sha1: eaebd8654a97b06387381175f433967202bf6008
+    name: Prasadi Abeysinghe Arachchilage
+    date: 2026-11-23
+  - sha1: 22ba2f245e5dd7e6d723b9e883cd5f06f10b2ca2
+    name: Shivam Singh
+    date: 2026-11-23
+  - sha1: 5eb137c60a468e705a7ac2f9f348063a7980192a
+    name: Tom Rickhoff
+    date: 2026-11-23
+  - sha1: 230f61e732335b09b7fdaae7a91c342714050740
+    name: Kumuditha Rathnayake
+    date: 2026-11-23
+  - sha1: 8ff71a51754f446fdb7486905cb9ee9ce1ec2956
+    name: Catherine Barth-Yoakum
+    date: 2026-11-23
+  - sha1: dd8ef15a5e1a9d9bb48b888a952a57d906042e41
+    name: Shristi Pradhan
+    date: 2026-11-23
