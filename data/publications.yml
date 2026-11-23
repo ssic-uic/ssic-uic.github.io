@@ -10,11 +10,11 @@
 # check: something to verify against the journal; the sync clears it once Crossref confirms.
 # Copied from the v0 design (cabana.chem.uic.edu, 13 Nov 2026); 2022-2025 only so far.
 - year: 2026
-  published: 2026-11-09
+  published: 2026-11-10
   title: "Tuning MoS2 Interlayer Spacing for Mg2+ Insertion: Navigating the Capacity–Stability Trade-Off in Mg-Ion Batteries"
   authors: S. C. Reddy, B. Kang, L. Cao, N. Sunariwal, K. Kumar, S. K. Mohanty, J. K. Park, J. Cabana, S. H. Oh and H. D. Yoo
   journal: ACS Appl. Energy Mater.
-  citation: online ahead of print
+  citation: 9, 15053–15062
   url: https://doi.org/10.1021/acsaem.6c02466
   doi: 10.1021/acsaem.6c02466
   themes:
@@ -516,6 +516,8 @@
   themes:
     - interface
   themes_set_by: guess
+  corresponding: true
+  corresponding_set_by: openalex
 - year: 2023
   published: 2023-10-30
   title: Insights into the reactivity and lithium plating mechanisms of ultra-thin metal oxide coatings for anode-free solid-state lithium metal batteries
@@ -818,7 +820,7 @@
   corresponding_set_by: openalex
 - year: 2022
   published: 2022-06-21
-  title: Unprecedented Multifunctionality in 1D Nb1‐xTaxS3 Transition Metal Trichalcogenide Alloy
+  title: Unprecedented Multifunctionality in 1D Nb1‐ x Ta x S3 Transition Metal Trichalcogenide Alloy
   authors: Z. Hemmat, A. Ahmadiparidari, S. Wang, K. Kumar, M. Zepeda, C. Zhang, N. Dandu, S. Rastegar, L. Majidi, A. Jaradat, A. Ngo, K. Thornton, L. A. Curtiss, J. Cabana, Z. Huang and A. Salehi‐Khojin
   journal: Adv. Funct. Mater.
   citation: 32, 2205214
@@ -955,7 +957,7 @@
   themes:
     - xray
   themes_set_by: guess
-  corresponding: true
+  corresponding: false
   corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2021
@@ -2895,6 +2897,8 @@
   themes:
     - ion
   themes_set_by: guess
+  corresponding: false
+  corresponding_set_by: openalex
   added: 2026-11-15
 - year: 2005
   published: 2005-09
